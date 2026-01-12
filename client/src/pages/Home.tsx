@@ -33,6 +33,7 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 export default function Home() {
   const menuItems = [
     { label: "Início", href: "#home" },
+    { label: "Oficina", href: "#oficina" },
     { label: "Serviços", href: "#servicos" },
     { label: "Avaliações", href: "#avaliacoes" },
     { label: "Localização", href: "#localizacao" },
@@ -391,6 +392,83 @@ export default function Home() {
             <div className="text-center group">
               <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">24/7</div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Suporte WhatsApp</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Oficina Section - Alta Performance */}
+      <section className="py-24 bg-zinc-950 text-white overflow-hidden relative" id="oficina">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <span className="inline-block bg-[#F97316] text-white px-4 py-1 rounded-sm text-xs font-black uppercase tracking-[0.3em] mb-4">
+                  Expertise Técnica
+                </span>
+                <h2 className="font-montserrat font-black text-4xl md:text-6xl mb-6 leading-tight uppercase italic">
+                  OFICINA DE <br />
+                  <span className="text-[#F97316]">ALTA PERFORMANCE</span>
+                </h2>
+                <p className="text-xl text-gray-400 leading-relaxed max-w-xl">
+                  Na R3 Bike Shop, sua bicicleta recebe tratamento de elite. Somos especialistas em <strong>manutenção de bicicletas de alta performance</strong>, utilizando ferramentas de precisão e processos rigorosos de qualidade.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                {[
+                  { icon: <Wrench className="text-[#F97316]" />, title: "Revisão Premium", desc: "Desmontagem completa e lubrificação técnica." },
+                  { icon: <Package className="text-[#F97316]" />, title: "Peças Originais", desc: "Shimano, SRAM e as melhores marcas." },
+                  { icon: <Star className="text-[#F97316]" />, title: "Mecânicos Elite", desc: "Profissionais certificados e experientes." },
+                  { icon: <Clock className="text-[#F97316]" />, title: "Entrega Rápida", desc: "Agilidade sem comprometer a perfeição." },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800 hover:border-[#F97316]/50 transition-colors group">
+                    <div className="mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
+                    <h4 className="font-black uppercase italic mb-2 text-white">{item.title}</h4>
+                    <p className="text-sm text-gray-500 leading-snug">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-4">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleConversion}
+                  className="inline-flex items-center gap-3 bg-[#F97316] text-white px-10 py-5 rounded-full font-black text-xl hover:bg-white hover:text-[#F97316] transition-all shadow-[0_0_30px_rgba(249,115,22,0.3)] uppercase italic"
+                >
+                  <MessageCircle size={24} />
+                  Agendar Minha Revisão
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#F97316]/20 rounded-full blur-[100px]"></div>
+              <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl">
+                <img 
+                  src="/uploads/R3(7).jpg" 
+                  alt="Oficina R3 Bike Shop - Manutenção Profissional" 
+                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                <div className="absolute bottom-8 left-8 right-8 bg-zinc-900/90 backdrop-blur-md p-6 rounded-2xl border border-zinc-800">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-[#F97316] p-4 rounded-xl">
+                      <Wrench className="text-white" size={32} />
+                    </div>
+                    <div>
+                      <p className="text-[#F97316] font-black uppercase text-xs tracking-widest mb-1">Diferencial R3</p>
+                      <h3 className="text-xl font-black uppercase italic">Ferramentas de Precisão</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
