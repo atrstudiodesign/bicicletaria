@@ -136,6 +136,51 @@ export default function Home() {
     }
   ];
 
+  const heroSlides = [
+    {
+      badge: "LOJA Especializada na Zona Norte",
+      title: "OFERTA IMPERDÍVEL",
+      titleHighlight: "NA R3 BIKE SHOP!",
+      description: (
+        <p>
+          A R3 Bike Shop é sua <strong>LOJA de bicicletas no Lauzane Paulista</strong>. Oferecemos <strong>manutenção de bicicletas em São Paulo</strong> com peças originais e atendimento especializado.
+        </p>
+      ),
+      ctaPrimary: { text: "Solicitar Orçamento", link: whatsappLink, icon: <MessageCircle size={20} /> },
+      ctaSecondary: { text: "Ligar Agora", link: "tel:+5511939065111", icon: <Phone size={20} /> },
+      image: facadeUrl,
+      alt: "R3 Bike Shop LOJA Profissional"
+    },
+    {
+      badge: "Oficina de Alta Performance",
+      title: "SUA BIKE EM",
+      titleHighlight: "MÃOS DE MESTRE",
+      description: (
+        <p>
+          Revisão completa, ajustes de precisão e <strong>peças originais</strong>. Mecânicos especializados para garantir que sua única preocupação seja o pedal.
+        </p>
+      ),
+      ctaPrimary: { text: "Agendar Manutenção", link: whatsappLink, icon: <Wrench size={20} /> },
+      ctaSecondary: { text: "Conhecer Oficina", link: "#servicos", icon: <ArrowRight size={20} /> },
+      image: "/uploads/R3(7).jpg",
+      alt: "Oficina R3 Bike Shop"
+    },
+    {
+      badge: "Melhores Marcas do Mercado",
+      title: "OFERTAS DE BIKES",
+      titleHighlight: "E COMPONENTES",
+      description: (
+        <p>
+          As melhores <strong>bicicletas novas e seminovas</strong> com condições que cabem no seu bolso. Shimano, SRAM e as principais marcas do mundo.
+        </p>
+      ),
+      ctaPrimary: { text: "Ver Ofertas", link: "#servicos", icon: <ShoppingCart size={20} /> },
+      ctaSecondary: { text: "Chamar no Whats", link: whatsappLink, icon: <MessageCircle size={20} /> },
+      image: "/uploads/R3(4).webp",
+      alt: "Ofertas de Bicicletas R3"
+    }
+  ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -241,65 +286,88 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24 border-b border-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <span className="inline-block bg-[#F97316]/10 text-[#F97316] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4">
-                LOJA Especializada na Zona Norte
-              </span>
-              <h1 className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
-                OFERTA IMPERDÍVEL <br />
-                <span className="text-[#F97316]">NA R3 BIKE SHOP!</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                A R3 Bike Shop é sua <strong>LOJA de bicicletas no Lauzane Paulista</strong>. Oferecemos <strong>manutenção de bicicletas em São Paulo</strong> com peças originais e atendimento especializado. Somos a melhor <strong>bike shop da Zona Norte SP</strong> para quem busca qualidade e preço justo.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleConversion}
-                  className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#F97316] transition-all shadow-xl hover:-translate-y-1 uppercase italic"
-                >
-                  <MessageCircle size={20} />
-                  Solicitar Orçamento
-                </a>
-                <a
-                  href="tel:+5511939065111"
-                  onClick={handleConversion}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-black text-black px-8 py-4 rounded-xl font-black text-lg hover:bg-black hover:text-white transition-all uppercase italic"
-                >
-                  <Phone size={20} />
-                  Ligar Agora
-                </a>
-              </div>
-            </div>
+      {/* Hero Section Slideshow */}
+      <section className="relative overflow-hidden bg-white border-b border-gray-50">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent>
+            {heroSlides.map((slide, index) => (
+              <CarouselItem key={index}>
+                <div className="pt-16 pb-24 container mx-auto px-4">
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="order-2 md:order-1">
+                      <span className="inline-block bg-[#F97316]/10 text-[#F97316] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4">
+                        {slide.badge}
+                      </span>
+                      <h1 className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
+                        {slide.title} <br />
+                        <span className="text-[#F97316]">{slide.titleHighlight}</span>
+                      </h1>
+                      <div className="text-xl text-gray-600 mb-8 leading-relaxed">
+                        {slide.description}
+                      </div>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <a
+                          href={slide.ctaPrimary.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={handleConversion}
+                          className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#F97316] transition-all shadow-xl hover:-translate-y-1 uppercase italic"
+                        >
+                          {slide.ctaPrimary.icon}
+                          {slide.ctaPrimary.text}
+                        </a>
+                        <a
+                          href={slide.ctaSecondary.link}
+                          onClick={handleConversion}
+                          className="inline-flex items-center justify-center gap-2 border-2 border-black text-black px-8 py-4 rounded-xl font-black text-lg hover:bg-black hover:text-white transition-all uppercase italic"
+                        >
+                          {slide.ctaSecondary.icon}
+                          {slide.ctaSecondary.text}
+                        </a>
+                      </div>
+                    </div>
 
-            <div className="order-1 md:order-2 relative">
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#F97316]/5 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-black/5 rounded-full blur-3xl -z-10"></div>
-              <img
-                src={facadeUrl}
-                alt="R3 Bike Shop LOJA Profissional"
-                className="w-full h-[500px] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 hidden md:block">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#F97316] p-3 rounded-xl">
-                    <Star className="text-white" size={24} fill="currentColor" />
-                  </div>
-                  <div>
-                    <p className="font-black text-2xl leading-none">100%</p>
-                    <p className="text-xs text-gray-500 uppercase font-bold">Qualidade R3</p>
+                    <div className="order-1 md:order-2 relative">
+                      <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#F97316]/5 rounded-full blur-3xl -z-10"></div>
+                      <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-black/5 rounded-full blur-3xl -z-10"></div>
+                      <img
+                        src={slide.image}
+                        alt={slide.alt}
+                        className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white"
+                      />
+                      <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 hidden md:block">
+                        <div className="flex items-center gap-4">
+                          <div className="bg-[#F97316] p-3 rounded-xl">
+                            <Star className="text-white" size={24} fill="currentColor" />
+                          </div>
+                          <div>
+                            <p className="font-black text-2xl leading-none">100%</p>
+                            <p className="text-xs text-gray-500 uppercase font-bold">Qualidade R3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+            <CarouselPrevious className="left-8 bg-white/80 hover:bg-[#F97316] hover:text-white border-none shadow-lg" />
+            <CarouselNext className="right-8 bg-white/80 hover:bg-[#F97316] hover:text-white border-none shadow-lg" />
           </div>
-        </div>
+        </Carousel>
       </section>
 
       {/* Stats Section */}
