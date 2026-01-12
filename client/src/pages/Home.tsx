@@ -654,7 +654,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-black text-xl uppercase italic text-[#F97316]">Fácil Acesso</h4>
                     <p className="text-gray-600 text-lg mt-1 leading-tight">
-                      Localização estratégica no <strong>Lauzane Paulista</strong>, com facilidade para estacionar e acesso rápido para quem vem de toda a Zona Norte.
+                      Localização estratégica no <strong>Lauzane Paulista</strong> (PROX. AO SHOPPING SANTANA PARKING), com facilidade para estacionar e acesso rápido para quem vem de toda a Zona Norte.
                     </p>
                   </div>
                 </div>
