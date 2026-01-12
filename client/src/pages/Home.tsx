@@ -91,7 +91,8 @@ export default function Home() {
   const offerImages = [
     "/uploads/R3(4).webp",
     "/uploads/R3(5).webp",
-    "/uploads/R3(6).webp"
+    "/uploads/R3(6).webp",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png?v=3"
   ];
 
   const services = [
