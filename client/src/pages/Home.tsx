@@ -46,7 +46,7 @@ export default function Home() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const facebookLink = "https://www.facebook.com/R3BikeShop";
-  const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
+  const logoUrl = "/uploads/destaquer3bike.PNG"; // Usando imagem local para evitar erro de DNS
   const facadeUrl = "/uploads/destaquer3bike.PNG"; // Foto de Destaque Oficial
 
   // Google Ads Conversion Event
@@ -59,25 +59,25 @@ export default function Home() {
   };
 
   const deliveryImages = [
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-2-e1761915925151.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-1-e1761915952803.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-e1761915976372.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-3-e1761916003786.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
+    "/uploads/R3(1).webp",
+    "/uploads/R3(2).webp",
+    "/uploads/R3(3).webp",
+    "/uploads/R3(4).webp",
+    "/uploads/R3(5).webp",
+    "/uploads/R3(6).webp",
+    "/uploads/r3(9).jpg",
+    "/uploads/R3(10).jpg",
+    "/uploads/R3(11).jpg",
+    "/uploads/R3(12).jpg",
+    "/uploads/r3(13).jpg"
   ];
 
   const storeImages = [
-    "https://lh3.googleusercontent.com/p/AF1QipO5XjLHq_wTWdBJ8Ych5Pcu3V2_D0YJKkfwIv7T=w408-h240-k-no-pi-10-ya300-ro0-fo100",
-    "https://lh3.googleusercontent.com/geougc/AF1QipPjT8mG_maVACSOR6KbMYsnjaG2jNFsGMxDbvnK=h305-no",
-    "https://lh3.googleusercontent.com/geougc/AF1QipNRS31fUnGUtciWPHSm3RADDoDW4nsLXV_-3C6I=h305-no",
-    "https://lh3.googleusercontent.com/geougc/AF1QipMissoeOZAxaxnojqtqXQjoc7VgikxWhWHbK77p=h305-no",
-    "https://lh3.googleusercontent.com/geougc/AF1QipOFnWmT9SIs3UewYxkyWjFKah9oDbv_eEQIie2S=h305-no"
+    "/uploads/R3(1).jpg",
+    "/uploads/R3(2).jpg",
+    "/uploads/R3(3).jpg",
+    "/uploads/r3(14).jpg",
+    "/uploads/r3(15).jpg"
   ];
 
   const partnerBrands = [
@@ -732,7 +732,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-black text-xl uppercase italic text-[#F97316]">Fácil Acesso</h4>
                     <p className="text-gray-600 text-lg mt-1 leading-tight">
-                      Localização estratégica no <strong>Lauzane Paulista</strong> (PROX. AO SHOPPING SANTANA PARKING), com facilidade para estacionar e acesso rápido para quem vem de toda a Zona Norte.
+                      Localização estratégica no <strong>Lauzane Paulista</strong> (PROX. AO SHOPPING SANTANA PARTAGE), com facilidade para estacionar e acesso rápido para quem vem de toda a Zona Norte.
                     </p>
                   </div>
                 </div>
