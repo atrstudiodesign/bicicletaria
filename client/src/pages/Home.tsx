@@ -91,18 +91,21 @@ export default function Home() {
 
   const offerImages = [
     "/uploads/promo/Absolute%20Nero%20aro%2029%20de%202300%2C00%20por%20apenas%201999%2C00%20e%20gan.jpeg",
-    "/uploads/promo/Bicicleta%20el%C3%A9trica%20Explore%20Urban%205000w%20de%205400%2C00%20por%20apenas%2.jpeg",
+    "/uploads/promo/Bicicleta%20elétrica%20Explore%20Urban%205000w%20de%205400%2C00%20por%20apenas%2.jpeg",
     "/uploads/promo/Caloi%20Explorer%20aro%2029%20de%205400%2C00%20por%20apenas%204990%2C00%20e%20ga.jpeg",
     "/uploads/promo/Caloi%20Explorer%20aro%2029%20de%205600%2C00%20por%20apenas%205199%2C00%20e%20ga.jpeg",
-    "/uploads/promo/First%20aro%2029%20de%202900%2C00%20por%20apenas%202490%2C00%20e%20ganha%20capac.jpeg",
     "/uploads/promo/First%20aro%2029%20de%201400%2C00%20por%20apenas%20999%2C00%20no%20pix.jpeg",
+    "/uploads/promo/First%20aro%2029%20de%202900%2C00%20por%20apenas%202490%2C00%20e%20ganha%20capac.jpeg",
     "/uploads/promo/First%20por%20apenas%201499%2C00.jpeg",
     "/uploads/promo/Freeride%20Maria%20por%20apenas%201690%2C00%20com%20freios%20hidraulicos.jpeg",
     "/uploads/promo/GTA%20CLIMB%20aro%2029%20de%203700%2C00%20por%20apenas%203200%2C00%20e%20ganha%2.jpeg",
     "/uploads/promo/GTA%20CLIMB%20aro%2029%20de%203900%2C00%20por%20apenas%203299%2C00%20e%20ganha%2.jpeg",
-    "/uploads/promo/GTA%20Gravity%20de%203200%2C00%20por%20apenas%202590%2C00%20e%20ganha%20capacete.jpeg",
+    "/uploads/promo/GTA%20Gravity%20de%203200%2C00%20por%20apenas%2025acete.jpeg",
     "/uploads/promo/GTA%20start%20aro%2029%20de%203900%2C00%20por%20apenas%203199%2C00%20e%20ganha%2.jpeg",
-    "/uploads/promo/Hupi%20Naja%20por%20apenas%204999%2C00%20com%20freios%20hidraulicos.jpeg"
+    "/uploads/promo/Hupi%20Naja%20por%20apenas%204999%2C00%20com%20freios%20hidraulicos.jpeg",
+    "/uploads/r3(13).jpg",
+    "/uploads/r3(14).jpg",
+    "/uploads/r3(15).jpg"
   ];
 
   const [currentOfferSlide, setCurrentOfferSlide] = useState(0);
@@ -110,7 +113,7 @@ export default function Home() {
   const extractPriceFromUrl = (url: string) => {
     try {
       const decoded = decodeURIComponent(url);
-      const match = decoded.match(/por apenas (\d+[.,]\d+)/);
+      const match = decoded.match(/por apenas (\d+[.,]\d+)/i) || decoded.match(/(\d+[.,]\d+)/);
       return match ? match[1].replace(".", ",") : "Consulte";
     } catch {
       return "Consulte";
@@ -121,7 +124,8 @@ export default function Home() {
     try {
       const decoded = decodeURIComponent(url);
       const filename = decoded.split("/").pop() || "";
-      return filename.replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "");
+      if (filename.toLowerCase().includes("r3(")) return "Oferta Especial R3 Bike Shop";
+      return filename.replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "").replace(/%20/g, " ");
     } catch {
       return "Oferta Especial";
     }
@@ -619,25 +623,15 @@ export default function Home() {
                 <span className="text-black">NA R3 BIKE SHOP!</span>
               </h2>
               <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 mb-8 shadow-2xl">
-                <p className="text-2xl md:text-3xl font-black mb-4">
-                  Por apenas <span className="text-black text-4xl md:text-5xl">R$ {extractPriceFromUrl(offerImages[currentOfferSlide])}</span> no Pix
-                </p>
-                <p className="text-xl md:text-2xl font-bold opacity-90 mb-6 leading-tight text-white uppercase italic">
+                <h3 className="text-2xl md:text-3xl font-black mb-6 leading-tight text-white uppercase italic">
                   {extractDescriptionFromUrl(offerImages[currentOfferSlide])}
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-black text-[#F97316] p-1.5 rounded-full">
-                      <Star size={18} fill="currentColor" />
-                    </div>
-                    <p className="font-bold text-lg italic">Pagando no Pix, ganhe 2 brindes exclusivos!</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-black text-[#F97316] p-1.5 rounded-full">
-                      <ShoppingCart size={18} fill="currentColor" />
-                    </div>
-                    <p className="font-bold text-lg italic">Saia pedalando na hora!</p>
-                  </div>
+                </h3>
+                <div className="inline-block bg-black text-white px-8 py-4 rounded-2xl shadow-xl">
+                  <p className="text-sm font-bold uppercase tracking-widest opacity-80 mb-1">Preço Imbatível</p>
+                  <p className="text-4xl md:text-5xl font-black">
+                    R$ {extractPriceFromUrl(offerImages[currentOfferSlide])}
+                  </p>
+                  <p className="text-xs font-bold mt-2">À VISTA NO PIX</p>
                 </div>
               </div>
             </div>
