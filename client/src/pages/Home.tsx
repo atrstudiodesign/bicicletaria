@@ -46,7 +46,7 @@ export default function Home() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const facebookLink = "https://www.facebook.com/R3BikeShop";
-  const logoUrl = "/uploads/destaquer3bike.PNG"; // Usando imagem local para evitar erro de DNS
+  const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
   const facadeUrl = "/uploads/destaquer3bike.PNG"; // Foto de Destaque Oficial
 
   // Google Ads Conversion Event
