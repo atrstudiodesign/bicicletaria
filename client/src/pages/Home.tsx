@@ -59,18 +59,18 @@ export default function Home() {
   };
 
   const deliveryImages = [
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop1.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop2.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop3.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop4.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop5.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop6.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop7.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop8.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop9.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop10.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop11.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop12.webp"
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop1.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop2.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop3.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop4.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop5.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop6.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop7.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop8.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop9.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop10.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop11.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop12.webp"
   ];
 
   const storeImages = [
