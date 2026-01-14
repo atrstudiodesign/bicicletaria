@@ -45,7 +45,7 @@ export default function Home() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
-  const facebookLink = "https://www.facebook.com/R3BikeShop";
+  const facebookLink = "https://www.facebook.com/share/1B1GX9jXCw/?mibextid=wwXIfr";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
   const facadeUrl = "/uploads/destaquer3bike.PNG"; // Foto de Destaque Oficial
 
@@ -90,10 +90,19 @@ export default function Home() {
   ];
 
   const offerImages = [
-    "/uploads/R3(4).webp",
-    "/uploads/R3(5).webp",
-    "/uploads/R3(6).webp",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png?v=3"
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Absolute%20Nero%20aro%2029%20de%202300%2C00%20por%20apenas%201999%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%201x8%20com%20cassete%20camale%C3%A3o%2C%20freios%20a%20disco%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20ombro..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Bicicleta%20el%C3%A9trica%20Explore%20Urban%205000w%205400%2C00%20por%20apenas%204990%2C00%20no%20Pix%20ou%2012x600%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20e%20mochila%20personalizada..mp4",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Caloi%20Explorer%20aro%2029%20de%205400%2C00%20por%20apenas%204990%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%201x12%20completo%20Absolute%2C%20freios%20hidr%C3%A1ulicos%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20ombro.jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Caloi%20Explorer%20aro%2029%20de%205600%2C00%20por%20apenas%205199%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%20Shimano%20cues%201x9%20completo%2C%20freios%20hidr%C3%A1ulicos%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20guida%CC%83o..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/First%20aro%2029%20de%202900%2C00%20por%20apenas%202490%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%203x8%20freios%20hidr%C3%A1ulicos%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20ombro..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/First%20aro%2029%20de%201400%2C00%20por%20apenas%20999%2C00%20no%20pix%2C%20freios%20a%20discos%20e%20garfo%20com%20amortecedor%20..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/First%20por%20apenas%201499%2C00.jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Freeride%20Maria%20por%20apenas%201690%2C00%20com%20freios%20hidr%C3%A1ulicos%20Shimano%20MT%20200.jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/GTA%20CLIMB%20aro%2029%20de%203700%2C00%20por%20apenas%203200%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%201x12%20completo%2C%20freios%20hidr%C3%A1ulicos%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20ombro..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/GTA%20CLIMB%20aro%2029%20de%203900%2C00%20por%20apenas%203299%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%201x12%20completo%2C%20freios%20hidr%C3%A1ulicos%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20guida%CC%83o..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/GTA%20Gravity%20de%203200%2C00%20por%20apenas%202590%2C00%20e%20ganha%20um%20capacete%20de%20brinde.jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/GTA%20start%20aro%2029%20de%203900%2C00%20por%20apenas%203199%2C00%20e%20ganha%20um%20capacete%20de%20brinde%20com%20configura%C3%A7%C3%A3o%20kit%201x12%20completo%2C%20freios%20hidr%C3%A1ulicos%20e%20garfo%20com%20amortecedor%20e%20trava%20no%20guida%CC%83o..jpeg",
+    "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Hupi%20Naja%20%F0%9F%90%8D%20por%20apenas%204999%2C00%20com%20freios%20hidr%C3%A1ulicos%20e%20cubo%20barulhento..jpeg"
   ];
 
   const services = [
