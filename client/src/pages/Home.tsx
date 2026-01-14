@@ -622,7 +622,7 @@ export default function Home() {
                 <p className="text-2xl md:text-3xl font-black mb-4">
                   Por apenas <span className="text-black text-4xl md:text-5xl">R$ {extractPriceFromUrl(offerImages[currentOfferSlide])}</span> no Pix
                 </p>
-                <p className="text-base opacity-90 mb-6 h-12 overflow-hidden">
+                <p className="text-xl md:text-2xl font-bold opacity-90 mb-6 leading-tight text-white uppercase italic">
                   {extractDescriptionFromUrl(offerImages[currentOfferSlide])}
                 </p>
                 <div className="space-y-4">
