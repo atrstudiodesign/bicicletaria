@@ -59,18 +59,17 @@ export default function Home() {
   };
 
   const deliveryImages = [
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop1.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop2.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop3.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop4.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop5.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop6.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop7.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop8.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop9.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop10.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop11.webp",
-    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/api/preview/big/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop12.webp"
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-2-e1761915925151.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-1-e1761915952803.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-e1761915976372.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-3-e1761916003786.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
   ];
 
   const storeImages = [
