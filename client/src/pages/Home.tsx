@@ -105,6 +105,24 @@ export default function Home() {
     "https://srv1194-files.hstgr.io/6b36613b2f977f8f/api/preview/big/public_html/dist/public/uploads/promo/Hupi%20Naja%20%F0%9F%90%8D%20por%20apenas%204999%2C00%20com%20freios%20hidr%C3%A1ulicos%20e%20cubo%20barulhento..jpeg"
   ];
 
+  const offerData = [
+    { desc: "Absolute Nero aro 29 de R$ 2300,00", price: "1999,00", details: "com configuração kit 1x8 com cassete camaleão, freios a disco e garfo com amortecedor" },
+    { desc: "Bicicleta elétrica Explore Urban 5000w", price: "4990,00", details: "no Pix ou 12x de R$ 600,00 e ganha mochila personalizada" },
+    { desc: "Caloi Explorer aro 29 de R$ 5400,00", price: "4990,00", details: "com configuração kit 1x12 Absolute, freios hidráulicos" },
+    { desc: "Caloi Explorer aro 29 de R$ 5600,00", price: "5199,00", details: "com configuração kit Shimano cues 1x9 completo" },
+    { desc: "First aro 29 de R$ 2900,00", price: "2490,00", details: "com configuração kit 3x8 freios hidráulicos" },
+    { desc: "First aro 29 de R$ 1400,00", price: "999,00", details: "no Pix, freios a discos e garfo com amortecedor" },
+    { desc: "First", price: "1499,00", details: "com preço imperdível!" },
+    { desc: "Freeride Maria", price: "1690,00", details: "com freios hidráulicos Shimano MT 200" },
+    { desc: "GTA CLIMB aro 29 de R$ 3700,00", price: "3200,00", details: "com configuração kit 1x12 completo" },
+    { desc: "GTA CLIMB aro 29 de R$ 3900,00", price: "3299,00", details: "com configuração kit 1x12 completo" },
+    { desc: "GTA Gravity de R$ 3200,00", price: "2590,00", details: "e ganha um capacete de brinde" },
+    { desc: "GTA start aro 29 de R$ 3900,00", price: "3199,00", details: "com configuração kit 1x12 completo" },
+    { desc: "Hupi Naja 🐍", price: "4999,00", details: "com freios hidráulicos e cubo barulhento" }
+  ];
+
+  const [currentOfferSlide, setCurrentOfferSlide] = useState(0);
+
   const services = [
     { title: "VENDA DE BICICLETAS", image: "/uploads/R3(1).webp" },
     { title: "REVISÃO COMPLETA", image: "/uploads/R3(7).jpg" },
@@ -564,6 +582,7 @@ export default function Home() {
                   }),
                 ]}
                 className="relative w-full"
+                onSelect={(api) => setCurrentOfferSlide(api.selectedIndex)}
               >
                 <CarouselContent>
                   {offerImages.map((img, index) => (
@@ -596,11 +615,14 @@ export default function Home() {
                 <span className="text-black">NA R3 BIKE SHOP!</span>
               </h2>
               <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 mb-8 shadow-2xl">
-                <p className="text-2xl md:text-3xl font-black mb-4">
-                  Por apenas <span className="text-black text-4xl md:text-5xl">R$ 999,00</span> no Pix
+                <p className="text-base font-bold opacity-90 mb-2">
+                  {offerData[currentOfferSlide].desc}
                 </p>
-                <p className="text-xl font-bold opacity-90 mb-6">
-                  Ou em 12x de <span className="text-black">R$ 116,00</span> no cartão de crédito
+                <p className="text-2xl md:text-3xl font-black mb-4">
+                  Por apenas <span className="text-black text-4xl md:text-5xl">R$ {offerData[currentOfferSlide].price}</span> no Pix
+                </p>
+                <p className="text-lg font-bold opacity-90 mb-6">
+                  {offerData[currentOfferSlide].details}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
