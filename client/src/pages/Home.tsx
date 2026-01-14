@@ -59,17 +59,18 @@ export default function Home() {
   };
 
   const deliveryImages = [
-    "/uploads/R3(1).webp",
-    "/uploads/R3(2).webp",
-    "/uploads/R3(3).webp",
-    "/uploads/R3(4).webp",
-    "/uploads/R3(5).webp",
-    "/uploads/R3(6).webp",
-    "/uploads/r3(9).jpg",
-    "/uploads/R3(10).jpg",
-    "/uploads/R3(11).jpg",
-    "/uploads/R3(12).jpg",
-    "/uploads/r3(13).jpg"
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop1.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop2.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop3.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop4.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop5.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop6.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop7.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop8.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop9.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop10.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop11.webp",
+    "https://srv1194-files.hstgr.io/28a864a5c2e892b7/files/public_html/dist/public/uploads/entregas/nossasentregasr3bikeshop12.webp"
   ];
 
   const storeImages = [
@@ -475,22 +476,60 @@ export default function Home() {
       </section>
 
       {/* Quem Somos Section */}
-      <section className="py-24 bg-white" id="sobre">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">
-              R3 Bike Shop: <span className="text-[#F97316]">Quem Somos</span>
-            </h2>
-            <div className="space-y-6 text-xl text-gray-600 leading-relaxed">
-              <p>
-                A <strong>R3 Bike Shop</strong> nasceu da paixão pelo ciclismo e do compromisso com a excelência técnica. Somos uma <strong>LOJA de bicicletas no Lauzane Paulista</strong> especializada em <strong>venda e manutenção de bicicletas</strong> de todos os tipos.
-              </p>
-              <p>
-                Nossa LOJA é equipada com ferramentas de precisão e nossa equipe é treinada para lidar com desde ajustes simples até revisões complexas de performance. Somos uma <strong>bike shop na Zona Norte SP</strong> com foco total na satisfação do cliente.
-              </p>
-              <p className="font-bold text-black italic">
-                "Somos uma LOJA de bicicletas com 5.0 estrelas no Google, baseada em mais de 300 avaliações reais."
-              </p>
+      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden" id="sobre">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#F97316] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#F97316] rounded-full blur-3xl"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Imagem */}
+            <div className="relative group order-2 md:order-1">
+              <div className="absolute -inset-6 bg-gradient-to-r from-[#F97316]/20 to-black/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514.jpeg"
+                alt="R3 Bike Shop - Quem Somos"
+                className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-[#F97316] text-white px-6 py-3 rounded-full font-black text-lg shadow-xl">
+                5.0 ★
+              </div>
+            </div>
+            
+            {/* Conteúdo */}
+            <div className="order-1 md:order-2">
+              <div className="mb-4 inline-block">
+                <span className="bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full font-black text-sm uppercase tracking-widest">Nossa História</span>
+              </div>
+              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic leading-tight">
+                R3 Bike Shop: <span className="text-[#F97316]">Quem Somos</span>
+              </h2>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="text-2xl flex-shrink-0">•</div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    A <strong>R3 Bike Shop</strong> nasceu da paixão pelo ciclismo e do compromisso com a excelência técnica. Somos uma <strong>LOJA de bicicletas no Lauzane Paulista</strong> especializada em <strong>venda e manutenção de bicicletas</strong> de todos os tipos.
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="text-2xl flex-shrink-0">•</div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Nossa LOJA é equipada com ferramentas de precisão e nossa equipe é treinada para lidar com desde ajustes simples até revisões complexas de performance.
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="text-2xl flex-shrink-0">•</div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Somos uma <strong>bike shop na Zona Norte SP</strong> com foco total na satisfação do cliente e 5.0 estrelas no Google!
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-6 bg-[#F97316]/10 rounded-2xl border-2 border-[#F97316]">
+                <p className="font-montserrat font-black text-xl text-[#F97316] italic">
+                  "Mais de 300 avaliações de clientes satisfeitos na Zona Norte!"
+                </p>
+              </div>
             </div>
           </div>
         </div>
