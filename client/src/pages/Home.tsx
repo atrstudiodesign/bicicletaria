@@ -229,8 +229,8 @@ export default function Home() {
 
   const services = [
     { title: "VENDAS DE BICICLETA", image: "/uploads/r3(1).webp" },
-    { title: "REVISAO COMPLETA", image: "/uploads/r3(7).jpg" },
-    { title: "conserto e manutençao", image: "/uploads/r3(12).jpg" },
+    { title: "REVISÃO COMPLETA", image: "/uploads/r3(7).jpg" },
+    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/r3(12).jpg" },
     { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.png" },
     { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
   ];
@@ -652,7 +652,7 @@ export default function Home() {
             <div className="relative group order-2 md:order-1">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#F97316]/20 to-black/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <img 
-                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514.jpeg"
+                src="/uploads/r3(11).jpg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
                 onLoad={(e) => {
