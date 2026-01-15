@@ -478,6 +478,13 @@ export default function Home() {
                         src={slide.image}
                         alt={slide.alt}
                         className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white"
+                        onLoad={(e) => {
+                          const target = e.currentTarget;
+                          target.style.display = 'block';
+                          const parent = target.parentElement;
+                          const fallback = parent?.querySelector('.fallback-hero');
+                          if (fallback) fallback.remove();
+                        }}
                         onError={(e) => {
                           const target = e.currentTarget;
                           target.style.display = 'none';
@@ -597,6 +604,24 @@ export default function Home() {
                   src="/uploads/r3(7).jpg" 
                   alt="Oficina R3 Bike Shop - Manutenção Profissional" 
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                  onLoad={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = 'block';
+                    const parent = target.parentElement;
+                    const fallback = parent?.querySelector('.fallback-workshop');
+                    if (fallback) fallback.remove();
+                  }}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent && !parent.querySelector('.fallback-workshop')) {
+                      const div = document.createElement('div');
+                      div.className = "fallback-workshop absolute inset-0 h-[600px] bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                      div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">OFICINA R3 BIKE</span>`;
+                      parent.appendChild(div);
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8 bg-zinc-900/90 backdrop-blur-md p-6 rounded-2xl border border-zinc-800">
@@ -631,6 +656,13 @@ export default function Home() {
                 src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514.jpeg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
+                onLoad={(e) => {
+                  const target = e.currentTarget;
+                  target.style.display = 'block';
+                  const parent = target.parentElement;
+                  const fallback = parent?.querySelector('.fallback-about');
+                  if (fallback) fallback.remove();
+                }}
                 onError={(e) => {
                   const target = e.currentTarget;
                   target.style.display = 'none';
@@ -796,12 +828,12 @@ export default function Home() {
                       </p>
                     </div>
 
-                    {/* Imagem de Fundo (Sutil e Posicionada) */}
                     <div className="absolute -right-12 -top-12 w-48 h-48 opacity-10 pointer-events-none group-hover:scale-110 group-hover:rotate-0 transition-all duration-700 rotate-12">
                       <img 
                         src={offer.image} 
                         alt=""
                         className="w-full h-full object-contain"
+                        onLoad={(e) => (e.currentTarget.style.display = 'block')}
                         onError={(e) => (e.currentTarget.style.display = 'none')}
                       />
                     </div>
@@ -923,6 +955,13 @@ export default function Home() {
                     src={img} 
                     alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} 
                     className="w-full h-full object-cover" 
+                    onLoad={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'block';
+                      const parent = target.parentElement;
+                      const fallback = parent?.querySelector('.fallback-delivery');
+                      if (fallback) fallback.remove();
+                    }}
                     onError={(e) => {
                       const target = e.currentTarget;
                       target.style.display = 'none';
@@ -974,38 +1013,38 @@ export default function Home() {
               <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">Localização da <span className="text-[#F97316]">LOJA</span></h2>
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
-                  <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
-                    <MapPin size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">LOJA de bicicletas no Lauzane Paulista</h4>
-                    <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Visite a R3 Bike Shop, sua <strong>bike shop na Zona Norte SP</strong>:</p>
-                    <div className="flex flex-wrap gap-3">
-                      <a 
-                        href="https://www.google.com/maps/dir/?api=1&destination=R3BikeShop+Lauzane+Paulista" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
-                      >
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#4285F4"/>
-                        </svg>
-                        Google Maps
-                      </a>
-                      <a 
-                        href="https://waze.com/ul?q=R3BikeShop+Lauzane+Paulista&navigate=yes" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
-                      >
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M18.5 12.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm-13 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" fill="#33CCFF"/>
-                          <path d="M12 2C6.5 2 2 6.5 2 12c0 1.5.3 2.9.9 4.2L2 21l4.8-.9c1.3.6 2.7.9 4.2.9 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 17.5c-1.3 0-2.5-.3-3.6-.9l-.3-.1-2.7.5.5-2.6-.2-.3c-.7-1.1-1.1-2.3-1.1-3.6 0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5z" fill="#33CCFF"/>
-                        </svg>
-                        Waze
-                      </a>
+                    <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
+                      <MapPin size={28} />
                     </div>
-                  </div>
+                    <div>
+                      <h4 className="font-black text-xl uppercase italic text-[#F97316]">LOJA de bicicletas no Lauzane Paulista</h4>
+                      <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Visite a R3 Bike Shop, sua <strong>bike shop na Zona Norte SP</strong>:</p>
+                      <div className="flex flex-wrap gap-3">
+                        <a 
+                          href="https://www.google.com/maps/dir/?api=1&destination=R3BikeShop+Lauzane+Paulista" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                        >
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#4285F4"/>
+                          </svg>
+                          Google Maps
+                        </a>
+                        <a 
+                          href="https://waze.com/ul?q=R3BikeShop+Lauzane+Paulista&navigate=yes" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                        >
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.5 12.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm-13 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" fill="#33CCFF"/>
+                            <path d="M12 2C6.5 2 2 6.5 2 12c0 1.5.3 2.9.9 4.2L2 21l4.8-.9c1.3.6 2.7.9 4.2.9 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 17.5c-1.3 0-2.5-.3-3.6-.9l-.3-.1-2.7.5.5-2.6-.2-.3c-.7-1.1-1.1-2.3-1.1-3.6 0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5z" fill="#33CCFF"/>
+                          </svg>
+                          Waze
+                        </a>
+                      </div>
+                    </div>
                 </div>
                 <div className="flex gap-6 items-start">
                   <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
@@ -1173,6 +1212,13 @@ export default function Home() {
                             src={img} 
                             alt={`Fachada e Interior da R3 Bike Shop no Lauzane Paulista Zona Norte SP - Foto ${index + 1}`} 
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            onLoad={(e) => {
+                              const target = e.currentTarget;
+                              target.style.display = 'block';
+                              const parent = target.parentElement;
+                              const fallback = parent?.querySelector('.fallback-store');
+                              if (fallback) fallback.remove();
+                            }}
                             onError={(e) => {
                               const target = e.currentTarget;
                               target.style.display = 'none';
