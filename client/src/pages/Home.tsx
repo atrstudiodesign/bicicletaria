@@ -867,6 +867,13 @@ export default function Home() {
                         src={service.image} 
                         alt={`${service.title} - R3 Bike Shop Lauzane Paulista Zona Norte SP`}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        onLoad={(e) => {
+                          const target = e.currentTarget;
+                          target.style.display = 'block';
+                          const parent = target.parentElement;
+                          const fallback = parent?.querySelector('.fallback-service');
+                          if (fallback) fallback.remove();
+                        }}
                         onError={(e) => {
                           const target = e.currentTarget;
                           target.style.display = 'none';
