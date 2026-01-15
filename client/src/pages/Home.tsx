@@ -20,6 +20,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -47,7 +48,7 @@ export default function Home() {
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const facebookLink = "https://www.facebook.com/share/1B1GX9jXCw/?mibextid=wwXIfr";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
-  const facadeUrl = "/uploads/destaquer3bike.PNG"; // Foto de Destaque Oficial
+  const facadeUrl = "/uploads/destaquer3bike.png"; // Foto de Destaque Oficial
 
   // Google Ads Conversion Event
   const handleConversion = () => {
@@ -73,9 +74,9 @@ export default function Home() {
   ];
 
   const storeImages = [
-    "/uploads/R3(1).jpg",
-    "/uploads/R3(2).jpg",
-    "/uploads/R3(3).jpg",
+    "/uploads/r3(1).jpg",
+    "/uploads/r3(2).jpg",
+    "/uploads/r3(3).jpg",
     "/uploads/r3(14).jpg",
     "/uploads/r3(15).jpg"
   ];
@@ -89,53 +90,148 @@ export default function Home() {
     { name: "First", logo: "/logos/first.png" }
   ];
 
-  const offerImages = [
-    "/uploads/promo/Absolute%20Nero%20aro%2029%20de%202300%2C00%20por%20apenas%201999%2C00%20e%20gan.jpeg",
-    "/uploads/promo/Bicicleta%20elétrica%20Explore%20Urban%205000w%20de%205400%2C00%20por%20apenas%2.jpeg",
-    "/uploads/promo/Caloi%20Explorer%20aro%2029%20de%205400%2C00%20por%20apenas%204990%2C00%20e%20ga.jpeg",
-    "/uploads/promo/Caloi%20Explorer%20aro%2029%20de%205600%2C00%20por%20apenas%205199%2C00%20e%20ga.jpeg",
-    "/uploads/promo/First%20aro%2029%20de%201400%2C00%20por%20apenas%20999%2C00%20no%20pix.jpeg",
-    "/uploads/promo/First%20aro%2029%20de%202900%2C00%20por%20apenas%202490%2C00%20e%20ganha%20capac.jpeg",
-    "/uploads/promo/First%20por%20apenas%201499%2C00.jpeg",
-    "/uploads/promo/Freeride%20Maria%20por%20apenas%201690%2C00%20com%20freios%20hidraulicos.jpeg",
-    "/uploads/promo/GTA%20CLIMB%20aro%2029%20de%203700%2C00%20por%20apenas%203200%2C00%20e%20ganha%2.jpeg",
-    "/uploads/promo/GTA%20CLIMB%20aro%2029%20de%203900%2C00%20por%20apenas%203299%2C00%20e%20ganha%2.jpeg",
-    "/uploads/promo/GTA%20Gravity%20de%203200%2C00%20por%20apenas%2025acete.jpeg",
-    "/uploads/promo/GTA%20start%20aro%2029%20de%203900%2C00%20por%20apenas%203199%2C00%20e%20ganha%2.jpeg",
-    "/uploads/promo/Hupi%20Naja%20por%20apenas%204999%2C00%20com%20freios%20hidraulicos.jpeg",
-    "/uploads/r3(13).jpg",
-    "/uploads/r3(14).jpg",
-    "/uploads/r3(15).jpg"
+  const promoOffers = [
+    {
+      name: "SPEED VERCELLI AUSTIN",
+      description: "De 5.400,00 por apenas 4.299,00 e ganha um capacete de brinde",
+      originalPrice: "5.400,00",
+      offerPrice: "4.299,00",
+      image: "/uploads/destaquer3bike.png"
+    },
+    {
+      name: "GTA GRAVITY",
+      description: "De 3.200,00 por apenas 2.590,00 e ganha um capacete de brinde",
+      originalPrice: "3.200,00",
+      offerPrice: "2.590,00",
+      image: "/uploads/promo/gta-gravity-de-320000-por-apenas-259000-e-ganha-capacete.jpeg"
+    },
+    {
+      name: "GTA CLIMB ARO 29",
+      description: "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no guidão + Capacete de brinde",
+      originalPrice: "3.900,00",
+      offerPrice: "3.299,00",
+      image: "/uploads/promo/gta-climb-aro-29-de-390000-por-apenas-329900-e-ganha.jpeg"
+    },
+    {
+      name: "EXPLORE URBAN 5000W",
+      description: "Bicicleta elétrica por apenas 4.990,00 no Pix ou 12x600,00 + Capacete e mochila personalizada",
+      originalPrice: "5.400,00",
+      offerPrice: "4.990,00",
+      image: "/uploads/promo/bicicleta-eletrica-explore-urban-5000w-de-540000-por-apenas.jpeg"
+    },
+    {
+      name: "GTA CLIMB ARO 29",
+      description: "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no ombro + Capacete de brinde",
+      originalPrice: "3.700,00",
+      offerPrice: "3.200,00",
+      image: "/uploads/promo/gta-climb-aro-29-de-370000-por-apenas-320000-e-ganha.jpeg"
+    },
+    {
+      name: "ABSOLUTE NERO ARO 29",
+      description: "Kit 1x8 cassete camaleão, freios a disco, garfo com amortecedor e trava no ombro + Capacete de brinde",
+      originalPrice: "2.300,00",
+      offerPrice: "1.999,00",
+      image: "/uploads/promo/absolute-nero-aro-29-de-230000-por-apenas-199900-e-gan.jpeg"
+    },
+    {
+      name: "FIRST ARO 29",
+      description: "Kit 3x8, freios hidráulicos, garfo com amortecedor e trava no ombro + Capacete de brinde",
+      originalPrice: "2.900,00",
+      offerPrice: "2.490,00",
+      image: "/uploads/promo/first-aro-29-de-290000-por-apenas-249000-e-ganha-capac.jpeg"
+    },
+    {
+      name: "FIRST ARO 29",
+      description: "Freios a discos e garfo com amortecedor. Oferta imperdível no Pix!",
+      originalPrice: "1.400,00",
+      offerPrice: "999,00",
+      image: "/uploads/promo/first-aro-29-de-140000-por-apenas-99900-no-pix.jpeg"
+    },
+    {
+      name: "CALOI EXPLORER ARO 29",
+      description: "Kit Shimano Cues 1x9 completo, freios hidráulicos, trava no guidão + Capacete de brinde",
+      originalPrice: "5.600,00",
+      offerPrice: "5.199,00",
+      image: "/uploads/promo/caloi-explorer-aro-29-de-560000-por-apenas-519900-e-ga.jpeg"
+    },
+    {
+      name: "CALOI EXPLORER ARO 29",
+      description: "Kit 1x12 completo Absolute, freios hidráulicos, trava no ombro + Capacete de brinde",
+      originalPrice: "5.400,00",
+      offerPrice: "4.990,00",
+      image: "/uploads/promo/caloi-explorer-aro-29-de-540000-por-apenas-499000-e-ga.jpeg"
+    },
+    {
+      name: "GTA START ARO 29",
+      description: "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no guidão + Capacete de brinde",
+      originalPrice: "3.900,00",
+      offerPrice: "3.199,00",
+      image: "/uploads/promo/gta-start-aro-29-de-390000-por-apenas-319900-e-ganha.jpeg"
+    },
+    {
+      name: "VIKING TUFF-30",
+      description: "A bike resistente para quem curte manobras e estilo urbano",
+      originalPrice: "",
+      offerPrice: "2.599,00",
+      image: "/uploads/destaquer3bike.png"
+    },
+    {
+      name: "HUPI NAJA 🐍",
+      description: "Freios hidráulicos e cubo barulhento. Estilo e performance garantidos",
+      originalPrice: "",
+      offerPrice: "4.999,00",
+      image: "/uploads/promo/hupi-naja-por-apenas-499900-com-freios-hidraulicos.jpeg"
+    },
+    {
+      name: "FIRST",
+      description: "Oferta especial R3 Bike Shop - Qualidade e preço justo",
+      originalPrice: "",
+      offerPrice: "1.499,00",
+      image: "/uploads/promo/first-por-apenas-149900.jpeg"
+    },
+    {
+      name: "FREERIDE MARIA",
+      description: "Equipada com freios hidráulicos Shimano MT 200",
+      originalPrice: "",
+      offerPrice: "1.690,00",
+      image: "/uploads/promo/freeride-maria-por-apenas-169000-com-freios-hidraulicos.jpeg"
+    }
   ];
 
   const [currentOfferSlide, setCurrentOfferSlide] = useState(0);
+  const [offerApi, setOfferApi] = useState<CarouselApi>();
 
-  const extractPriceFromUrl = (url: string) => {
-    try {
-      const decoded = decodeURIComponent(url);
-      const match = decoded.match(/por apenas (\d+[.,]\d+)/i) || decoded.match(/(\d+[.,]\d+)/);
-      return match ? match[1].replace(".", ",") : "Consulte";
-    } catch {
-      return "Consulte";
-    }
-  };
+  useEffect(() => {
+    if (!offerApi) return;
 
-  const extractDescriptionFromUrl = (url: string) => {
-    try {
-      const decoded = decodeURIComponent(url);
-      const filename = decoded.split("/").pop() || "";
-      if (filename.toLowerCase().includes("r3(")) return "Oferta Especial R3 Bike Shop";
-      return filename.replace(/\.(jpeg|jpg|png|webp|mp4)$/i, "").replace(/%20/g, " ");
-    } catch {
-      return "Oferta Especial";
-    }
+    const onSelect = () => {
+      setCurrentOfferSlide(offerApi.selectedScrollSnap());
+    };
+
+    offerApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      offerApi.off("select", onSelect);
+    };
+  }, [offerApi]);
+
+  const getCardColor = (index: number) => {
+    const colors = [
+      "from-sky-400 to-sky-600",
+      "from-orange-300 to-orange-500",
+      "from-emerald-400 to-emerald-600",
+      "from-purple-400 to-purple-600",
+      "from-rose-400 to-rose-600"
+    ];
+    return colors[index % colors.length];
   };
 
   const services = [
-    { title: "VENDA DE BICICLETAS", image: "/uploads/R3(1).webp" },
-    { title: "REVISÃO COMPLETA", image: "/uploads/R3(7).jpg" },
-    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/R3(12).jpg" },
-    { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.PNG" },
+    { title: "VENDA DE BICICLETAS", image: "/uploads/r3(1).webp" },
+    { title: "REVISÃO COMPLETA", image: "/uploads/r3(7).jpg" },
+    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/r3(12).jpg" },
+    { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.png" },
     { title: "ACESSÓRIOS PARA BIKE", image: "/uploads/r3(9).jpg" },
     { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
   ];
@@ -199,7 +295,7 @@ export default function Home() {
       ),
       ctaPrimary: { text: "Agendar Manutenção", link: whatsappLink, icon: <Wrench size={20} /> },
       ctaSecondary: { text: "Conhecer Oficina", link: "#servicos", icon: <ArrowRight size={20} /> },
-      image: "/uploads/R3(7).jpg",
+      image: "/uploads/r3(7).jpg",
       alt: "Oficina R3 Bike Shop"
     },
     {
@@ -213,7 +309,7 @@ export default function Home() {
       ),
       ctaPrimary: { text: "Ver Ofertas", link: "#servicos", icon: <ShoppingCart size={20} /> },
       ctaSecondary: { text: "Chamar no Whats", link: whatsappLink, icon: <MessageCircle size={20} /> },
-      image: "/uploads/R3(4).webp",
+      image: "/uploads/r3(4).webp",
       alt: "Ofertas de Bicicletas R3"
     }
   ];
@@ -382,6 +478,17 @@ export default function Home() {
                         src={slide.image}
                         alt={slide.alt}
                         className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent && !parent.querySelector('.fallback-hero')) {
+                            const div = document.createElement('div');
+                            div.className = "fallback-hero absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4 rounded-3xl";
+                            div.innerHTML = `<span class="text-white/10 font-black text-6xl uppercase italic text-center">R3 BIKE SHOP</span>`;
+                            parent.appendChild(div);
+                          }
+                        }}
                       />
                       <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 hidden md:block">
                         <div className="flex items-center gap-4">
@@ -487,7 +594,7 @@ export default function Home() {
               <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#F97316]/20 rounded-full blur-[100px]"></div>
               <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl">
                 <img 
-                  src="/uploads/R3(7).jpg" 
+                  src="/uploads/r3(7).jpg" 
                   alt="Oficina R3 Bike Shop - Manutenção Profissional" 
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -524,6 +631,17 @@ export default function Home() {
                 src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514.jpeg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent && !parent.querySelector('.fallback-about')) {
+                    const div = document.createElement('div');
+                    div.className = "fallback-about relative w-full aspect-video bg-gradient-to-br from-[#2C3E50] to-black rounded-3xl flex items-center justify-center p-4";
+                    div.innerHTML = `<span class="text-white/10 font-black text-4xl uppercase italic text-center">R3 BIKE SHOP</span>`;
+                    parent.appendChild(div);
+                  }
+                }}
               />
               <div className="absolute -bottom-4 -right-4 bg-[#F97316] text-white px-6 py-3 rounded-full font-black text-lg shadow-xl">
                 5.0 ★
@@ -569,75 +687,142 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Oferta Imperdível Section */}
-      <section className="py-20 bg-[#F97316] text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 left-10 w-64 h-64 border-8 border-white rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 border-8 border-white rounded-full"></div>
+      {/* Seção de Ofertas Imperdíveis - Reconstruída do Zero */}
+      <section className="py-24 bg-zinc-950 relative overflow-hidden" id="ofertas">
+        {/* Elementos Decorativos de Fundo */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#F97316] rounded-full blur-[120px]"></div>
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#F97316] rounded-full blur-[120px]"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-white/20 rounded-3xl blur-2xl group-hover:bg-white/30 transition-all"></div>
-              
-              <Carousel
-                opts={{
-                  loop: true,
-                }}
-                plugins={[
-                  Autoplay({
-                    delay: 4000,
-                  }),
-                ]}
-                className="relative w-full"
-                onSelect={(api) => setCurrentOfferSlide(api.selectedIndex)}
-              >
-                <CarouselContent>
-                  {offerImages.map((img, index) => (
-                    <CarouselItem key={index}>
-                      <img 
-                        src={img} 
-                        alt={`Oferta ${index + 1}`} 
-                        className="w-full h-[400px] object-cover rounded-2xl shadow-2xl border-4 border-white"
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4">
-                  <CarouselPrevious className="pointer-events-auto h-10 w-10 rounded-full bg-black/50 border-none text-white hover:bg-black" />
-                  <CarouselNext className="pointer-events-auto h-10 w-10 rounded-full bg-black/50 border-none text-white hover:bg-black" />
-                </div>
-              </Carousel>
 
-              <p className="text-white/50 text-xs mt-2 text-right italic">Foto ilustrativa</p>
-              <div className="absolute top-4 left-4 bg-black text-white px-6 py-2 rounded-full font-black uppercase italic tracking-widest shadow-xl z-20">
-                Promoção Ativa
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 bg-[#F97316]/10 border border-[#F97316]/20 px-4 py-2 rounded-full mb-4">
+                <span className="w-2 h-2 bg-[#F97316] rounded-full animate-pulse"></span>
+                <span className="text-[#F97316] text-xs font-black uppercase tracking-[0.2em]">Promoções Ativas</span>
               </div>
-            </div>
-            <div>
-              <span className="inline-block bg-white text-[#F97316] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-6 shadow-lg">
-                Oportunidade Única
-              </span>
-              <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-6 leading-tight uppercase italic drop-shadow-lg">
-                OFERTA IMPERDÍVEL <br />
-                <span className="text-black">NA R3 BIKE SHOP!</span>
+              <h2 className="font-montserrat font-black text-4xl md:text-6xl text-white uppercase italic leading-none">
+                OFERTA <span className="text-[#F97316]">IMPERDÍVEL</span><br />
+                <span className="text-zinc-500">NA R3 BIKE SHOP!</span>
               </h2>
-              <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 mb-8 shadow-2xl">
-                <h3 className="text-2xl md:text-3xl font-black mb-6 leading-tight text-white uppercase italic">
-                  {extractDescriptionFromUrl(offerImages[currentOfferSlide])}
-                </h3>
-                <div className="inline-block bg-black text-white px-8 py-4 rounded-2xl shadow-xl">
-                  <p className="text-sm font-bold uppercase tracking-widest opacity-80 mb-1">Preço Imbatível</p>
-                  <p className="text-4xl md:text-5xl font-black">
-                    R$ {extractPriceFromUrl(offerImages[currentOfferSlide])}
-                  </p>
-                  <p className="text-xs font-bold mt-2">À VISTA NO PIX</p>
-                </div>
-              </div>
             </div>
+            <div className="hidden md:flex gap-2">
+              <button 
+                onClick={() => offerApi?.scrollPrev()}
+                className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-white hover:bg-[#F97316] hover:border-[#F97316] transition-all"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={() => offerApi?.scrollNext()}
+                className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-white hover:bg-[#F97316] hover:border-[#F97316] transition-all"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+                stopOnInteraction: false,
+              }),
+            ]}
+            setApi={setOfferApi}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {promoOffers.map((offer, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <div className={`group relative bg-gradient-to-br ${getCardColor(index)} rounded-[40px] overflow-hidden shadow-2xl transition-all duration-500 h-full flex flex-col p-8 border-4 border-white/20`}>
+                    {/* Badge */}
+                    <div className="mb-6">
+                      <span className="bg-[#F97316] text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-lg shadow-lg italic tracking-[0.2em]">
+                        OFERTA ESPECIAL
+                      </span>
+                    </div>
+
+                    {/* Header - Nome da Bike em Destaque */}
+                    <div className="mb-4">
+                      <h4 className="text-white/70 font-montserrat font-bold text-xs uppercase tracking-[0.3em] mb-1">
+                        R3 BIKE SHOP
+                      </h4>
+                      <h3 className="text-white font-montserrat font-black text-2xl md:text-3xl uppercase italic leading-[1] tracking-tighter drop-shadow-xl group-hover:scale-105 transition-transform duration-500">
+                        {offer.name}
+                      </h3>
+                    </div>
+
+                    {/* Descrição Legível entre Nome e Valor */}
+                    <div className="flex-grow mb-6">
+                      <p className="text-white/90 font-bold text-sm leading-snug bg-black/10 p-4 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        {offer.description}
+                      </p>
+                    </div>
+
+                    {/* Preço e CTA */}
+                    <div className="space-y-4">
+                      <div className="bg-black/20 backdrop-blur-md rounded-2xl p-4 border border-white/10">
+                        {offer.originalPrice && (
+                          <p className="text-white/40 text-[10px] font-bold uppercase line-through mb-0.5">
+                            De R$ {offer.originalPrice}
+                          </p>
+                        )}
+                        <p className="text-white/80 text-[10px] font-black uppercase mb-1 tracking-widest">Por apenas</p>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-white text-3xl font-black italic leading-none drop-shadow-md">
+                            R$ {offer.offerPrice}
+                          </span>
+                        </div>
+                      </div>
+
+                      <a 
+                        href={whatsappLink + encodeURIComponent(`\n\nQuero saber mais sobre a oferta: ${offer.name} - ${offer.offerPrice}`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-black hover:bg-white hover:text-black text-white py-4 rounded-2xl font-black uppercase text-sm italic tracking-widest flex items-center justify-center gap-2 transition-all shadow-xl active:scale-95 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                      >
+                        <MessageCircle size={20} />
+                        Eu Quero
+                      </a>
+                      
+                      <p className="text-white/60 text-[10px] text-center font-bold uppercase tracking-widest">
+                        Ganha brindes no Pix! 🎁
+                      </p>
+                    </div>
+
+                    {/* Imagem de Fundo (Sutil e Posicionada) */}
+                    <div className="absolute -right-12 -top-12 w-48 h-48 opacity-10 pointer-events-none group-hover:scale-110 group-hover:rotate-0 transition-all duration-700 rotate-12">
+                      <img 
+                        src={offer.image} 
+                        alt=""
+                        className="w-full h-full object-contain"
+                        onError={(e) => (e.currentTarget.style.display = 'none')}
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          {/* Indicadores de Progresso (Mobile) */}
+          <div className="flex justify-center mt-8 md:hidden gap-1.5">
+            {promoOffers.map((_, i) => (
+              <div 
+                key={i} 
+                className={`h-1 rounded-full transition-all ${currentOfferSlide === i ? 'w-8 bg-[#F97316]' : 'w-2 bg-zinc-800'}`}
+              ></div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Nossos Serviços com Carrossel Automático */}
       <section className="py-24 bg-black relative overflow-hidden" id="servicos">
@@ -682,6 +867,17 @@ export default function Home() {
                         src={service.image} 
                         alt={`${service.title} - R3 Bike Shop Lauzane Paulista Zona Norte SP`}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent && !parent.querySelector('.fallback-service')) {
+                            const div = document.createElement('div');
+                            div.className = "fallback-service absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                            div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">R3 BIKE SHOP</span>`;
+                            parent.appendChild(div);
+                          }
+                        }}
                       />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-6 pt-16">
                         <h3 className="text-white font-montserrat font-black text-2xl text-center uppercase italic leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
@@ -716,7 +912,22 @@ export default function Home() {
                   key={index}
                   className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
                 >
-                  <img src={img} alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} className="w-full h-full object-cover" />
+                  <img 
+                    src={img} 
+                    alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} 
+                    className="w-full h-full object-cover" 
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent && !parent.querySelector('.fallback-delivery')) {
+                        const div = document.createElement('div');
+                        div.className = "fallback-delivery absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                        div.innerHTML = `<span class="text-white/20 font-black text-4xl uppercase italic text-center">ENTREGA R3 BIKE</span>`;
+                        parent.appendChild(div);
+                      }
+                    }}
+                  />
                 </div>
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
@@ -913,9 +1124,9 @@ export default function Home() {
                         const target = e.currentTarget;
                         target.style.display = 'none';
                         const parent = target.parentElement;
-                        if (parent) {
+                        if (parent && !parent.querySelector('.fallback-brand')) {
                           const span = document.createElement('span');
-                          span.className = "font-black text-xl text-white/60 group-hover:text-white uppercase italic tracking-tighter transition-all";
+                          span.className = "fallback-brand font-black text-xl text-white/40 group-hover:text-white uppercase italic tracking-tighter transition-all duration-300";
                           span.textContent = brand.name;
                           parent.appendChild(span);
                         }
@@ -955,6 +1166,17 @@ export default function Home() {
                             src={img} 
                             alt={`Fachada e Interior da R3 Bike Shop no Lauzane Paulista Zona Norte SP - Foto ${index + 1}`} 
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent && !parent.querySelector('.fallback-store')) {
+                                const div = document.createElement('div');
+                                div.className = "fallback-store absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                                div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">R3 BIKE</span>`;
+                                parent.appendChild(div);
+                              }
+                            }}
                           />
                           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <div className="bg-white/90 p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
