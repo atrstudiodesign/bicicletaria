@@ -652,7 +652,7 @@ export default function Home() {
             <div className="relative group order-2 md:order-1">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#F97316]/20 to-black/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <img 
-                src="/uploads/r3(11).jpg"
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514-768x768.jpeg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
                 onLoad={(e) => {
