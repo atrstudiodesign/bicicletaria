@@ -228,11 +228,10 @@ export default function Home() {
   };
 
   const services = [
-    { title: "VENDA DE BICICLETAS", image: "/uploads/r3(1).webp" },
-    { title: "REVISÃO COMPLETA", image: "/uploads/r3(7).jpg" },
-    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/r3(12).jpg" },
+    { title: "VENDAS DE BICICLETA", image: "/uploads/r3(1).webp" },
+    { title: "REVISAO COMPLETA", image: "/uploads/r3(7).jpg" },
+    { title: "conserto e manutençao", image: "/uploads/r3(12).jpg" },
     { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.png" },
-    { title: "ACESSÓRIOS PARA BIKE", image: "/uploads/r3(9).jpg" },
     { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
   ];
 
@@ -281,7 +280,7 @@ export default function Home() {
       ),
       ctaPrimary: { text: "Solicitar Orçamento", link: whatsappLink, icon: <MessageCircle size={20} /> },
       ctaSecondary: { text: "Ligar Agora", link: "tel:+5511939065111", icon: <Phone size={20} /> },
-      image: facadeUrl,
+      image: "/uploads/destaquer3bike.png",
       alt: "R3 Bike Shop LOJA Profissional"
     },
     {

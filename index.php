@@ -23,6 +23,11 @@ if ($request_path !== '/' && is_file($file)) {
     $mime = mime_content_type($file);
     if (str_ends_with($request_path, '.js')) $mime = 'application/javascript';
     if (str_ends_with($request_path, '.css')) $mime = 'text/css';
+    if (str_ends_with($request_path, '.webp')) $mime = 'image/webp';
+    if (str_ends_with($request_path, '.jpg') || str_ends_with($request_path, '.jpeg')) $mime = 'image/jpeg';
+    if (str_ends_with($request_path, '.png')) $mime = 'image/png';
+    if (str_ends_with($request_path, '.svg')) $mime = 'image/svg+xml';
+    if (str_ends_with($request_path, '.mp4')) $mime = 'video/mp4';
     
     header("Content-Type: $mime");
     readfile($file);
