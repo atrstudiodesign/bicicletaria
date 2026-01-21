@@ -119,6 +119,11 @@ export default function Home() {
   };
 
   const deliveryImages = [
+    "/uploads/entregas/doc-1.jpeg",
+    "/uploads/entregas/doc-2.jpeg",
+    "/uploads/entregas/doc-3.jpeg",
+    "/uploads/entregas/doc-4.jpeg",
+    "/uploads/entregas/doc-5.jpeg",
     "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
     "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
     "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
