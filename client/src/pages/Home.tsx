@@ -30,6 +30,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 
 function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: string, duration?: number, suffix?: string, prefix?: string }) {
   const [count, setCount] = useState(0);
@@ -1234,6 +1235,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <BeforeAfterGallery />
 
       {/* Oficina Section - Alta Performance */}
       <section className="py-24 bg-zinc-950 text-white overflow-hidden relative" id="oficina">
