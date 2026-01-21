@@ -118,7 +118,19 @@ export default function Home() {
     }
   };
 
-  const deliveryImages = Array.from({ length: 11 }, (_, i) => `/uploads/entregas/${i + 1}.jpg`);
+  const deliveryImages = [
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.39-2-e1761915925151.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.39-1-e1761915952803.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.39-e1761915976372.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-3-e1761916003786.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
+  ];
 
   const storeImages = [
     "/uploads/r3(1).jpg",
