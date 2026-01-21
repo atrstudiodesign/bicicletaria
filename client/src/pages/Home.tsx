@@ -118,19 +118,7 @@ export default function Home() {
     }
   };
 
-  const deliveryImages = [
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-2-e1761915925151.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-1-e1761915952803.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-e1761915976372.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-3-e1761916003786.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
-    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
-  ];
+  const deliveryImages = Array.from({ length: 11 }, (_, i) => `/uploads/entregas/${i + 1}.jpg`);
 
   const storeImages = [
     "/uploads/r3(1).jpg",
