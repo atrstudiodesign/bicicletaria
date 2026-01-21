@@ -1,5 +1,5 @@
 import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu, Maximize2, Quote, Clock } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
   Accordion,
@@ -30,6 +30,64 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+
+function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: string, duration?: number, suffix?: string, prefix?: string }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const countRef = useRef<HTMLDivElement>(null);
+  
+  // Extract number from end string (e.g., "500" from "+500")
+  const numericPart = end.replace(/[^\d]/g, '');
+  const targetNumber = numericPart ? parseInt(numericPart) : 0;
+  const isTimeFormat = end.includes('/');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (countRef.current) {
+      observer.observe(countRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || isTimeFormat || targetNumber === 0) return;
+
+    let start = 0;
+    const startTime = Date.now();
+
+    const updateCount = () => {
+      const now = Date.now();
+      const progress = Math.min((now - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * targetNumber));
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
+      }
+    };
+
+    requestAnimationFrame(updateCount);
+  }, [isVisible, targetNumber, duration, isTimeFormat]);
+
+  if (isTimeFormat) {
+    return <div ref={countRef}>{end}</div>;
+  }
+
+  return (
+    <div ref={countRef}>
+      {prefix}{count}{suffix}
+    </div>
+  );
+}
 
 export default function Home() {
   const menuItems = [
@@ -526,19 +584,27 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">100%</div>
+              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+                <Counter end="100" suffix="%" />
+              </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Atendimento Local</p>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">+500</div>
+              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+                <Counter end="500" prefix="+" />
+              </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Clientes Satisfeitos</p>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">10+</div>
+              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+                <Counter end="10" suffix="+" />
+              </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Anos de Experiência</p>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">24/7</div>
+              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+                <Counter end="24/7" />
+              </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Suporte WhatsApp</p>
             </div>
           </div>
