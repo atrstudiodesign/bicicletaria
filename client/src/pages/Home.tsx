@@ -129,16 +129,7 @@ export default function Home() {
     "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
     "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
     "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg",
-    "/uploads/entregas/compradores-r3bikeshop-1.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-2.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-3.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-4.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-5.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-7.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-8.jpg",
-    "/uploads/entregas/compradores-r3bikeshop-9.jpg",
-    "/uploads/entregas/nossasentregasr3bikeshop2.webp"
+    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
   ];
 
   const storeImages = [
