@@ -994,7 +994,7 @@ export default function Home() {
                         </div>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none flex items-center justify-center">
+                    <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none flex items-center justify-center z-[9999]">
                       <VisuallyHidden.Root>
                         <DialogTitle>Entrega {index + 1}</DialogTitle>
                       </VisuallyHidden.Root>
@@ -1007,23 +1007,23 @@ export default function Home() {
                   </Dialog>
                 </div>
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-20"></div>
             </div>
             
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100 z-30"
             >
               <ChevronLeft size={28} />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100 z-30"
             >
               <ChevronRight size={28} />
             </button>
 
-            <div className="flex justify-center gap-3 mt-8">
+            <div className="flex justify-center gap-3 mt-8 relative z-30">
               {deliveryImages.map((_, index) => (
                 <button 
                   key={index}
