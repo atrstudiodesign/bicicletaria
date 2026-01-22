@@ -961,31 +961,50 @@ export default function Home() {
               {deliveryImages.map((img, index) => (
                 <div 
                   key={index}
-                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
+                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'}`}
                 >
-                  <img 
-                    src={img} 
-                    alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} 
-                    className="w-full h-full object-cover" 
-                    onLoad={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = 'block';
-                      const parent = target.parentElement;
-                      const fallback = parent?.querySelector('.fallback-delivery');
-                      if (fallback) fallback.remove();
-                    }}
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent && !parent.querySelector('.fallback-delivery')) {
-                        const div = document.createElement('div');
-                        div.className = "fallback-delivery absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
-                        div.innerHTML = `<span class="text-white/20 font-black text-4xl uppercase italic text-center">ENTREGA R3 BIKE</span>`;
-                        parent.appendChild(div);
-                      }
-                    }}
-                  />
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="w-full h-full cursor-zoom-in relative group">
+                        <img 
+                          src={img} 
+                          alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} 
+                          className="w-full h-full object-cover" 
+                          onLoad={(e) => {
+                            const target = e.currentTarget;
+                            target.style.display = 'block';
+                            const parent = target.parentElement;
+                            const fallback = parent?.querySelector('.fallback-delivery');
+                            if (fallback) fallback.remove();
+                          }}
+                          onError={(e) => {
+                            const target = e.currentTarget;
+                            target.style.display = 'none';
+                            const parent = target.parentElement;
+                            if (parent && !parent.querySelector('.fallback-delivery')) {
+                              const div = document.createElement('div');
+                              div.className = "fallback-delivery absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                              div.innerHTML = `<span class="text-white/20 font-black text-4xl uppercase italic text-center">ENTREGA R3 BIKE</span>`;
+                              parent.appendChild(div);
+                            }
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <Maximize2 className="text-white drop-shadow-lg" size={48} />
+                        </div>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none flex items-center justify-center">
+                      <VisuallyHidden.Root>
+                        <DialogTitle>Entrega {index + 1}</DialogTitle>
+                      </VisuallyHidden.Root>
+                      <img 
+                        src={img} 
+                        alt={`Entrega Detalhada - ${index + 1}`} 
+                        className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                      />
+                    </DialogContent>
+                  </Dialog>
                 </div>
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
