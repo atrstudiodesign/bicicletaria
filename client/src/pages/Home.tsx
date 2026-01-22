@@ -119,22 +119,13 @@ export default function Home() {
   };
 
   const deliveryImages = [
-    "/uploads/entregas/doc-1.jpeg",
-    "/uploads/entregas/doc-2.jpeg",
-    "/uploads/entregas/doc-3.jpeg",
-    "/uploads/entregas/doc-4.jpeg",
-    "/uploads/entregas/doc-5.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.39-2-e1761915925151.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.39-1-e1761915952803.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.52.39-e1761915976372.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-3-e1761916003786.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
-    "/uploads/entregas/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
+    "/uploads/entregas/compradores-1.jpg",
+    "/uploads/entregas/compradores-2.jpg",
+    "/uploads/entregas/compradores-3.jpg",
+    "/uploads/entregas/compradores-4.jpg",
+    "/uploads/entregas/compradores-5.jpg",
+    "/uploads/entregas/compradores-6.jpg",
+    "/uploads/entregas/compradores-7.jpg"
   ];
 
   const storeImages = [
@@ -501,14 +492,16 @@ export default function Home() {
               "/uploads/banners/banner-1.jpg",
               "/uploads/banners/banner-2.jpg",
               "/uploads/banners/banner-3.jpg",
-              "/uploads/banners/banner-4.jpg"
+              "/uploads/banners/banner-4.jpg",
+              "/uploads/banners/banner-5.jpg",
+              "/uploads/banners/banner-6.jpg"
             ].map((banner, index) => (
               <CarouselItem key={index} className="pl-0">
                 <div className="w-full relative">
                   <img
                     src={banner}
                     alt={`Banner Promocional R3 Bike Shop ${index + 1}`}
-                    className="w-full h-auto object-cover max-h-[500px]"
+                    className="w-full h-[250px] sm:h-[400px] md:h-[500px] object-cover object-center"
                     onLoad={(e) => {
                       const target = e.currentTarget;
                       target.style.display = 'block';
