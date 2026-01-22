@@ -482,6 +482,49 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Banner Slideshow Section */}
+      <section className="w-full bg-black overflow-hidden">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="ml-0">
+            {[
+              "/uploads/banners/banner-1.jpg",
+              "/uploads/banners/banner-2.jpg",
+              "/uploads/banners/banner-3.jpg",
+              "/uploads/banners/banner-4.jpg"
+            ].map((banner, index) => (
+              <CarouselItem key={index} className="pl-0">
+                <div className="w-full relative">
+                  <img
+                    src={banner}
+                    alt={`Banner Promocional R3 Bike Shop ${index + 1}`}
+                    className="w-full h-auto object-cover max-h-[500px]"
+                    onLoad={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'block';
+                    }}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = 'none';
+                    }}
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+
       {/* Hero Section Slideshow */}
       <section className="relative overflow-hidden bg-white border-b border-gray-50">
         <Carousel
