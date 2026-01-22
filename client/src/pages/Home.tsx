@@ -384,9 +384,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans">
+    <div id="home" className="min-h-screen bg-white text-black font-sans">
       {/* Header */}
-      <header id="home" className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
