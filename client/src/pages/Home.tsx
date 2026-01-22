@@ -92,7 +92,7 @@ function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: stri
 
 export default function Home() {
   const menuItems = [
-    { label: "Início", href: "#home" },
+    { label: "Início", href: "/" },
     { label: "Oficina", href: "#oficina" },
     { label: "Serviços", href: "#servicos" },
     { label: "Avaliações", href: "#avaliacoes" },
