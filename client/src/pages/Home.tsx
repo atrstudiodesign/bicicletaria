@@ -107,7 +107,7 @@ export default function Home() {
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const facebookLink = "https://www.facebook.com/share/1B1GX9jXCw/?mibextid=wwXIfr";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
-  const facadeUrl = "/uploads/destaquer3bike.png"; // Foto de Destaque Oficial
+  const facadeUrl = "/uploads/r3-bike-shop-loja.jpg"; // Foto de Destaque Oficial
 
   // Google Ads Conversion Event
   const handleConversion = () => {
@@ -151,7 +151,7 @@ export default function Home() {
       description: "De 5.400,00 por apenas 4.299,00 e ganha um capacete de brinde",
       originalPrice: "5.400,00",
       offerPrice: "4.299,00",
-      image: "/uploads/destaquer3bike.png"
+      image: "/uploads/r3-bike-shop-loja.jpg"
     },
     {
       name: "GTA GRAVITY",
@@ -228,7 +228,7 @@ export default function Home() {
       description: "A bike resistente para quem curte manobras e estilo urbano",
       originalPrice: "",
       offerPrice: "2.599,00",
-      image: "/uploads/destaquer3bike.png"
+      image: "/uploads/r3-bike-shop-loja.jpg"
     },
     {
       name: "HUPI NAJA 🐍",
@@ -284,9 +284,9 @@ export default function Home() {
 
   const services = [
     { title: "VENDAS DE BICICLETA", image: "/uploads/r3(1).webp" },
-    { title: "REVISÃO COMPLETA", image: "/uploads/r3(7).jpg" },
+    { title: "REVISÃO COMPLETA", image: "/uploads/oficina-bicicleta-r3.jpg" },
     { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/r3(12).jpg" },
-    { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.png" },
+    { title: "PEÇAS E COMPONENTES", image: "/uploads/r3-bike-shop-loja.jpg" },
     { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
   ];
 
@@ -335,8 +335,8 @@ export default function Home() {
       ),
       ctaPrimary: { text: "Solicitar Orçamento", link: whatsappLink, icon: <MessageCircle size={20} /> },
       ctaSecondary: { text: "Ligar Agora", link: "tel:+5511939065111", icon: <Phone size={20} /> },
-      image: "/uploads/destaquer3bike.png",
-      alt: "R3 Bike Shop LOJA Profissional"
+      image: "/uploads/r3-bike-shop-loja.jpg",
+      alt: "Loja de bicicletas R3 Bike Shop"
     },
     {
       badge: "Oficina de Alta Performance",
@@ -349,8 +349,8 @@ export default function Home() {
       ),
       ctaPrimary: { text: "Agendar Manutenção", link: whatsappLink, icon: <Wrench size={20} /> },
       ctaSecondary: { text: "Conhecer Oficina", link: "#servicos", icon: <ArrowRight size={20} /> },
-      image: "/uploads/r3(7).jpg",
-      alt: "Oficina R3 Bike Shop"
+      image: "/uploads/oficina-bicicleta-r3.jpg",
+      alt: "Oficina de manutenção de bicicletas"
     },
     {
       badge: "Melhores Marcas do Mercado",
@@ -578,6 +578,9 @@ export default function Home() {
                         src={slide.image}
                         alt={slide.alt}
                         className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white"
+                        loading="lazy"
+                        width={600}
+                        height={500}
                         onLoad={(e) => {
                           const target = e.currentTarget;
                           target.style.display = 'block';
@@ -699,25 +702,31 @@ export default function Home() {
                 <span className="bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full font-black text-sm uppercase tracking-widest">Nossa História</span>
               </div>
               <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic leading-tight">
-                Por que escolher a <span className="text-[#F97316]">R3 Bike Shop</span>
+                Bicicletaria de Confiança <span className="text-[#F97316]">na Lauzane Paulista</span>
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    A <strong>R3 Bike Shop</strong> nasceu da paixão pelo ciclismo e do compromisso com a excelência técnica. Somos uma <strong>LOJA de bicicletas no Lauzane Paulista</strong> especializada em <strong>venda e manutenção de bicicletas</strong> de todos os tipos.
+                    A <strong>R3 Bike Shop</strong> é especializada em venda de bicicletas, peças e acessórios, além de oferecer oficina completa para manutenção e revisão de bikes. Atendemos ciclistas urbanos, MTB e speed, com foco em qualidade, atendimento rápido e preço justo.
                   </p>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Nossa LOJA é equipada com ferramentas de precisão e nossa equipe é treinada para lidar com desde ajustes simples até revisões complexas de performance.
+                    Trabalhamos com acessórios para bicicleta, capacetes, pneus, câmaras, freios, marchas e serviços de revisão completa, ajustes e manutenção preventiva. Nossa oficina é preparada para atender desde reparos simples até revisões avançadas.
                   </p>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Somos uma <strong>bike shop na Zona Norte SP</strong> com foco total na satisfação do cliente e 5.0 estrelas no Google!
+                    Se você procura uma <strong>bike shop</strong> completa na Zona Norte, a R3 é o seu lugar. Nossa <strong>loja de bicicleta</strong> oferece as melhores marcas e um showroom diversificado. Na nossa <strong>oficina de bicicleta</strong>, cuidamos do seu equipamento com a expertise que você merece, garantindo uma <strong>manutenção de bike</strong> precisa e duradoura.
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="text-2xl flex-shrink-0">•</div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Venha nos visitar no Lauzane Paulista e descubra por que somos referência em <strong>bike shop</strong> e serviços especializados na região.
                   </p>
                 </div>
               </div>
@@ -1313,8 +1322,8 @@ export default function Home() {
                   Expertise Técnica
                 </span>
                 <h2 className="font-montserrat font-black text-4xl md:text-6xl mb-6 leading-tight uppercase italic">
-                  Oficina Especializada <br />
-                  <span className="text-[#F97316]">em Bikes</span>
+                  Oficina de Bicicleta <br />
+                  <span className="text-[#F97316]">na Zona Norte de São Paulo</span>
                 </h2>
                 <p className="text-xl text-gray-400 leading-relaxed max-w-xl">
                   Na R3 Bike Shop, sua bicicleta recebe tratamento de elite. Somos especialistas em <strong>manutenção de bicicletas de alta performance</strong>, utilizando ferramentas de precisão e processos rigorosos de qualidade.
@@ -1354,9 +1363,12 @@ export default function Home() {
               <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#F97316]/20 rounded-full blur-[100px]"></div>
               <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl">
                 <img 
-                  src="/uploads/r3(7).jpg" 
-                  alt="Oficina R3 Bike Shop - Manutenção Profissional" 
+                  src="/uploads/oficina-bicicleta-r3.jpg" 
+                  alt="Oficina de manutenção de bicicletas" 
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width={800}
+                  height={600}
                   onLoad={(e) => {
                     const target = e.currentTarget;
                     target.style.display = 'block';
@@ -1520,7 +1532,19 @@ export default function Home() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-gray-400 group">
                   <MapPin size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-base">Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP - CEP: 02430-002</span>
+                  <span className="text-base">
+                    <strong>R3 Bike Shop</strong><br />
+                    Rua Conselheiro Moreira de Barros, 3809<br />
+                    Lauzane Paulista<br />
+                    São Paulo - SP<br />
+                    CEP: 02430-002
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-400 group">
+                  <Phone size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-base">
+                    <strong>(11) 93906-5111</strong>
+                  </span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400 group">
                   <Clock size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
