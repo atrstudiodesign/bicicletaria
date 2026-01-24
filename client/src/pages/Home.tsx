@@ -385,6 +385,7 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-screen bg-white text-black font-sans">
+      <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em [Cidade/SP]</h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -541,10 +542,10 @@ export default function Home() {
                       <span className="inline-block bg-[#F97316]/10 text-[#F97316] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4">
                         {slide.badge}
                       </span>
-                      <h1 className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
+                      <div className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
                         {slide.title} <br />
                         <span className="text-[#F97316]">{slide.titleHighlight}</span>
-                      </h1>
+                      </div>
                       <div className="text-xl text-gray-600 mb-8 leading-relaxed">
                         {slide.description}
                       </div>
@@ -698,7 +699,7 @@ export default function Home() {
                 <span className="bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full font-black text-sm uppercase tracking-widest">Nossa História</span>
               </div>
               <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic leading-tight">
-                R3 Bike Shop: <span className="text-[#F97316]">Quem Somos</span>
+                Por que escolher a <span className="text-[#F97316]">R3 Bike Shop</span>
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
@@ -747,8 +748,8 @@ export default function Home() {
                 <span className="text-[#F97316] text-xs font-black uppercase tracking-[0.2em]">Promoções Ativas</span>
               </div>
               <h2 className="font-montserrat font-black text-4xl md:text-6xl text-white uppercase italic leading-none">
-                OFERTA <span className="text-[#F97316]">IMPERDÍVEL</span><br />
-                <span className="text-zinc-500">NA R3 BIKE SHOP!</span>
+                Acessórios e Peças <span className="text-[#F97316]">para Bicicletas</span><br />
+                <span className="text-zinc-500 text-2xl md:text-4xl">NA R3 BIKE SHOP!</span>
               </h2>
             </div>
             <div className="hidden md:flex gap-2">
@@ -884,7 +885,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Serviços da <span className="text-[#F97316]">R3 Bike Shop</span></h2>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Manutenção, Revisão <span className="text-[#F97316]">e Ajustes</span></h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto font-bold italic">
               Excelência técnica e cuidado especial: a melhor <strong>manutenção de bicicletas em São Paulo</strong>.
             </p>
@@ -1312,8 +1313,8 @@ export default function Home() {
                   Expertise Técnica
                 </span>
                 <h2 className="font-montserrat font-black text-4xl md:text-6xl mb-6 leading-tight uppercase italic">
-                  OFICINA DE <br />
-                  <span className="text-[#F97316]">ALTA PERFORMANCE</span>
+                  Oficina Especializada <br />
+                  <span className="text-[#F97316]">em Bikes</span>
                 </h2>
                 <p className="text-xl text-gray-400 leading-relaxed max-w-xl">
                   Na R3 Bike Shop, sua bicicleta recebe tratamento de elite. Somos especialistas em <strong>manutenção de bicicletas de alta performance</strong>, utilizando ferramentas de precisão e processos rigorosos de qualidade.
