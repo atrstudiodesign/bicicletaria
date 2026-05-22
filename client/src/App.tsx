@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
+import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -9,7 +10,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiesPolicy from "./pages/Cookies";
 import LegalNotice from "./pages/LegalNotice";
 import TermsOfService from "./pages/TermsOfService";
-
 
 function Router() {
   return (
@@ -41,6 +41,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <Analytics />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
