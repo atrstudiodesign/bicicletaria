@@ -1,7 +1,8 @@
-import AdmZip from 'adm-zip';
-import path from 'path';
+import AdmZip from "adm-zip";
+import path from "path";
 
-const zipPath = 'C:\\Users\\agtra\\Downloads\\drive-download-20260121T022143Z-1-001.zip';
+const zipPath =
+  "C:\\Users\\agtra\\Downloads\\drive-download-20260121T022143Z-1-001.zip";
 
 try {
   const zip = new AdmZip(zipPath);

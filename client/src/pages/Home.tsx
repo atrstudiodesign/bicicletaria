@@ -1,4 +1,24 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu, Maximize2, Quote, Clock } from "lucide-react";
+import {
+  MessageCircle,
+  Wrench,
+  Package,
+  Users,
+  Star,
+  MapPin,
+  Phone,
+  ShoppingCart,
+  ArrowRight,
+  Instagram,
+  ChevronRight,
+  ChevronLeft,
+  Facebook,
+  Youtube,
+  Mail,
+  Menu,
+  Maximize2,
+  Quote,
+  Clock,
+} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
@@ -32,15 +52,25 @@ import {
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 
-function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: string, duration?: number, suffix?: string, prefix?: string }) {
+function Counter({
+  end,
+  duration = 2000,
+  suffix = "",
+  prefix = "",
+}: {
+  end: string;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
+}) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const countRef = useRef<HTMLDivElement>(null);
-  
+
   // Extract number from end string (e.g., "500" from "+500")
-  const numericPart = end.replace(/[^\d]/g, '');
+  const numericPart = end.replace(/[^\d]/g, "");
   const targetNumber = numericPart ? parseInt(numericPart) : 0;
-  const isTimeFormat = end.includes('/');
+  const isTimeFormat = end.includes("/");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,7 +98,7 @@ function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: stri
     const updateCount = () => {
       const now = Date.now();
       const progress = Math.min((now - startTime) / duration, 1);
-      
+
       setCount(Math.floor(progress * targetNumber));
 
       if (progress < 1) {
@@ -85,7 +115,9 @@ function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: stri
 
   return (
     <div ref={countRef}>
-      {prefix}{count}{suffix}
+      {prefix}
+      {count}
+      {suffix}
     </div>
   );
 }
@@ -105,15 +137,17 @@ export default function Home() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
-  const facebookLink = "https://www.facebook.com/share/1B1GX9jXCw/?mibextid=wwXIfr";
-  const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
+  const facebookLink =
+    "https://www.facebook.com/share/1B1GX9jXCw/?mibextid=wwXIfr";
+  const logoUrl =
+    "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
   const facadeUrl = "/uploads/r3-bike-shop-loja.jpg"; // Foto de Destaque Oficial
 
   // Google Ads Conversion Event
   const handleConversion = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-17865927460/sOHcCNOs0OAbEKTWkcdC'
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-17865927460/sOHcCNOs0OAbEKTWkcdC",
       });
     }
   };
@@ -125,7 +159,7 @@ export default function Home() {
     "/uploads/entregas/compradores-4.jpg",
     "/uploads/entregas/compradores-5.jpg",
     "/uploads/entregas/compradores-6.jpg",
-    "/uploads/entregas/compradores-7.jpg"
+    "/uploads/entregas/compradores-7.jpg",
   ];
 
   const storeImages = [
@@ -133,7 +167,7 @@ export default function Home() {
     "/uploads/r3(2).jpg",
     "/uploads/r3(3).jpg",
     "/uploads/r3(14).jpg",
-    "/uploads/r3(15).jpg"
+    "/uploads/r3(15).jpg",
   ];
 
   const partnerBrands = [
@@ -142,115 +176,139 @@ export default function Home() {
     { name: "RockShox", logo: "/logos/rockshox.png" },
     { name: "Caloi", logo: "/logos/caloi.png" },
     { name: "TSW", logo: "/logos/tsw.png" },
-    { name: "First", logo: "/logos/first.png" }
+    { name: "First", logo: "/logos/first.png" },
   ];
 
   const promoOffers = [
     {
       name: "SPEED VERCELLI AUSTIN",
-      description: "De 5.400,00 por apenas 4.299,00 e ganha um capacete de brinde",
+      description:
+        "De 5.400,00 por apenas 4.299,00 e ganha um capacete de brinde",
       originalPrice: "5.400,00",
       offerPrice: "4.299,00",
-      image: "/uploads/r3-bike-shop-loja.jpg"
+      image: "/uploads/r3-bike-shop-loja.jpg",
     },
     {
       name: "GTA GRAVITY",
-      description: "De 3.200,00 por apenas 2.590,00 e ganha um capacete de brinde",
+      description:
+        "De 3.200,00 por apenas 2.590,00 e ganha um capacete de brinde",
       originalPrice: "3.200,00",
       offerPrice: "2.590,00",
-      image: "/uploads/promo/gta-gravity-de-320000-por-apenas-259000-e-ganha-capacete.jpeg"
+      image:
+        "/uploads/promo/gta-gravity-de-320000-por-apenas-259000-e-ganha-capacete.jpeg",
     },
     {
       name: "GTA CLIMB ARO 29",
-      description: "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no guidão + Capacete de brinde",
+      description:
+        "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no guidão + Capacete de brinde",
       originalPrice: "3.900,00",
       offerPrice: "3.299,00",
-      image: "/uploads/promo/gta-climb-aro-29-de-390000-por-apenas-329900-e-ganha.jpeg"
+      image:
+        "/uploads/promo/gta-climb-aro-29-de-390000-por-apenas-329900-e-ganha.jpeg",
     },
     {
       name: "EXPLORE URBAN 5000W",
-      description: "Bicicleta elétrica por apenas 4.990,00 no Pix ou 12x600,00 + Capacete e mochila personalizada",
+      description:
+        "Bicicleta elétrica por apenas 4.990,00 no Pix ou 12x600,00 + Capacete e mochila personalizada",
       originalPrice: "5.400,00",
       offerPrice: "4.990,00",
-      image: "/uploads/promo/bicicleta-eletrica-explore-urban-5000w-de-540000-por-apenas.jpeg"
+      image:
+        "/uploads/promo/bicicleta-eletrica-explore-urban-5000w-de-540000-por-apenas.jpeg",
     },
     {
       name: "GTA CLIMB ARO 29",
-      description: "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no ombro + Capacete de brinde",
+      description:
+        "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no ombro + Capacete de brinde",
       originalPrice: "3.700,00",
       offerPrice: "3.200,00",
-      image: "/uploads/promo/gta-climb-aro-29-de-370000-por-apenas-320000-e-ganha.jpeg"
+      image:
+        "/uploads/promo/gta-climb-aro-29-de-370000-por-apenas-320000-e-ganha.jpeg",
     },
     {
       name: "ABSOLUTE NERO ARO 29",
-      description: "Kit 1x8 cassete camaleão, freios a disco, garfo com amortecedor e trava no ombro + Capacete de brinde",
+      description:
+        "Kit 1x8 cassete camaleão, freios a disco, garfo com amortecedor e trava no ombro + Capacete de brinde",
       originalPrice: "2.300,00",
       offerPrice: "1.999,00",
-      image: "/uploads/promo/absolute-nero-aro-29-de-230000-por-apenas-199900-e-gan.jpeg"
+      image:
+        "/uploads/promo/absolute-nero-aro-29-de-230000-por-apenas-199900-e-gan.jpeg",
     },
     {
       name: "FIRST ARO 29",
-      description: "Kit 3x8, freios hidráulicos, garfo com amortecedor e trava no ombro + Capacete de brinde",
+      description:
+        "Kit 3x8, freios hidráulicos, garfo com amortecedor e trava no ombro + Capacete de brinde",
       originalPrice: "2.900,00",
       offerPrice: "2.490,00",
-      image: "/uploads/promo/first-aro-29-de-290000-por-apenas-249000-e-ganha-capac.jpeg"
+      image:
+        "/uploads/promo/first-aro-29-de-290000-por-apenas-249000-e-ganha-capac.jpeg",
     },
     {
       name: "FIRST ARO 29",
-      description: "Freios a discos e garfo com amortecedor. Oferta imperdível no Pix!",
+      description:
+        "Freios a discos e garfo com amortecedor. Oferta imperdível no Pix!",
       originalPrice: "1.400,00",
       offerPrice: "999,00",
-      image: "/uploads/promo/first-aro-29-de-140000-por-apenas-99900-no-pix.jpeg"
+      image:
+        "/uploads/promo/first-aro-29-de-140000-por-apenas-99900-no-pix.jpeg",
     },
     {
       name: "CALOI EXPLORER ARO 29",
-      description: "Kit Shimano Cues 1x9 completo, freios hidráulicos, trava no guidão + Capacete de brinde",
+      description:
+        "Kit Shimano Cues 1x9 completo, freios hidráulicos, trava no guidão + Capacete de brinde",
       originalPrice: "5.600,00",
       offerPrice: "5.199,00",
-      image: "/uploads/promo/caloi-explorer-aro-29-de-560000-por-apenas-519900-e-ga.jpeg"
+      image:
+        "/uploads/promo/caloi-explorer-aro-29-de-560000-por-apenas-519900-e-ga.jpeg",
     },
     {
       name: "CALOI EXPLORER ARO 29",
-      description: "Kit 1x12 completo Absolute, freios hidráulicos, trava no ombro + Capacete de brinde",
+      description:
+        "Kit 1x12 completo Absolute, freios hidráulicos, trava no ombro + Capacete de brinde",
       originalPrice: "5.400,00",
       offerPrice: "4.990,00",
-      image: "/uploads/promo/caloi-explorer-aro-29-de-540000-por-apenas-499000-e-ga.jpeg"
+      image:
+        "/uploads/promo/caloi-explorer-aro-29-de-540000-por-apenas-499000-e-ga.jpeg",
     },
     {
       name: "GTA START ARO 29",
-      description: "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no guidão + Capacete de brinde",
+      description:
+        "Kit 1x12 completo, freios hidráulicos, garfo com amortecedor e trava no guidão + Capacete de brinde",
       originalPrice: "3.900,00",
       offerPrice: "3.199,00",
-      image: "/uploads/promo/gta-start-aro-29-de-390000-por-apenas-319900-e-ganha.jpeg"
+      image:
+        "/uploads/promo/gta-start-aro-29-de-390000-por-apenas-319900-e-ganha.jpeg",
     },
     {
       name: "VIKING TUFF-30",
       description: "A bike resistente para quem curte manobras e estilo urbano",
       originalPrice: "",
       offerPrice: "2.599,00",
-      image: "/uploads/r3-bike-shop-loja.jpg"
+      image: "/uploads/r3-bike-shop-loja.jpg",
     },
     {
       name: "HUPI NAJA 🐍",
-      description: "Freios hidráulicos e cubo barulhento. Estilo e performance garantidos",
+      description:
+        "Freios hidráulicos e cubo barulhento. Estilo e performance garantidos",
       originalPrice: "",
       offerPrice: "4.999,00",
-      image: "/uploads/promo/hupi-naja-por-apenas-499900-com-freios-hidraulicos.jpeg"
+      image:
+        "/uploads/promo/hupi-naja-por-apenas-499900-com-freios-hidraulicos.jpeg",
     },
     {
       name: "FIRST",
       description: "Oferta especial R3 Bike Shop - Qualidade e preço justo",
       originalPrice: "",
       offerPrice: "1.499,00",
-      image: "/uploads/promo/first-por-apenas-149900.jpeg"
+      image: "/uploads/promo/first-por-apenas-149900.jpeg",
     },
     {
       name: "FREERIDE MARIA",
       description: "Equipada com freios hidráulicos Shimano MT 200",
       originalPrice: "",
       offerPrice: "1.690,00",
-      image: "/uploads/promo/freeride-maria-por-apenas-169000-com-freios-hidraulicos.jpeg"
-    }
+      image:
+        "/uploads/promo/freeride-maria-por-apenas-169000-com-freios-hidraulicos.jpeg",
+    },
   ];
 
   const [currentOfferSlide, setCurrentOfferSlide] = useState(0);
@@ -277,7 +335,7 @@ export default function Home() {
       "from-orange-300 to-orange-500",
       "from-emerald-400 to-emerald-600",
       "from-purple-400 to-purple-600",
-      "from-rose-400 to-rose-600"
+      "from-rose-400 to-rose-600",
     ];
     return colors[index % colors.length];
   };
@@ -291,36 +349,36 @@ export default function Home() {
   ];
 
   const googleReviews = [
-    { 
-      text: "Extremamente profissionais, me atenderam em pleno dia de Natal (25/12) e montaram 2 bicicletas para meus filhos em menos de duas horas e fizeram nossa alegria. Preço justo e atendimento sensacional. Parabéns!", 
+    {
+      text: "Extremamente profissionais, me atenderam em pleno dia de Natal (25/12) e montaram 2 bicicletas para meus filhos em menos de duas horas e fizeram nossa alegria. Preço justo e atendimento sensacional. Parabéns!",
       author: "Lucca Firmino",
-      metadata: "Local Guide · 180 avaliações · 2 semanas atrás"
+      metadata: "Local Guide · 180 avaliações · 2 semanas atrás",
     },
-    { 
-      text: "Gostaria de expressar minha satisfação com o serviço prestado pela R3 bike shop. A revisão da minha bicicleta foi realizada com excelência, demonstrando um alto nível de profissionalismo e conhecimento técnico. Compramos 4 bicicletas lindas sendo 3 para meus filhos e amamos. O atendimento foi excelente, loja muito bem organizada e um ótimo café.", 
+    {
+      text: "Gostaria de expressar minha satisfação com o serviço prestado pela R3 bike shop. A revisão da minha bicicleta foi realizada com excelência, demonstrando um alto nível de profissionalismo e conhecimento técnico. Compramos 4 bicicletas lindas sendo 3 para meus filhos e amamos. O atendimento foi excelente, loja muito bem organizada e um ótimo café.",
       author: "Clovis Souza de Brito",
-      metadata: "4 avaliações · 2 meses atrás"
+      metadata: "4 avaliações · 2 meses atrás",
     },
-    { 
-      text: "Equipe incrível, bikes de boas qualidades, atendimento maravilhoso, fui bem atendido e fiquei super feliz com a minha compra, recomendo... Comprei duas bicicletas, ótima qualidade, atendimento excelente, preços ótimos e variedade de produtos. Recomendo muito", 
+    {
+      text: "Equipe incrível, bikes de boas qualidades, atendimento maravilhoso, fui bem atendido e fiquei super feliz com a minha compra, recomendo... Comprei duas bicicletas, ótima qualidade, atendimento excelente, preços ótimos e variedade de produtos. Recomendo muito",
       author: "Sergio Carvalho",
-      metadata: "4 avaliações · 2 meses atrás"
+      metadata: "4 avaliações · 2 meses atrás",
     },
-    { 
-      text: "Loja top, atendimento excelente e produtos de alta qualidade. Super recomendo.", 
+    {
+      text: "Loja top, atendimento excelente e produtos de alta qualidade. Super recomendo.",
       author: "Google User",
-      metadata: "Local Guide"
+      metadata: "Local Guide",
     },
-    { 
-      text: "Lugar aconchegante e acolhedor, profissionais de ponta com muita experiência.", 
+    {
+      text: "Lugar aconchegante e acolhedor, profissionais de ponta com muita experiência.",
       author: "Google User",
-      metadata: "Local Guide"
+      metadata: "Local Guide",
     },
-    { 
-      text: "Qualidade, variedade e preço acessível para todos os gostos.", 
+    {
+      text: "Qualidade, variedade e preço acessível para todos os gostos.",
       author: "Google User",
-      metadata: "Local Guide"
-    }
+      metadata: "Local Guide",
+    },
   ];
 
   const heroSlides = [
@@ -330,13 +388,24 @@ export default function Home() {
       titleHighlight: "NA R3 BIKE SHOP!",
       description: (
         <p>
-          A R3 Bike Shop é sua <strong>LOJA de bicicletas no Lauzane Paulista</strong>. Oferecemos <strong>manutenção de bicicletas em São Paulo</strong> com peças originais e atendimento especializado.
+          A R3 Bike Shop é sua{" "}
+          <strong>LOJA de bicicletas no Lauzane Paulista</strong>. Oferecemos{" "}
+          <strong>manutenção de bicicletas em São Paulo</strong> com peças
+          originais e atendimento especializado.
         </p>
       ),
-      ctaPrimary: { text: "Solicitar Orçamento", link: whatsappLink, icon: <MessageCircle size={20} /> },
-      ctaSecondary: { text: "Ligar Agora", link: "tel:+5511939065111", icon: <Phone size={20} /> },
+      ctaPrimary: {
+        text: "Solicitar Orçamento",
+        link: whatsappLink,
+        icon: <MessageCircle size={20} />,
+      },
+      ctaSecondary: {
+        text: "Ligar Agora",
+        link: "tel:+5511939065111",
+        icon: <Phone size={20} />,
+      },
       image: "/uploads/r3-bike-shop-loja.jpg",
-      alt: "Loja de bicicletas R3 Bike Shop"
+      alt: "Loja de bicicletas R3 Bike Shop",
     },
     {
       badge: "Oficina de Alta Performance",
@@ -344,13 +413,23 @@ export default function Home() {
       titleHighlight: "MÃOS DE MESTRE",
       description: (
         <p>
-          Revisão completa, ajustes de precisão e <strong>peças originais</strong>. Mecânicos especializados para garantir que sua única preocupação seja o pedal.
+          Revisão completa, ajustes de precisão e{" "}
+          <strong>peças originais</strong>. Mecânicos especializados para
+          garantir que sua única preocupação seja o pedal.
         </p>
       ),
-      ctaPrimary: { text: "Agendar Manutenção", link: whatsappLink, icon: <Wrench size={20} /> },
-      ctaSecondary: { text: "Conhecer Oficina", link: "#servicos", icon: <ArrowRight size={20} /> },
+      ctaPrimary: {
+        text: "Agendar Manutenção",
+        link: whatsappLink,
+        icon: <Wrench size={20} />,
+      },
+      ctaSecondary: {
+        text: "Conhecer Oficina",
+        link: "#servicos",
+        icon: <ArrowRight size={20} />,
+      },
       image: "/uploads/oficina-bicicleta-r3.jpg",
-      alt: "Oficina de manutenção de bicicletas"
+      alt: "Oficina de manutenção de bicicletas",
     },
     {
       badge: "Melhores Marcas do Mercado",
@@ -358,24 +437,36 @@ export default function Home() {
       titleHighlight: "E COMPONENTES",
       description: (
         <p>
-          As melhores <strong>bicicletas novas e seminovas</strong> com condições que cabem no seu bolso. Shimano, SRAM e as principais marcas do mundo.
+          As melhores <strong>bicicletas novas e seminovas</strong> com
+          condições que cabem no seu bolso. Shimano, SRAM e as principais marcas
+          do mundo.
         </p>
       ),
-      ctaPrimary: { text: "Ver Ofertas", link: "#servicos", icon: <ShoppingCart size={20} /> },
-      ctaSecondary: { text: "Chamar no Whats", link: whatsappLink, icon: <MessageCircle size={20} /> },
+      ctaPrimary: {
+        text: "Ver Ofertas",
+        link: "#servicos",
+        icon: <ShoppingCart size={20} />,
+      },
+      ctaSecondary: {
+        text: "Chamar no Whats",
+        link: whatsappLink,
+        icon: <MessageCircle size={20} />,
+      },
       image: "/uploads/r3(4).webp",
-      alt: "Ofertas de Bicicletas R3"
-    }
+      alt: "Ofertas de Bicicletas R3",
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % deliveryImages.length);
+    setCurrentSlide(prev => (prev + 1) % deliveryImages.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + deliveryImages.length) % deliveryImages.length);
+    setCurrentSlide(
+      prev => (prev - 1 + deliveryImages.length) % deliveryImages.length
+    );
   };
 
   useEffect(() => {
@@ -385,13 +476,22 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-screen bg-white text-black font-sans">
-      <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em [Cidade/SP]</h1>
+      <h1 className="sr-only">
+        R3 Bike Shop – Loja e Oficina de Bicicletas em [Cidade/SP]
+      </h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoUrl} alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista" className="h-12 w-auto" />
+            <a
+              href="/"
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            >
+              <img
+                src={logoUrl}
+                alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista"
+                className="h-12 w-auto"
+              />
               <span className="font-montserrat font-black text-xl text-black hidden lg:inline uppercase tracking-tight italic">
                 R3 BIKE <span className="text-[#F97316]">SHOP</span>
               </span>
@@ -399,7 +499,7 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6">
-              {menuItems.map((item) => (
+              {menuItems.map(item => (
                 <a
                   key={item.label}
                   href={item.href}
@@ -413,11 +513,16 @@ export default function Home() {
 
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden sm:flex items-center gap-4">
-              <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#F97316] transition-colors">
+              <a
+                href={instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#F97316] transition-colors"
+              >
                 <Instagram size={24} />
               </a>
             </div>
-            
+
             <a
               href={whatsappLink}
               target="_blank"
@@ -436,7 +541,10 @@ export default function Home() {
                   <Menu size={32} strokeWidth={2.5} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-4 border-l-[#F97316]">
+              <SheetContent
+                side="right"
+                className="w-[300px] sm:w-[400px] border-l-4 border-l-[#F97316]"
+              >
                 <SheetHeader className="text-left border-b border-gray-100 pb-6">
                   <SheetTitle className="flex items-center gap-3">
                     <img src={logoUrl} alt="Logo" className="h-10 w-auto" />
@@ -446,23 +554,38 @@ export default function Home() {
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 py-8">
-                  {menuItems.map((item) => (
+                  {menuItems.map(item => (
                     <a
                       key={item.label}
                       href={item.href}
                       className="text-2xl font-black uppercase italic tracking-tighter text-gray-800 hover:text-[#F97316] transition-colors flex items-center justify-between group"
                     >
                       {item.label}
-                      <ChevronRight size={24} className="text-gray-300 group-hover:text-[#F97316] transition-colors" />
+                      <ChevronRight
+                        size={24}
+                        className="text-gray-300 group-hover:text-[#F97316] transition-colors"
+                      />
                     </a>
                   ))}
                   <div className="mt-8 pt-8 border-t border-gray-100">
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Siga-nos</p>
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+                      Siga-nos
+                    </p>
                     <div className="flex gap-4">
-                      <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                      <a
+                        href={instagramLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all"
+                      >
                         <Instagram size={22} />
                       </a>
-                      <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                      <a
+                        href={facebookLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all"
+                      >
                         <Facebook size={22} />
                       </a>
                     </div>
@@ -495,7 +618,7 @@ export default function Home() {
               "/uploads/banners/banner-3.jpg",
               "/uploads/banners/banner-4.jpg",
               "/uploads/banners/banner-5.jpg",
-              "/uploads/banners/banner-6.jpg"
+              "/uploads/banners/banner-6.jpg",
             ].map((banner, index) => (
               <CarouselItem key={index} className="pl-0">
                 <div className="w-full relative">
@@ -503,13 +626,13 @@ export default function Home() {
                     src={banner}
                     alt={`Banner Promocional R3 Bike Shop ${index + 1}`}
                     className="w-full h-[250px] sm:h-[400px] md:h-[500px] object-cover object-center"
-                    onLoad={(e) => {
+                    onLoad={e => {
                       const target = e.currentTarget;
-                      target.style.display = 'block';
+                      target.style.display = "block";
                     }}
-                    onError={(e) => {
+                    onError={e => {
                       const target = e.currentTarget;
-                      target.style.display = 'none';
+                      target.style.display = "none";
                     }}
                   />
                 </div>
@@ -544,7 +667,9 @@ export default function Home() {
                       </span>
                       <div className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
                         {slide.title} <br />
-                        <span className="text-[#F97316]">{slide.titleHighlight}</span>
+                        <span className="text-[#F97316]">
+                          {slide.titleHighlight}
+                        </span>
                       </div>
                       <div className="text-xl text-gray-600 mb-8 leading-relaxed">
                         {slide.description}
@@ -581,20 +706,25 @@ export default function Home() {
                         loading="lazy"
                         width={600}
                         height={500}
-                        onLoad={(e) => {
+                        onLoad={e => {
                           const target = e.currentTarget;
-                          target.style.display = 'block';
+                          target.style.display = "block";
                           const parent = target.parentElement;
-                          const fallback = parent?.querySelector('.fallback-hero');
+                          const fallback =
+                            parent?.querySelector(".fallback-hero");
                           if (fallback) fallback.remove();
                         }}
-                        onError={(e) => {
+                        onError={e => {
                           const target = e.currentTarget;
-                          target.style.display = 'none';
+                          target.style.display = "none";
                           const parent = target.parentElement;
-                          if (parent && !parent.querySelector('.fallback-hero')) {
-                            const div = document.createElement('div');
-                            div.className = "fallback-hero absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4 rounded-3xl";
+                          if (
+                            parent &&
+                            !parent.querySelector(".fallback-hero")
+                          ) {
+                            const div = document.createElement("div");
+                            div.className =
+                              "fallback-hero absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4 rounded-3xl";
                             div.innerHTML = `<span class="text-white/10 font-black text-6xl uppercase italic text-center">R3 BIKE SHOP</span>`;
                             parent.appendChild(div);
                           }
@@ -603,11 +733,19 @@ export default function Home() {
                       <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 hidden md:block">
                         <div className="flex items-center gap-4">
                           <div className="bg-[#F97316] p-3 rounded-xl">
-                            <Star className="text-white" size={24} fill="currentColor" />
+                            <Star
+                              className="text-white"
+                              size={24}
+                              fill="currentColor"
+                            />
                           </div>
                           <div>
-                            <p className="font-black text-2xl leading-none">100%</p>
-                            <p className="text-xs text-gray-500 uppercase font-bold">Qualidade R3</p>
+                            <p className="font-black text-2xl leading-none">
+                              100%
+                            </p>
+                            <p className="text-xs text-gray-500 uppercase font-bold">
+                              Qualidade R3
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -633,32 +771,43 @@ export default function Home() {
               <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
                 <Counter end="100" suffix="%" />
               </div>
-              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Atendimento Local</p>
+              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">
+                Atendimento Local
+              </p>
             </div>
             <div className="text-center group">
               <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
                 <Counter end="500" prefix="+" />
               </div>
-              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Clientes Satisfeitos</p>
+              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">
+                Clientes Satisfeitos
+              </p>
             </div>
             <div className="text-center group">
               <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
                 <Counter end="10" suffix="+" />
               </div>
-              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Anos de Experiência</p>
+              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">
+                Anos de Experiência
+              </p>
             </div>
             <div className="text-center group">
               <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
                 <Counter end="24/7" />
               </div>
-              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Suporte WhatsApp</p>
+              <p className="text-sm text-gray-400 uppercase font-black tracking-widest">
+                Suporte WhatsApp
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Quem Somos Section */}
-      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden" id="sobre">
+      <section
+        className="py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden"
+        id="sobre"
+      >
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#F97316] rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#F97316] rounded-full blur-3xl"></div>
@@ -668,24 +817,25 @@ export default function Home() {
             {/* Imagem */}
             <div className="relative group order-2 md:order-1">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#F97316]/20 to-black/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-              <img 
+              <img
                 src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514-768x768.jpeg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
-                onLoad={(e) => {
+                onLoad={e => {
                   const target = e.currentTarget;
-                  target.style.display = 'block';
+                  target.style.display = "block";
                   const parent = target.parentElement;
-                  const fallback = parent?.querySelector('.fallback-about');
+                  const fallback = parent?.querySelector(".fallback-about");
                   if (fallback) fallback.remove();
                 }}
-                onError={(e) => {
+                onError={e => {
                   const target = e.currentTarget;
-                  target.style.display = 'none';
+                  target.style.display = "none";
                   const parent = target.parentElement;
-                  if (parent && !parent.querySelector('.fallback-about')) {
-                    const div = document.createElement('div');
-                    div.className = "fallback-about relative w-full aspect-video bg-gradient-to-br from-[#2C3E50] to-black rounded-3xl flex items-center justify-center p-4";
+                  if (parent && !parent.querySelector(".fallback-about")) {
+                    const div = document.createElement("div");
+                    div.className =
+                      "fallback-about relative w-full aspect-video bg-gradient-to-br from-[#2C3E50] to-black rounded-3xl flex items-center justify-center p-4";
                     div.innerHTML = `<span class="text-white/10 font-black text-4xl uppercase italic text-center">R3 BIKE SHOP</span>`;
                     parent.appendChild(div);
                   }
@@ -695,45 +845,64 @@ export default function Home() {
                 5.0 ★
               </div>
             </div>
-            
+
             {/* Conteúdo */}
             <div className="order-1 md:order-2">
               <div className="mb-4 inline-block">
-                <span className="bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full font-black text-sm uppercase tracking-widest">Nossa História</span>
+                <span className="bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full font-black text-sm uppercase tracking-widest">
+                  Nossa História
+                </span>
               </div>
               <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic leading-tight">
-                Bicicletaria de Confiança <span className="text-[#F97316]">na Lauzane Paulista</span>
+                Bicicletaria de Confiança{" "}
+                <span className="text-[#F97316]">na Lauzane Paulista</span>
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    A <strong>R3 Bike Shop</strong> é especializada em venda de bicicletas, peças e acessórios, além de oferecer oficina completa para manutenção e revisão de bikes. Atendemos ciclistas urbanos, MTB e speed, com foco em qualidade, atendimento rápido e preço justo.
+                    A <strong>R3 Bike Shop</strong> é especializada em venda de
+                    bicicletas, peças e acessórios, além de oferecer oficina
+                    completa para manutenção e revisão de bikes. Atendemos
+                    ciclistas urbanos, MTB e speed, com foco em qualidade,
+                    atendimento rápido e preço justo.
                   </p>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Trabalhamos com acessórios para bicicleta, capacetes, pneus, câmaras, freios, marchas e serviços de revisão completa, ajustes e manutenção preventiva. Nossa oficina é preparada para atender desde reparos simples até revisões avançadas.
+                    Trabalhamos com acessórios para bicicleta, capacetes, pneus,
+                    câmaras, freios, marchas e serviços de revisão completa,
+                    ajustes e manutenção preventiva. Nossa oficina é preparada
+                    para atender desde reparos simples até revisões avançadas.
                   </p>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Se você procura uma <strong>bike shop</strong> completa na Zona Norte, a R3 é o seu lugar. Nossa <strong>loja de bicicleta</strong> oferece as melhores marcas e um showroom diversificado. Na nossa <strong>oficina de bicicleta</strong>, cuidamos do seu equipamento com a expertise que você merece, garantindo uma <strong>manutenção de bike</strong> precisa e duradoura.
+                    Se você procura uma <strong>bike shop</strong> completa na
+                    Zona Norte, a R3 é o seu lugar. Nossa{" "}
+                    <strong>loja de bicicleta</strong> oferece as melhores
+                    marcas e um showroom diversificado. Na nossa{" "}
+                    <strong>oficina de bicicleta</strong>, cuidamos do seu
+                    equipamento com a expertise que você merece, garantindo uma{" "}
+                    <strong>manutenção de bike</strong> precisa e duradoura.
                   </p>
                 </div>
                 <div className="flex gap-4">
                   <div className="text-2xl flex-shrink-0">•</div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Venha nos visitar no Lauzane Paulista e descubra por que somos referência em <strong>bike shop</strong> e serviços especializados na região.
+                    Venha nos visitar no Lauzane Paulista e descubra por que
+                    somos referência em <strong>bike shop</strong> e serviços
+                    especializados na região.
                   </p>
                 </div>
               </div>
-              
+
               <div className="mt-8 p-6 bg-[#F97316]/10 rounded-2xl border-2 border-[#F97316]">
                 <p className="font-montserrat font-black text-xl text-[#F97316] italic">
-                  "Mais de 300 avaliações de clientes satisfeitos na Zona Norte!"
+                  "Mais de 300 avaliações de clientes satisfeitos na Zona
+                  Norte!"
                 </p>
               </div>
             </div>
@@ -742,7 +911,10 @@ export default function Home() {
       </section>
 
       {/* Seção de Ofertas Imperdíveis - Reconstruída do Zero */}
-      <section className="py-24 bg-zinc-950 relative overflow-hidden" id="ofertas">
+      <section
+        className="py-24 bg-zinc-950 relative overflow-hidden"
+        id="ofertas"
+      >
         {/* Elementos Decorativos de Fundo */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#F97316] rounded-full blur-[120px]"></div>
@@ -754,21 +926,27 @@ export default function Home() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-[#F97316]/10 border border-[#F97316]/20 px-4 py-2 rounded-full mb-4">
                 <span className="w-2 h-2 bg-[#F97316] rounded-full animate-pulse"></span>
-                <span className="text-[#F97316] text-xs font-black uppercase tracking-[0.2em]">Promoções Ativas</span>
+                <span className="text-[#F97316] text-xs font-black uppercase tracking-[0.2em]">
+                  Promoções Ativas
+                </span>
               </div>
               <h2 className="font-montserrat font-black text-4xl md:text-6xl text-white uppercase italic leading-none">
-                Acessórios e Peças <span className="text-[#F97316]">para Bicicletas</span><br />
-                <span className="text-zinc-500 text-2xl md:text-4xl">NA R3 BIKE SHOP!</span>
+                Acessórios e Peças{" "}
+                <span className="text-[#F97316]">para Bicicletas</span>
+                <br />
+                <span className="text-zinc-500 text-2xl md:text-4xl">
+                  NA R3 BIKE SHOP!
+                </span>
               </h2>
             </div>
             <div className="hidden md:flex gap-2">
-              <button 
+              <button
                 onClick={() => offerApi?.scrollPrev()}
                 className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-white hover:bg-[#F97316] hover:border-[#F97316] transition-all"
               >
                 <ChevronLeft size={24} />
               </button>
-              <button 
+              <button
                 onClick={() => offerApi?.scrollNext()}
                 className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-white hover:bg-[#F97316] hover:border-[#F97316] transition-all"
               >
@@ -793,8 +971,13 @@ export default function Home() {
           >
             <CarouselContent className="-ml-4">
               {promoOffers.map((offer, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                  <div className={`group relative bg-gradient-to-br ${getCardColor(index)} rounded-[40px] overflow-hidden shadow-2xl transition-all duration-500 h-full flex flex-col p-8 border-4 border-white/20`}>
+                <CarouselItem
+                  key={index}
+                  className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                >
+                  <div
+                    className={`group relative bg-gradient-to-br ${getCardColor(index)} rounded-[40px] overflow-hidden shadow-2xl transition-all duration-500 h-full flex flex-col p-8 border-4 border-white/20`}
+                  >
                     {/* Badge */}
                     <div className="mb-6">
                       <span className="bg-[#F97316] text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-lg shadow-lg italic tracking-[0.2em]">
@@ -827,7 +1010,9 @@ export default function Home() {
                             De R$ {offer.originalPrice}
                           </p>
                         )}
-                        <p className="text-white/80 text-[10px] font-black uppercase mb-1 tracking-widest">Por apenas</p>
+                        <p className="text-white/80 text-[10px] font-black uppercase mb-1 tracking-widest">
+                          Por apenas
+                        </p>
                         <div className="flex items-baseline gap-1">
                           <span className="text-white text-3xl font-black italic leading-none drop-shadow-md">
                             R$ {offer.offerPrice}
@@ -835,8 +1020,13 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <a 
-                        href={whatsappLink + encodeURIComponent(`\n\nQuero saber mais sobre a oferta: ${offer.name} - ${offer.offerPrice}`)}
+                      <a
+                        href={
+                          whatsappLink +
+                          encodeURIComponent(
+                            `\n\nQuero saber mais sobre a oferta: ${offer.name} - ${offer.offerPrice}`
+                          )
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full bg-black hover:bg-white hover:text-black text-white py-4 rounded-2xl font-black uppercase text-sm italic tracking-widest flex items-center justify-center gap-2 transition-all shadow-xl active:scale-95 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
@@ -844,19 +1034,19 @@ export default function Home() {
                         <MessageCircle size={20} />
                         Eu Quero
                       </a>
-                      
+
                       <p className="text-white/60 text-[10px] text-center font-bold uppercase tracking-widest">
                         Ganha brindes no Pix! 🎁
                       </p>
                     </div>
 
                     <div className="absolute -right-12 -top-12 w-48 h-48 opacity-10 pointer-events-none group-hover:scale-110 group-hover:rotate-0 transition-all duration-700 rotate-12">
-                      <img 
-                        src={offer.image} 
+                      <img
+                        src={offer.image}
                         alt=""
                         className="w-full h-full object-contain"
-                        onLoad={(e) => (e.currentTarget.style.display = 'block')}
-                        onError={(e) => (e.currentTarget.style.display = 'none')}
+                        onLoad={e => (e.currentTarget.style.display = "block")}
+                        onError={e => (e.currentTarget.style.display = "none")}
                       />
                     </div>
                   </div>
@@ -868,35 +1058,41 @@ export default function Home() {
           {/* Indicadores de Progresso (Mobile) */}
           <div className="flex justify-center mt-8 md:hidden gap-1.5">
             {promoOffers.map((_, i) => (
-              <div 
-                key={i} 
-                className={`h-1 rounded-full transition-all ${currentOfferSlide === i ? 'w-8 bg-[#F97316]' : 'w-2 bg-zinc-800'}`}
+              <div
+                key={i}
+                className={`h-1 rounded-full transition-all ${currentOfferSlide === i ? "w-8 bg-[#F97316]" : "w-2 bg-zinc-800"}`}
               ></div>
             ))}
           </div>
         </div>
       </section>
 
-
       {/* Nossos Serviços com Carrossel Automático */}
-      <section className="py-24 bg-black relative overflow-hidden" id="servicos">
+      <section
+        className="py-24 bg-black relative overflow-hidden"
+        id="servicos"
+      >
         {/* Background image with overlay style footer */}
-        <div 
+        <div
           className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
           style={{
             backgroundImage: `url('${facadeUrl}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Manutenção, Revisão <span className="text-[#F97316]">e Ajustes</span></h2>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">
+              Manutenção, Revisão{" "}
+              <span className="text-[#F97316]">e Ajustes</span>
+            </h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto font-bold italic">
-              Excelência técnica e cuidado especial: a melhor <strong>manutenção de bicicletas em São Paulo</strong>.
+              Excelência técnica e cuidado especial: a melhor{" "}
+              <strong>manutenção de bicicletas em São Paulo</strong>.
             </p>
           </div>
 
@@ -914,27 +1110,35 @@ export default function Home() {
           >
             <CarouselContent className="-ml-4">
               {services.map((service, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={index}
+                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                >
                   <div className="bg-transparent rounded-none shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
                     <div className="relative aspect-[4/5] overflow-hidden border-[4px] border-[#F97316]">
-                      <img 
-                        src={service.image} 
+                      <img
+                        src={service.image}
                         alt={`${service.title} - R3 Bike Shop Lauzane Paulista Zona Norte SP`}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                        onLoad={(e) => {
+                        onLoad={e => {
                           const target = e.currentTarget;
-                          target.style.display = 'block';
+                          target.style.display = "block";
                           const parent = target.parentElement;
-                          const fallback = parent?.querySelector('.fallback-service');
+                          const fallback =
+                            parent?.querySelector(".fallback-service");
                           if (fallback) fallback.remove();
                         }}
-                        onError={(e) => {
+                        onError={e => {
                           const target = e.currentTarget;
-                          target.style.display = 'none';
+                          target.style.display = "none";
                           const parent = target.parentElement;
-                          if (parent && !parent.querySelector('.fallback-service')) {
-                            const div = document.createElement('div');
-                            div.className = "fallback-service absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                          if (
+                            parent &&
+                            !parent.querySelector(".fallback-service")
+                          ) {
+                            const div = document.createElement("div");
+                            div.className =
+                              "fallback-service absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
                             div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">R3 BIKE SHOP</span>`;
                             parent.appendChild(div);
                           }
@@ -962,45 +1166,57 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossas <span className="text-[#F97316]">Entregas</span></h2>
-            <p className="text-gray-600 text-xl">Transparência e satisfação em cada entrega realizada.</p>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">
+              Nossas <span className="text-[#F97316]">Entregas</span>
+            </h2>
+            <p className="text-gray-600 text-xl">
+              Transparência e satisfação em cada entrega realizada.
+            </p>
           </div>
 
           <div className="relative max-w-5xl mx-auto group">
             <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.15)] border-8 border-white">
               {deliveryImages.map((img, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'}`}
+                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 scale-100 z-10" : "opacity-0 scale-105 z-0 pointer-events-none"}`}
                 >
                   <Dialog>
                     <DialogTrigger asChild>
                       <div className="w-full h-full cursor-zoom-in relative group">
-                        <img 
-                          src={img} 
-                          alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} 
-                          className="w-full h-full object-cover" 
-                          onLoad={(e) => {
+                        <img
+                          src={img}
+                          alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`}
+                          className="w-full h-full object-cover"
+                          onLoad={e => {
                             const target = e.currentTarget;
-                            target.style.display = 'block';
+                            target.style.display = "block";
                             const parent = target.parentElement;
-                            const fallback = parent?.querySelector('.fallback-delivery');
+                            const fallback =
+                              parent?.querySelector(".fallback-delivery");
                             if (fallback) fallback.remove();
                           }}
-                          onError={(e) => {
+                          onError={e => {
                             const target = e.currentTarget;
-                            target.style.display = 'none';
+                            target.style.display = "none";
                             const parent = target.parentElement;
-                            if (parent && !parent.querySelector('.fallback-delivery')) {
-                              const div = document.createElement('div');
-                              div.className = "fallback-delivery absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                            if (
+                              parent &&
+                              !parent.querySelector(".fallback-delivery")
+                            ) {
+                              const div = document.createElement("div");
+                              div.className =
+                                "fallback-delivery absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
                               div.innerHTML = `<span class="text-white/20 font-black text-4xl uppercase italic text-center">ENTREGA R3 BIKE</span>`;
                               parent.appendChild(div);
                             }
                           }}
                         />
                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                          <Maximize2 className="text-white drop-shadow-lg" size={48} />
+                          <Maximize2
+                            className="text-white drop-shadow-lg"
+                            size={48}
+                          />
                         </div>
                       </div>
                     </DialogTrigger>
@@ -1008,9 +1224,9 @@ export default function Home() {
                       <VisuallyHidden.Root>
                         <DialogTitle>Entrega {index + 1}</DialogTitle>
                       </VisuallyHidden.Root>
-                      <img 
-                        src={img} 
-                        alt={`Entrega Detalhada - ${index + 1}`} 
+                      <img
+                        src={img}
+                        alt={`Entrega Detalhada - ${index + 1}`}
                         className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
                       />
                     </DialogContent>
@@ -1019,14 +1235,14 @@ export default function Home() {
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-20"></div>
             </div>
-            
-            <button 
+
+            <button
               onClick={prevSlide}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100 z-30"
             >
               <ChevronLeft size={28} />
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100 z-30"
             >
@@ -1035,10 +1251,10 @@ export default function Home() {
 
             <div className="flex justify-center gap-3 mt-8 relative z-30">
               {deliveryImages.map((_, index) => (
-                <button 
+                <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-500 ${index === currentSlide ? 'bg-[#F97316] w-12' : 'bg-gray-200 w-2 hover:bg-gray-300'}`}
+                  className={`h-2 rounded-full transition-all duration-500 ${index === currentSlide ? "bg-[#F97316] w-12" : "bg-gray-200 w-2 hover:bg-gray-300"}`}
                 />
               ))}
             </div>
@@ -1051,50 +1267,81 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">Localização da <span className="text-[#F97316]">LOJA</span></h2>
+              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">
+                Localização da <span className="text-[#F97316]">LOJA</span>
+              </h2>
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
-                    <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
-                      <MapPin size={28} />
-                    </div>
-                    <div>
-                      <h4 className="font-black text-xl uppercase italic text-[#F97316]">LOJA de bicicletas no Lauzane Paulista</h4>
-                      <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Visite a R3 Bike Shop, sua <strong>bike shop na Zona Norte SP</strong>:</p>
-                      <div className="flex flex-wrap gap-3">
-                        <a 
-                          href="https://www.google.com/maps/dir/?api=1&destination=R3BikeShop+Lauzane+Paulista" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                  <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
+                    <MapPin size={28} />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">
+                      LOJA de bicicletas no Lauzane Paulista
+                    </h4>
+                    <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">
+                      Visite a R3 Bike Shop, sua{" "}
+                      <strong>bike shop na Zona Norte SP</strong>:
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      <a
+                        href="https://www.google.com/maps/dir/?api=1&destination=R3BikeShop+Lauzane+Paulista"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#4285F4"/>
-                          </svg>
-                          Google Maps
-                        </a>
-                        <a 
-                          href="https://waze.com/ul?q=R3BikeShop+Lauzane+Paulista&navigate=yes" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                          <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"
+                            fill="#4285F4"
+                          />
+                        </svg>
+                        Google Maps
+                      </a>
+                      <a
+                        href="https://waze.com/ul?q=R3BikeShop+Lauzane+Paulista&navigate=yes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.5 12.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm-13 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" fill="#33CCFF"/>
-                            <path d="M12 2C6.5 2 2 6.5 2 12c0 1.5.3 2.9.9 4.2L2 21l4.8-.9c1.3.6 2.7.9 4.2.9 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 17.5c-1.3 0-2.5-.3-3.6-.9l-.3-.1-2.7.5.5-2.6-.2-.3c-.7-1.1-1.1-2.3-1.1-3.6 0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5z" fill="#33CCFF"/>
-                          </svg>
-                          Waze
-                        </a>
-                      </div>
+                          <path
+                            d="M18.5 12.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm-13 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z"
+                            fill="#33CCFF"
+                          />
+                          <path
+                            d="M12 2C6.5 2 2 6.5 2 12c0 1.5.3 2.9.9 4.2L2 21l4.8-.9c1.3.6 2.7.9 4.2.9 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 17.5c-1.3 0-2.5-.3-3.6-.9l-.3-.1-2.7.5.5-2.6-.2-.3c-.7-1.1-1.1-2.3-1.1-3.6 0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5z"
+                            fill="#33CCFF"
+                          />
+                        </svg>
+                        Waze
+                      </a>
                     </div>
+                  </div>
                 </div>
                 <div className="flex gap-6 items-start">
                   <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
                     <ShoppingCart size={28} />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Fácil Acesso</h4>
+                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">
+                      Fácil Acesso
+                    </h4>
                     <p className="text-gray-600 text-lg mt-1 leading-tight">
-                      Localização estratégica no <strong>Lauzane Paulista</strong> (PROX. AO SHOPPING SANTANA PARTAGE), com facilidade para estacionar e acesso rápido para quem vem de toda a Zona Norte.
+                      Localização estratégica no{" "}
+                      <strong>Lauzane Paulista</strong> (PROX. AO SHOPPING
+                      SANTANA PARTAGE), com facilidade para estacionar e acesso
+                      rápido para quem vem de toda a Zona Norte.
                     </p>
                   </div>
                 </div>
@@ -1103,7 +1350,9 @@ export default function Home() {
                     <Star size={28} fill="currentColor" />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic text-black">Paixão pelo Pedal</h4>
+                    <h4 className="font-black text-xl uppercase italic text-black">
+                      Paixão pelo Pedal
+                    </h4>
                     <p className="text-[#F97316] text-2xl font-black mt-1 leading-tight uppercase italic tracking-tighter">
                       Sua bike em boas mãos, <br />
                       você seguro na pista!
@@ -1112,9 +1361,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-12">
-                <a 
-                  href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
-                  target="_blank" 
+                <a
+                  href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#F97316] font-black text-lg hover:underline uppercase italic"
                 >
@@ -1123,12 +1372,12 @@ export default function Home() {
               </div>
             </div>
             <div className="h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white relative group">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.560316935854!2d-46.650629099999996!3d-23.476319300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef70041fec2eb%3A0xce8dfaf42ae7cfc0!2sR3BikeShop!5e0!3m2!1spt-BR!2sbr!4v1768005391319!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.560316935854!2d-46.650629099999996!3d-23.476319300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef70041fec2eb%3A0xce8dfaf42ae7cfc0!2sR3BikeShop!5e0!3m2!1spt-BR!2sbr!4v1768005391319!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale group-hover:grayscale-0 transition-all duration-700"
@@ -1142,28 +1391,48 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-24 bg-black relative overflow-hidden">
         {/* Geometric Bike Chain Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-          style={{ 
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F97316' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
+            backgroundSize: "60px 60px",
           }}
         ></div>
-        
+
         <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Dúvidas <span className="text-[#F97316]">Frequentes</span></h2>
-            <p className="text-gray-400 text-xl italic">Tudo o que você precisa saber sobre nossos serviços.</p>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">
+              Dúvidas <span className="text-[#F97316]">Frequentes</span>
+            </h2>
+            <p className="text-gray-400 text-xl italic">
+              Tudo o que você precisa saber sobre nossos serviços.
+            </p>
           </div>
 
           <Accordion type="single" collapsible className="w-full space-y-4">
             {[
-              { q: "Onde vocês atendem?", a: "Nossa loja física está no Lauzane Paulista (Rua Conselheiro Moreira de Barros, 3809), mas atendemos toda a Zona Norte com nosso serviço de Busca e Leva." },
-              { q: "As bicicletas têm garantia?", a: "Sim! Todas as bikes novas possuem garantia de fábrica. Nossos serviços de manutenção também contam com garantia de execução." },
-              { q: "Quais as formas de pagamento?", a: "Aceitamos cartões de crédito (em até 12x), PIX e dinheiro. Oferecemos condições especiais para revisões completas." },
-              { q: "Fazem busca e leva da bicicleta?", a: "Com certeza! Esse é um dos nossos diferenciais. Coletamos sua bike na sua casa ou trabalho na Zona Norte e devolvemos pronta." }
+              {
+                q: "Onde vocês atendem?",
+                a: "Nossa loja física está no Lauzane Paulista (Rua Conselheiro Moreira de Barros, 3809), mas atendemos toda a Zona Norte com nosso serviço de Busca e Leva.",
+              },
+              {
+                q: "As bicicletas têm garantia?",
+                a: "Sim! Todas as bikes novas possuem garantia de fábrica. Nossos serviços de manutenção também contam com garantia de execução.",
+              },
+              {
+                q: "Quais as formas de pagamento?",
+                a: "Aceitamos cartões de crédito (em até 12x), PIX e dinheiro. Oferecemos condições especiais para revisões completas.",
+              },
+              {
+                q: "Fazem busca e leva da bicicleta?",
+                a: "Com certeza! Esse é um dos nossos diferenciais. Coletamos sua bike na sua casa ou trabalho na Zona Norte e devolvemos pronta.",
+              },
             ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border border-white/10 rounded-2xl px-6 bg-white/5 backdrop-blur-sm">
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="border border-white/10 rounded-2xl px-6 bg-white/5 backdrop-blur-sm"
+              >
                 <AccordionTrigger className="text-left font-black text-xl py-6 hover:no-underline text-white hover:text-[#F97316] transition-colors uppercase italic">
                   {item.q}
                 </AccordionTrigger>
@@ -1181,12 +1450,13 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-16 uppercase italic drop-shadow-lg">
-            Trabalhamos com as <span className="text-black">Melhores Marcas</span>
+            Trabalhamos com as{" "}
+            <span className="text-black">Melhores Marcas</span>
           </h2>
-          
+
           <Carousel
             opts={{
               align: "start",
@@ -1201,19 +1471,26 @@ export default function Home() {
           >
             <CarouselContent className="-ml-4 flex items-center">
               {partnerBrands.map((brand, index) => (
-                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                <CarouselItem
+                  key={index}
+                  className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5"
+                >
                   <div className="bg-transparent transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-24 group mx-2">
-                    <img 
-                      src={brand.logo} 
-                      alt={`Logo ${brand.name} - Marca parceira R3 Bike Shop`} 
+                    <img
+                      src={brand.logo}
+                      alt={`Logo ${brand.name} - Marca parceira R3 Bike Shop`}
                       className="max-h-12 w-auto object-contain transition-all duration-500 opacity-60 grayscale brightness-0 invert group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:invert-0 group-hover:scale-110"
-                      onError={(e) => {
+                      onError={e => {
                         const target = e.currentTarget;
-                        target.style.display = 'none';
+                        target.style.display = "none";
                         const parent = target.parentElement;
-                        if (parent && !parent.querySelector('.fallback-brand')) {
-                          const span = document.createElement('span');
-                          span.className = "fallback-brand font-black text-xl text-white/40 group-hover:text-white uppercase italic tracking-tighter transition-all duration-300";
+                        if (
+                          parent &&
+                          !parent.querySelector(".fallback-brand")
+                        ) {
+                          const span = document.createElement("span");
+                          span.className =
+                            "fallback-brand font-black text-xl text-white/40 group-hover:text-white uppercase italic tracking-tighter transition-all duration-300";
                           span.textContent = brand.name;
                           parent.appendChild(span);
                         }
@@ -1231,8 +1508,12 @@ export default function Home() {
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossa Loja <span className="text-[#F97316]">por Dentro</span></h2>
-            <p className="text-gray-600 text-xl italic">Um espaço completo para cuidar da sua paixão.</p>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">
+              Nossa Loja <span className="text-[#F97316]">por Dentro</span>
+            </h2>
+            <p className="text-gray-600 text-xl italic">
+              Um espaço completo para cuidar da sua paixão.
+            </p>
           </div>
 
           <div className="max-w-6xl mx-auto relative px-12">
@@ -1245,28 +1526,36 @@ export default function Home() {
             >
               <CarouselContent className="-ml-4">
                 {[facadeUrl, ...storeImages].map((img, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem
+                    key={index}
+                    className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  >
                     <Dialog>
                       <DialogTrigger asChild>
                         <div className="relative group cursor-zoom-in overflow-hidden rounded-2xl aspect-square border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500">
-                          <img 
-                            src={img} 
-                            alt={`Fachada e Interior da R3 Bike Shop no Lauzane Paulista Zona Norte SP - Foto ${index + 1}`} 
+                          <img
+                            src={img}
+                            alt={`Fachada e Interior da R3 Bike Shop no Lauzane Paulista Zona Norte SP - Foto ${index + 1}`}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            onLoad={(e) => {
+                            onLoad={e => {
                               const target = e.currentTarget;
-                              target.style.display = 'block';
+                              target.style.display = "block";
                               const parent = target.parentElement;
-                              const fallback = parent?.querySelector('.fallback-store');
+                              const fallback =
+                                parent?.querySelector(".fallback-store");
                               if (fallback) fallback.remove();
                             }}
-                            onError={(e) => {
+                            onError={e => {
                               const target = e.currentTarget;
-                              target.style.display = 'none';
+                              target.style.display = "none";
                               const parent = target.parentElement;
-                              if (parent && !parent.querySelector('.fallback-store')) {
-                                const div = document.createElement('div');
-                                div.className = "fallback-store absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                              if (
+                                parent &&
+                                !parent.querySelector(".fallback-store")
+                              ) {
+                                const div = document.createElement("div");
+                                div.className =
+                                  "fallback-store absolute inset-0 bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
                                 div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">R3 BIKE</span>`;
                                 parent.appendChild(div);
                               }
@@ -1283,9 +1572,9 @@ export default function Home() {
                         <VisuallyHidden.Root>
                           <DialogTitle>Imagem da Loja {index + 1}</DialogTitle>
                         </VisuallyHidden.Root>
-                        <img 
-                          src={img} 
-                          alt={`Foto Detalhada R3 Bike Shop Lauzane Paulista - ${index + 1}`} 
+                        <img
+                          src={img}
+                          alt={`Foto Detalhada R3 Bike Shop Lauzane Paulista - ${index + 1}`}
                           className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
                         />
                       </DialogContent>
@@ -1297,7 +1586,7 @@ export default function Home() {
               <CarouselNext className="hidden md:flex -right-12 bg-[#F97316] hover:bg-black text-white border-none size-12" />
             </Carousel>
           </div>
-          
+
           <div className="mt-12 text-center md:hidden">
             <p className="text-gray-400 text-sm font-bold uppercase tracking-widest animate-pulse">
               ← Deslize para ver mais →
@@ -1309,11 +1598,14 @@ export default function Home() {
       <BeforeAfterGallery />
 
       {/* Oficina Section - Alta Performance */}
-      <section className="py-24 bg-zinc-950 text-white overflow-hidden relative" id="oficina">
+      <section
+        className="py-24 bg-zinc-950 text-white overflow-hidden relative"
+        id="oficina"
+      >
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -1323,24 +1615,55 @@ export default function Home() {
                 </span>
                 <h2 className="font-montserrat font-black text-4xl md:text-6xl mb-6 leading-tight uppercase italic">
                   Oficina de Bicicleta <br />
-                  <span className="text-[#F97316]">na Zona Norte de São Paulo</span>
+                  <span className="text-[#F97316]">
+                    na Zona Norte de São Paulo
+                  </span>
                 </h2>
                 <p className="text-xl text-gray-400 leading-relaxed max-w-xl">
-                  Na R3 Bike Shop, sua bicicleta recebe tratamento de elite. Somos especialistas em <strong>manutenção de bicicletas de alta performance</strong>, utilizando ferramentas de precisão e processos rigorosos de qualidade.
+                  Na R3 Bike Shop, sua bicicleta recebe tratamento de elite.
+                  Somos especialistas em{" "}
+                  <strong>manutenção de bicicletas de alta performance</strong>,
+                  utilizando ferramentas de precisão e processos rigorosos de
+                  qualidade.
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { icon: <Wrench className="text-[#F97316]" />, title: "REVISÃO PREMIUM", desc: "Desmontagem completa e lubrificação técnica." },
-                  { icon: <Package className="text-[#F97316]" />, title: "PEÇAS ORIGINAIS", desc: "Shimano, SRAM e as melhores marcas." },
-                  { icon: <Star className="text-[#F97316]" />, title: "MECÂNICOS ELITE", desc: "Profissionais certificados e experientes." },
-                  { icon: <Clock className="text-[#F97316]" />, title: "ENTREGA RÁPIDA", desc: "Agilidade sem comprometer a perfeição." },
+                  {
+                    icon: <Wrench className="text-[#F97316]" />,
+                    title: "REVISÃO PREMIUM",
+                    desc: "Desmontagem completa e lubrificação técnica.",
+                  },
+                  {
+                    icon: <Package className="text-[#F97316]" />,
+                    title: "PEÇAS ORIGINAIS",
+                    desc: "Shimano, SRAM e as melhores marcas.",
+                  },
+                  {
+                    icon: <Star className="text-[#F97316]" />,
+                    title: "MECÂNICOS ELITE",
+                    desc: "Profissionais certificados e experientes.",
+                  },
+                  {
+                    icon: <Clock className="text-[#F97316]" />,
+                    title: "ENTREGA RÁPIDA",
+                    desc: "Agilidade sem comprometer a perfeição.",
+                  },
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800 hover:border-[#F97316]/50 transition-colors group">
-                    <div className="mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
-                    <h4 className="font-black uppercase italic mb-2 text-white">{item.title}</h4>
-                    <p className="text-sm text-gray-500 leading-snug">{item.desc}</p>
+                  <div
+                    key={idx}
+                    className="bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800 hover:border-[#F97316]/50 transition-colors group"
+                  >
+                    <div className="mb-4 group-hover:scale-110 transition-transform">
+                      {item.icon}
+                    </div>
+                    <h4 className="font-black uppercase italic mb-2 text-white">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-500 leading-snug">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -1362,27 +1685,29 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#F97316]/20 rounded-full blur-[100px]"></div>
               <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl">
-                <img 
-                  src="/uploads/oficina-bicicleta-r3.jpg" 
-                  alt="Oficina de manutenção de bicicletas" 
+                <img
+                  src="/uploads/oficina-bicicleta-r3.jpg"
+                  alt="Oficina de manutenção de bicicletas"
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   width={800}
                   height={600}
-                  onLoad={(e) => {
+                  onLoad={e => {
                     const target = e.currentTarget;
-                    target.style.display = 'block';
+                    target.style.display = "block";
                     const parent = target.parentElement;
-                    const fallback = parent?.querySelector('.fallback-workshop');
+                    const fallback =
+                      parent?.querySelector(".fallback-workshop");
                     if (fallback) fallback.remove();
                   }}
-                  onError={(e) => {
+                  onError={e => {
                     const target = e.currentTarget;
-                    target.style.display = 'none';
+                    target.style.display = "none";
                     const parent = target.parentElement;
-                    if (parent && !parent.querySelector('.fallback-workshop')) {
-                      const div = document.createElement('div');
-                      div.className = "fallback-workshop absolute inset-0 h-[600px] bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                    if (parent && !parent.querySelector(".fallback-workshop")) {
+                      const div = document.createElement("div");
+                      div.className =
+                        "fallback-workshop absolute inset-0 h-[600px] bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
                       div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">OFICINA R3 BIKE</span>`;
                       parent.appendChild(div);
                     }
@@ -1395,8 +1720,12 @@ export default function Home() {
                       <Wrench className="text-white" size={32} />
                     </div>
                     <div>
-                      <p className="text-[#F97316] font-black uppercase text-xs tracking-widest mb-1">Diferencial R3</p>
-                      <h3 className="text-xl font-black uppercase italic">Ferramentas de Precisão</h3>
+                      <p className="text-[#F97316] font-black uppercase text-xs tracking-widest mb-1">
+                        Diferencial R3
+                      </p>
+                      <h3 className="text-xl font-black uppercase italic">
+                        Ferramentas de Precisão
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -1407,25 +1736,39 @@ export default function Home() {
       </section>
 
       {/* Avaliações do Google Section */}
-      <section className="py-24 bg-black text-white relative overflow-hidden" id="avaliacoes">
+      <section
+        className="py-24 bg-black text-white relative overflow-hidden"
+        id="avaliacoes"
+      >
         {/* Background image with overlay */}
-        <div 
+        <div
           className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
           style={{
             backgroundImage: `url('/uploads/r3.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-0"></div>
-        
+
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliações: <span className="text-[#F97316]">R3 Bike Shop</span></h2>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">
+              Avaliações: <span className="text-[#F97316]">R3 Bike Shop</span>
+            </h2>
             <div className="flex items-center justify-center gap-2 mb-8">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Avaliações R3 Bike Shop Lauzane Paulista" className="w-8 h-8" />
-              <div className="text-2xl font-black">5,0 ★ <span className="text-gray-400 font-normal text-lg">no Google</span></div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                alt="Google Avaliações R3 Bike Shop Lauzane Paulista"
+                className="w-8 h-8"
+              />
+              <div className="text-2xl font-black">
+                5,0 ★{" "}
+                <span className="text-gray-400 font-normal text-lg">
+                  no Google
+                </span>
+              </div>
             </div>
           </div>
 
@@ -1444,21 +1787,32 @@ export default function Home() {
             >
               <CarouselContent className="-ml-4">
                 {googleReviews.map((review, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem
+                    key={index}
+                    className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  >
                     <div className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-[#F97316]/50 transition-all duration-300 h-full flex flex-col justify-between">
                       <div>
                         <div className="flex text-[#F97316] gap-0.5 mb-6">
-                          {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} size={16} fill="currentColor" />
+                          ))}
                         </div>
-                        <p className="text-lg italic mb-8 text-gray-300 leading-relaxed line-clamp-6">"{review.text}"</p>
+                        <p className="text-lg italic mb-8 text-gray-300 leading-relaxed line-clamp-6">
+                          "{review.text}"
+                        </p>
                       </div>
                       <div className="flex items-center gap-3 mt-auto">
                         <div className="w-10 h-10 bg-[#F97316] rounded-full flex items-center justify-center font-black text-white shrink-0">
                           {review.author.charAt(0)}
                         </div>
                         <div className="overflow-hidden">
-                          <p className="font-black uppercase italic text-sm truncate">{review.author}</p>
-                          <p className="text-gray-500 text-xs truncate">{review.metadata}</p>
+                          <p className="font-black uppercase italic text-sm truncate">
+                            {review.author}
+                          </p>
+                          <p className="text-gray-500 text-xs truncate">
+                            {review.metadata}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1469,16 +1823,22 @@ export default function Home() {
               <CarouselNext className="hidden md:flex -right-12 bg-[#F97316] hover:bg-white hover:text-[#F97316] text-white border-none size-12 transition-all" />
             </Carousel>
           </div>
-          
+
           <div className="mt-16 text-center">
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Nota 5,0 no Google • 315 avaliações</p>
-            <a 
-              href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
-              target="_blank" 
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">
+              Nota 5,0 no Google • 315 avaliações
+            </p>
+            <a
+              href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-black hover:bg-[#F97316] hover:text-white transition-all uppercase italic shadow-2xl"
             >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-6 h-6" />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                alt="Google"
+                className="w-6 h-6"
+              />
               Ver Todas no Google
             </a>
           </div>
@@ -1488,87 +1848,170 @@ export default function Home() {
       {/* Footer Ajustado */}
       <footer className="bg-black text-white pt-16 pb-8 relative overflow-hidden">
         {/* Background image with overlay */}
-        <div 
+        <div
           className="absolute inset-0 z-0 opacity-40 grayscale pointer-events-none"
           style={{
             backgroundImage: `url('${facadeUrl}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-0"></div>
-        
+
         {/* Background decorative elements */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F97316] to-transparent opacity-30 z-10"></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             {/* Quick Links */}
             <div>
-              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Links Úteis</h4>
+              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">
+                Links Úteis
+              </h4>
               <ul className="space-y-2">
-                <li><a href="#home" className="text-gray-400 hover:text-white transition-colors text-base">Início</a></li>
-                <li><a href="#sobre" className="text-gray-400 hover:text-white transition-colors text-base">Quem Somos</a></li>
-                <li><a href="#servicos" className="text-gray-400 hover:text-white transition-colors text-base">Serviços</a></li>
-                <li><a href="#localizacao" className="text-gray-400 hover:text-white transition-colors text-base">Localização</a></li>
+                <li>
+                  <a
+                    href="#home"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Início
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#sobre"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Quem Somos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#servicos"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Serviços
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#localizacao"
+                    className="text-gray-400 hover:text-white transition-colors text-base"
+                  >
+                    Localização
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Legal Links */}
             <div>
-              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Institucional</h4>
+              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">
+                Institucional
+              </h4>
               <ul className="space-y-2">
-                <li><Link href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Política de Privacidade</Link></li>
-                <li><Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Política de Cookies</Link></li>
-                <li><Link href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Aviso Legal</Link></li>
-                <li><Link href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Termos de Serviço</Link></li>
+                <li>
+                  <Link
+                    href="/politica-de-privacidade"
+                    className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer"
+                  >
+                    Política de Privacidade
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/cookies"
+                    className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer"
+                  >
+                    Política de Cookies
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/aviso-legal"
+                    className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer"
+                  >
+                    Aviso Legal
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/termos-de-servico"
+                    className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer"
+                  >
+                    Termos de Serviço
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Contato</h4>
+              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">
+                Contato
+              </h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-gray-400 group">
-                  <MapPin size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <MapPin
+                    size={20}
+                    className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform"
+                  />
                   <span className="text-base">
-                    <strong>R3 Bike Shop</strong><br />
-                    Rua Conselheiro Moreira de Barros, 3809<br />
-                    Lauzane Paulista<br />
-                    São Paulo - SP<br />
+                    <strong>R3 Bike Shop</strong>
+                    <br />
+                    Rua Conselheiro Moreira de Barros, 3809
+                    <br />
+                    Lauzane Paulista
+                    <br />
+                    São Paulo - SP
+                    <br />
                     CEP: 02430-002
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400 group">
-                  <Phone size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <Phone
+                    size={20}
+                    className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform"
+                  />
                   <span className="text-base">
                     <strong>(11) 93906-5111</strong>
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400 group">
-                  <Clock size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <Clock
+                    size={20}
+                    className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform"
+                  />
                   <span className="text-base">
-                    <span className="text-white font-bold">Atendimento:</span><br />
-                    Segunda a sexta: 9h às 18h<br />
+                    <span className="text-white font-bold">Atendimento:</span>
+                    <br />
+                    Segunda a sexta: 9h às 18h
+                    <br />
                     Sábado: 9h às 15h
                   </span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-400 group">
-                  <Mail size={20} className="text-[#F97316] group-hover:scale-110 transition-transform" />
-                  <a 
-                    href="mailto:suporte@r3bikeshop.com" 
+                  <Mail
+                    size={20}
+                    className="text-[#F97316] group-hover:scale-110 transition-transform"
+                  />
+                  <a
+                    href="mailto:suporte@r3bikeshop.com"
                     className="bg-white/5 hover:bg-[#F97316] text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase italic transition-all border border-white/10 hover:border-transparent flex items-center gap-2"
                   >
                     Enviar E-mail
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-gray-400 group">
-                  <Phone size={20} className="text-[#F97316] group-hover:scale-110 transition-transform" />
-                  <a 
-                    href={whatsappLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <Phone
+                    size={20}
+                    className="text-[#F97316] group-hover:scale-110 transition-transform"
+                  />
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={handleConversion}
                     className="bg-[#25D366] hover:bg-[#128C7E] text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase italic transition-all flex items-center gap-2 shadow-lg"
                   >
@@ -1587,7 +2030,11 @@ export default function Home() {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-white p-2 border border-white/10 flex items-center justify-center shadow-xl">
-                  <img src={logoUrl} alt="Logo R3 Bike Shop - Oficina no Lauzane Paulista" className="w-full h-full object-contain" />
+                  <img
+                    src={logoUrl}
+                    alt="Logo R3 Bike Shop - Oficina no Lauzane Paulista"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h3 className="text-xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
@@ -1598,17 +2045,40 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-gray-400 text-base mb-6 leading-relaxed italic">
-                R3 Bike Shop – Oficina de Bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Manutenção, revisão, peças e acessórios.
+                R3 Bike Shop – Oficina de Bicicletas no Lauzane Paulista, Zona
+                Norte de São Paulo. Manutenção, revisão, peças e acessórios.
               </p>
               <div className="flex gap-3">
-                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Instagram className="text-white group-hover:scale-110" size={20} />
+                <a
+                  href={instagramLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group"
+                >
+                  <Instagram
+                    className="text-white group-hover:scale-110"
+                    size={20}
+                  />
                 </a>
-                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Facebook className="text-white group-hover:scale-110" size={20} />
+                <a
+                  href={facebookLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group"
+                >
+                  <Facebook
+                    className="text-white group-hover:scale-110"
+                    size={20}
+                  />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Youtube className="text-white group-hover:scale-110" size={20} />
+                <a
+                  href="#"
+                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group"
+                >
+                  <Youtube
+                    className="text-white group-hover:scale-110"
+                    size={20}
+                  />
                 </a>
               </div>
             </div>
@@ -1617,19 +2087,20 @@ export default function Home() {
           {/* Copyright */}
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-left">
-              © {new Date().getFullYear()} R3 BIKE SHOP - TODOS OS DIREITOS RESERVADOS
+              © {new Date().getFullYear()} R3 BIKE SHOP - TODOS OS DIREITOS
+              RESERVADOS
             </p>
             <div className="flex items-center gap-2 text-gray-500 text-xs font-bold uppercase">
               <span>Desenvolvido por</span>
-              <a 
-                href="https://agenciatrampos.vercel.app" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://agenciatrampos.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white hover:text-[#F97316] transition-colors group"
               >
-                <img 
-                  src="https://agenciatrampos.vercel.app/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
-                  alt="Agência Trampos Logo" 
+                <img
+                  src="https://agenciatrampos.vercel.app/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75"
+                  alt="Agência Trampos Logo"
                   className="w-4 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
                 />
                 <span>Agência Trampos</span>
@@ -1639,19 +2110,31 @@ export default function Home() {
         </div>
 
         {/* Floating Google Review Button */}
-        <a 
-          href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
-          target="_blank" 
+        <a
+          href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9"
+          target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-32 right-8 bg-white rounded-full px-5 py-3 flex items-center gap-3 shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-[9999] border border-gray-100 group"
         >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-7 h-7" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+            alt="Google"
+            className="w-7 h-7"
+          />
           <div className="flex flex-col">
-            <span className="text-[13px] font-black text-black leading-none uppercase italic">5,0 ★ no Google</span>
-            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">315 avaliações</span>
+            <span className="text-[13px] font-black text-black leading-none uppercase italic">
+              5,0 ★ no Google
+            </span>
+            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
+              315 avaliações
+            </span>
           </div>
           <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-[#F97316] transition-colors">
-            <Star size={14} className="text-[#F97316] group-hover:text-white" fill="currentColor" />
+            <Star
+              size={14}
+              className="text-[#F97316] group-hover:text-white"
+              fill="currentColor"
+            />
           </div>
         </a>
       </footer>
@@ -1665,7 +2148,9 @@ export default function Home() {
         className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-5 rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group flex items-center gap-3"
       >
         <MessageCircle size={32} fill="currentColor" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-black uppercase italic whitespace-nowrap">Falar com Especialista</span>
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-black uppercase italic whitespace-nowrap">
+          Falar com Especialista
+        </span>
       </a>
     </div>
   );

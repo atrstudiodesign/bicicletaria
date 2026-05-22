@@ -13,14 +13,16 @@ const galleryItems: BeforeAfterItem[] = [
   {
     id: 1,
     title: "Mountain Bike - Restauracao Completa",
-    description: "Bike com ferrugem e componentes desgastados transformada em perfeito estado de funcionamento.",
+    description:
+      "Bike com ferrugem e componentes desgastados transformada em perfeito estado de funcionamento.",
     before: "/images/before-after-1-before.jpg",
     after: "/images/before-after-1-after.jpg",
   },
   {
     id: 2,
     title: "Road Bike - Manutencao Profissional",
-    description: "Bike de estrada restaurada com novos componentes e pintura impecavel.",
+    description:
+      "Bike de estrada restaurada com novos componentes e pintura impecavel.",
     before: "/images/before-after-2-before.jpg",
     after: "/images/before-after-2-after.jpg",
   },
@@ -33,12 +35,14 @@ export default function BeforeAfterGallery() {
   const currentItem = galleryItems[currentIndex];
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+    setCurrentIndex(
+      prev => (prev - 1 + galleryItems.length) % galleryItems.length
+    );
     setSliderPosition(50);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % galleryItems.length);
+    setCurrentIndex(prev => (prev + 1) % galleryItems.length);
     setSliderPosition(50);
   };
 
@@ -57,7 +61,8 @@ export default function BeforeAfterGallery() {
             Galeria de Transformacoes
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Veja o resultado do nosso trabalho profissional. Bikes transformadas de forma completa.
+            Veja o resultado do nosso trabalho profissional. Bikes transformadas
+            de forma completa.
           </p>
         </div>
 
@@ -115,7 +120,9 @@ export default function BeforeAfterGallery() {
             <h3 className="font-montserrat font-bold text-2xl text-foreground mb-2">
               {currentItem.title}
             </h3>
-            <p className="text-muted-foreground mb-6">{currentItem.description}</p>
+            <p className="text-muted-foreground mb-6">
+              {currentItem.description}
+            </p>
 
             {/* Navigation */}
             <div className="flex items-center justify-center gap-4">
