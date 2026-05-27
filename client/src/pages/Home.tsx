@@ -1622,17 +1622,17 @@ export default function Home() {
             <div className="flex items-center gap-2 text-gray-500 text-xs font-bold uppercase">
               <span>Desenvolvido por</span>
               <a 
-                href="https://agenciatrampos.vercel.app" 
+                href="https://atrstudio.com.br" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 text-white hover:text-[#F97316] transition-colors group"
               >
                 <img 
-                  src="https://agenciatrampos.vercel.app/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
+                  src="https://atrstudio.com.br/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
                   alt="Agência Trampos Logo" 
                   className="w-4 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
                 />
-                <span>Agência Trampos</span>
+                <span>ATR Studio Design</span>
               </a>
             </div>
           </div>
