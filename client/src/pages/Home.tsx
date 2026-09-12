@@ -385,7 +385,7 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-screen bg-white text-black font-sans">
-      <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em [Cidade/SP]</h1>
+      <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em Lauzane Paulista, São Paulo</h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -663,7 +663,7 @@ export default function Home() {
             <div className="relative group order-2 md:order-1">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#F97316]/20 to-black/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <img 
-                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514-768x768.jpeg"
+                src="/uploads/r3(3).jpg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
                 onLoad={(e) => {
@@ -1612,11 +1612,9 @@ export default function Home() {
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 text-white hover:text-[#F97316] transition-colors group"
               >
-                <img 
-                  src="https://atrstudio.com.br/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
-                  alt="Agência Trampos Logo" 
-                  className="w-4 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
-                />
+                <span aria-hidden="true" className="flex h-5 min-w-8 items-center justify-center rounded bg-white px-1 text-[9px] font-black tracking-tight text-black">
+                  ATR
+                </span>
                 <span>ATR Studio Design</span>
               </a>
             </div>
