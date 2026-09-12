@@ -106,7 +106,7 @@ export default function Home() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const facebookLink = "https://www.facebook.com/share/1B1GX9jXCw/?mibextid=wwXIfr";
-  const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
+  const logoUrl = "/logo-r3-bike-shop.webp";
   const facadeUrl = "/uploads/r3-bike-shop-loja.jpg"; // Foto de Destaque Oficial
 
   // Google Ads Conversion Event
@@ -385,16 +385,13 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-screen bg-white text-black font-sans">
-      <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em [Cidade/SP]</h1>
+      <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em Lauzane Paulista, São Paulo</h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoUrl} alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista" className="h-12 w-auto" />
-              <span className="font-montserrat font-black text-xl text-black hidden lg:inline uppercase tracking-tight italic">
-                R3 BIKE <span className="text-[#F97316]">SHOP</span>
-              </span>
+              <img src={logoUrl} alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista" className="h-12 w-auto brightness-0" />
             </a>
 
             {/* Desktop Navigation */}
@@ -439,10 +436,7 @@ export default function Home() {
               <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-4 border-l-[#F97316]">
                 <SheetHeader className="text-left border-b border-gray-100 pb-6">
                   <SheetTitle className="flex items-center gap-3">
-                    <img src={logoUrl} alt="Logo" className="h-10 w-auto" />
-                    <span className="font-montserrat font-black text-lg italic uppercase">
-                      R3 BIKE <span className="text-[#F97316]">SHOP</span>
-                    </span>
+                    <img src={logoUrl} alt="R3 Bike Shop" className="h-12 w-auto brightness-0" />
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 py-8">
@@ -669,7 +663,7 @@ export default function Home() {
             <div className="relative group order-2 md:order-1">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#F97316]/20 to-black/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <img 
-                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-30-at-18.51.18-e1761874792514-768x768.jpeg"
+                src="/uploads/r3(3).jpg"
                 alt="R3 Bike Shop - Quem Somos"
                 className="relative w-full rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-500"
                 onLoad={(e) => {
@@ -1586,16 +1580,7 @@ export default function Home() {
             {/* Brand Column */}
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white p-2 border border-white/10 flex items-center justify-center shadow-xl">
-                  <img src={logoUrl} alt="Logo R3 Bike Shop - Oficina no Lauzane Paulista" className="w-full h-full object-contain" />
-                </div>
-                <h3 className="text-xl font-black italic tracking-tighter flex flex-col leading-none">
-                  <span className="text-white">R3</span>
-                  <div className="flex gap-1">
-                    <span className="text-[#F97316]">BIKE</span>
-                    <span className="text-[#F97316]">SHOP</span>
-                  </div>
-                </h3>
+                <img src={logoUrl} alt="Logo R3 Bike Shop - Oficina no Lauzane Paulista" className="h-20 w-auto object-contain" />
               </div>
               <p className="text-gray-400 text-base mb-6 leading-relaxed italic">
                 R3 Bike Shop – Oficina de Bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Manutenção, revisão, peças e acessórios.
@@ -1627,11 +1612,9 @@ export default function Home() {
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 text-white hover:text-[#F97316] transition-colors group"
               >
-                <img 
-                  src="https://atrstudio.com.br/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
-                  alt="Agência Trampos Logo" 
-                  className="w-4 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
-                />
+                <span aria-hidden="true" className="flex h-5 min-w-8 items-center justify-center rounded bg-white px-1 text-[9px] font-black tracking-tight text-black">
+                  ATR
+                </span>
                 <span>ATR Studio Design</span>
               </a>
             </div>
