@@ -75,7 +75,7 @@
 
   <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="description" content="Loja e oficina especializada em bicicletas em São Paulo. Revisão, manutenção, peças e acessórios premium na R3 Bike Shop." />
 
@@ -96,21 +96,33 @@
 
   <meta property="og:type" content="business.business" />
 
-  <meta property="og:url" content="https://www.r3bikeshop.com" />
+  <meta property="og:url" content="https://r3bikeshop.com/" />
+
+  <meta property="og:locale" content="pt_BR" />
+
+  <meta property="og:site_name" content="R3 Bike Shop" />
 
   <meta property="og:image" content="https://r3bikeshop.com/uploads/r3-bike-shop-loja.jpg" />
   <meta property="og:image:alt" content="Loja R3 Bike Shop em Lauzane Paulista, São Paulo" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="R3 Bike Shop | Loja e Oficina de Bicicletas em Lauzane Paulista - SP" />
+  <meta name="twitter:description" content="Loja e oficina especializada em bicicletas em São Paulo. Revisão, manutenção, peças e acessórios premium na R3 Bike Shop." />
+  <meta name="twitter:image" content="https://r3bikeshop.com/uploads/r3-bike-shop-loja.jpg" />
 
   <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BicycleStore",
+    "@type": ["BicycleStore", "LocalBusiness"],
+    "@id": "https://r3bikeshop.com/#business",
     "name": "R3 Bike Shop",
+    "description": "Loja e oficina de bicicletas no Lauzane Paulista, Zona Norte de São Paulo.",
     "image": "https://r3bikeshop.com/uploads/r3-bike-shop-loja.jpg",
+    "logo": "https://r3bikeshop.com/logo-r3-bike-shop.webp",
     "url": "https://r3bikeshop.com/",
     "telephone": "+5511939065111",
+    "email": "suporte@r3bikeshop.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Rua Conselheiro Moreira de Barros, 3809",
@@ -119,10 +131,37 @@
       "postalCode": "02430-002",
       "addressCountry": "BR"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.4763193,
+      "longitude": -46.6506291
+    },
+    "hasMap": "https://www.google.com/maps/place/R3+BikeShop/@-23.4763193,-46.6506291,17z/data=!4m6!3m5!1s0x94cef70041fec2eb:0xce8dfaf42ae7cfc0!8m2!3d-23.4763193!4d-46.6506291!16s%2Fg%2F11vybjc3zy",
+    "areaServed": ["Lauzane Paulista", "Zona Norte de São Paulo", "São Paulo"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/r3bikeshop",
+      "https://www.facebook.com/R3bikeshop3809"
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "315"
+      "reviewCount": "609",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   }
   </script>
@@ -160,7 +199,21 @@
     />
   </noscript>
 
-  <div id="root"></div>
+  <div id="root">
+    <!-- SEO_FALLBACK_START -->
+    <main style="max-width:960px;margin:40px auto;padding:0 24px;font-family:Arial,sans-serif;color:#171717">
+      <h1>R3 Bike Shop — Loja e Oficina de Bicicletas no Lauzane Paulista</h1>
+      <p>Venda de bicicletas, peças e acessórios, revisão e manutenção especializada na Zona Norte de São Paulo.</p>
+      <h2>Serviços para sua bicicleta</h2>
+      <p>Revisão completa, conserto, manutenção preventiva, montagem, regulagem e serviço de busca e leva.</p>
+      <h2>Localização e contato</h2>
+      <address>Rua Conselheiro Moreira de Barros, 3809 — Lauzane Paulista, São Paulo — SP, CEP 02430-002.</address>
+      <p>Telefone e WhatsApp: <a href="tel:+5511939065111">(11) 93906-5111</a>.</p>
+      <p>Atendimento de segunda a sexta, das 9h às 18h, e sábado, das 9h às 15h.</p>
+      <p>Avaliação 5,0 no Google, com 609 avaliações.</p>
+    </main>
+    <!-- SEO_FALLBACK_END -->
+  </div>
 
   <script type="module" src="/src/main.tsx"></script>
 

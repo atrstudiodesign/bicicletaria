@@ -1,9 +1,15 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import Seo from "@/components/Seo";
 
 export default function CookiesPolicy() {
   return (
     <div className="min-h-screen bg-white text-black font-sans pb-20">
+      <Seo
+        title="Política de Cookies | R3 Bike Shop"
+        description="Entenda como o site da R3 Bike Shop utiliza cookies essenciais, funcionais e de desempenho."
+        path="/cookies"
+      />
       {/* Header Simples */}
       <header className="bg-white border-b border-gray-100 py-6 sticky top-0 z-50">
         <div className="container mx-auto px-4 flex items-center justify-between">

@@ -1,13 +1,12 @@
 {
   "installCommand": "pnpm install --no-frozen-lockfile",
-  "buildCommand": "vite build",
+  "buildCommand": "pnpm build",
   "outputDirectory": "dist/public",
   "rewrites": [
-    { "source": "/politica-de-privacidade", "destination": "/index.html" },
-    { "source": "/cookies", "destination": "/index.html" },
-    { "source": "/aviso-legal", "destination": "/index.html" },
-    { "source": "/termos-de-servico", "destination": "/index.html" },
-    { "source": "/404", "destination": "/index.html" }
+    { "source": "/politica-de-privacidade", "destination": "/politica-de-privacidade/index.html" },
+    { "source": "/cookies", "destination": "/cookies/index.html" },
+    { "source": "/aviso-legal", "destination": "/aviso-legal/index.html" },
+    { "source": "/termos-de-servico", "destination": "/termos-de-servico/index.html" }
   ],
   "headers": [
     {
