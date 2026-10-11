@@ -32,6 +32,7 @@ import {
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import Seo from "@/components/Seo";
+import { openCookiePreferences } from "@/components/CookieConsent";
 
 const GOOGLE_BUSINESS_URL = "https://www.google.com/maps/place/R3+BikeShop/@-23.4763193,-46.6506291,17z/data=!4m6!3m5!1s0x94cef70041fec2eb:0xce8dfaf42ae7cfc0!8m2!3d-23.4763193!4d-46.6506291!16s%2Fg%2F11vybjc3zy";
 const GOOGLE_RATING = "5,0";
@@ -116,7 +117,11 @@ export default function Home() {
 
   // Google Ads Conversion Event
   const handleConversion = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
+    if (
+      typeof window !== 'undefined' &&
+      localStorage.getItem('r3-cookie-consent-v1') === 'accepted' &&
+      (window as any).gtag
+    ) {
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-17865927460/sOHcCNOs0OAbEKTWkcdC'
       });
@@ -387,6 +392,12 @@ export default function Home() {
         title="R3 Bike Shop | Loja e Oficina de Bicicletas em Lauzane Paulista - SP"
         description="Loja e oficina de bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Revisão, manutenção, peças, acessórios e busca e leva."
       />
+      <a
+        href="#conteudo-principal"
+        className="fixed left-4 top-4 z-[110] -translate-y-24 rounded-lg bg-black px-4 py-3 font-bold text-white transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#F97316]"
+      >
+        Pular para o conteúdo
+      </a>
       <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em Lauzane Paulista, São Paulo</h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -412,7 +423,7 @@ export default function Home() {
 
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden sm:flex items-center gap-4">
-              <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#F97316] transition-colors">
+              <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram da R3 Bike Shop" className="text-gray-600 hover:text-[#F97316] transition-colors">
                 <Instagram size={24} />
               </a>
             </div>
@@ -455,10 +466,10 @@ export default function Home() {
                   <div className="mt-8 pt-8 border-t border-gray-100">
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Siga-nos</p>
                     <div className="flex gap-4">
-                      <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                      <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram da R3 Bike Shop" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
                         <Instagram size={22} />
                       </a>
-                      <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                      <a href={facebookLink} target="_blank" rel="noopener noreferrer" aria-label="Facebook da R3 Bike Shop" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
                         <Facebook size={22} />
                       </a>
                     </div>
@@ -470,6 +481,7 @@ export default function Home() {
         </div>
       </header>
 
+      <main id="conteudo-principal" tabIndex={-1}>
       {/* Banner Slideshow Section */}
       <section className="w-full bg-black overflow-hidden">
         <Carousel
@@ -762,12 +774,14 @@ export default function Home() {
             <div className="hidden md:flex gap-2">
               <button 
                 onClick={() => offerApi?.scrollPrev()}
+                aria-label="Ver oferta anterior"
                 className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-white hover:bg-[#F97316] hover:border-[#F97316] transition-all"
               >
                 <ChevronLeft size={24} />
               </button>
               <button 
                 onClick={() => offerApi?.scrollNext()}
+                aria-label="Ver próxima oferta"
                 className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-white hover:bg-[#F97316] hover:border-[#F97316] transition-all"
               >
                 <ChevronRight size={24} />
@@ -872,6 +886,9 @@ export default function Home() {
               ></div>
             ))}
           </div>
+          <p className="mt-6 text-center text-xs font-bold text-zinc-400">
+            Preços podem sofrer reajustes. Verifique com a loja.
+          </p>
         </div>
       </section>
 
@@ -1020,12 +1037,14 @@ export default function Home() {
             
             <button 
               onClick={prevSlide}
+              aria-label="Ver entrega anterior"
               className="absolute left-2 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/90 p-3 opacity-100 shadow-2xl transition-all hover:bg-[#F97316] hover:text-white sm:left-4 sm:p-4 md:opacity-0 md:group-hover:opacity-100"
             >
               <ChevronLeft size={28} />
             </button>
             <button 
               onClick={nextSlide}
+              aria-label="Ver próxima entrega"
               className="absolute right-2 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/90 p-3 opacity-100 shadow-2xl transition-all hover:bg-[#F97316] hover:text-white sm:right-4 sm:p-4 md:opacity-0 md:group-hover:opacity-100"
             >
               <ChevronRight size={28} />
@@ -1036,6 +1055,8 @@ export default function Home() {
                 <button 
                   key={index}
                   onClick={() => setCurrentSlide(index)}
+                  aria-label={`Ver entrega ${index + 1}`}
+                  aria-current={index === currentSlide ? "true" : undefined}
                   className={`h-2 rounded-full transition-all duration-500 ${index === currentSlide ? 'bg-[#F97316] w-12' : 'bg-gray-200 w-2 hover:bg-gray-300'}`}
                 />
               ))}
@@ -1470,6 +1491,7 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
       {/* Footer Ajustado */}
       <footer className="bg-black text-white pt-16 pb-8 relative overflow-hidden">
         {/* Background image with overlay */}
@@ -1506,6 +1528,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><Link href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Política de Privacidade</Link></li>
                 <li><Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Política de Cookies</Link></li>
+                <li><button type="button" onClick={openCookiePreferences} className="min-h-11 text-left text-base text-gray-400 transition-colors hover:text-white">Preferências de cookies</button></li>
                 <li><Link href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Aviso Legal</Link></li>
                 <li><Link href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Termos de Serviço</Link></li>
               </ul>
@@ -1577,10 +1600,10 @@ export default function Home() {
                 R3 Bike Shop – Oficina de Bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Manutenção, revisão, peças e acessórios.
               </p>
               <div className="flex gap-3">
-                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram da R3 Bike Shop" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
                   <Instagram className="text-white group-hover:scale-110" size={20} />
                 </a>
-                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                <a href={facebookLink} target="_blank" rel="noopener noreferrer" aria-label="Facebook da R3 Bike Shop" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
                   <Facebook className="text-white group-hover:scale-110" size={20} />
                 </a>
               </div>
