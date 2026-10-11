@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import Seo from "@/components/Seo";
+import { openCookiePreferences } from "@/components/CookieConsent";
 
 export default function CookiesPolicy() {
   return (
@@ -29,7 +30,7 @@ export default function CookiesPolicy() {
         
         <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
           <p>
-            O site da <strong>R3 Bike Shop</strong> utiliza cookies para melhorar sua experiência de navegação e entender como você utiliza nossa plataforma.
+            O site da <strong>R3 Bike Shop</strong> usa armazenamento estritamente necessário para guardar sua escolha de privacidade. Ferramentas de medição e publicidade só são ativadas depois do seu consentimento.
           </p>
 
           <h2 className="text-2xl font-black text-black uppercase italic mt-12">O que são Cookies?</h2>
@@ -39,18 +40,30 @@ export default function CookiesPolicy() {
 
           <h2 className="text-2xl font-black text-black uppercase italic mt-12">Como usamos os Cookies?</h2>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Cookies Essenciais:</strong> Necessários para que o site funcione corretamente (ex: navegação entre seções).</li>
-            <li><strong>Cookies de Desempenho:</strong> Coletam dados anônimos sobre como as pessoas usam o site para que possamos melhorá-lo (ex: Google Analytics).</li>
-            <li><strong>Cookies Funcionais:</strong> Lembram escolhas que você faz para personalizar sua experiência.</li>
+            <li><strong>Armazenamento essencial:</strong> Guarda sua escolha de consentimento no próprio navegador e não pode ser desativado pelo banner.</li>
+            <li><strong>Medição e publicidade:</strong> Google Tag Manager e as ferramentas configuradas nele podem medir visitas e conversões.</li>
+            <li><strong>Meta Pixel:</strong> Pode medir visitas e ações relacionadas a campanhas nas plataformas da Meta.</li>
           </ul>
 
-          <h2 className="text-2xl font-black text-black uppercase italic mt-12">Como desativar?</h2>
+          <h2 className="text-2xl font-black text-black uppercase italic mt-12">Consentimento e revogação</h2>
           <p>
-            Você pode configurar seu navegador para recusar todos os cookies ou para indicar quando um cookie está sendo enviado. No entanto, algumas funcionalidades do site podem não operar corretamente sem eles.
+            Você pode aceitar ou recusar os rastreadores opcionais sem perder o acesso ao site. Também pode rever sua escolha a qualquer momento pelo botão abaixo. Ao revogar uma autorização já concedida, a página é recarregada para interromper os rastreadores ativos.
+          </p>
+
+          <button
+            type="button"
+            onClick={openCookiePreferences}
+            className="min-h-11 rounded-full bg-[#F97316] px-6 py-3 font-black uppercase text-white transition-colors hover:bg-[#EA580C]"
+          >
+            Gerenciar preferências
+          </button>
+
+          <p>
+            Você também pode excluir cookies e dados de sites nas configurações do seu navegador. Para dúvidas sobre privacidade, escreva para <strong>suporte@r3bikeshop.com</strong>.
           </p>
 
           <p className="mt-12 text-sm italic">
-            Última atualização: 09 de Janeiro de 2026.
+            Última atualização: 11 de outubro de 2026.
           </p>
         </div>
       </main>
