@@ -1,4 +1,4 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu, Maximize2, Quote, Clock } from "lucide-react";
+import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Mail, Menu, Maximize2, Quote, Clock } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
@@ -382,7 +382,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div id="home" className="min-h-screen bg-white text-black font-sans">
+    <div id="home" className="min-h-screen overflow-x-clip bg-white text-black font-sans">
       <Seo
         title="R3 Bike Shop | Loja e Oficina de Bicicletas em Lauzane Paulista - SP"
         description="Loja e oficina de bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Revisão, manutenção, peças, acessórios e busca e leva."
@@ -390,14 +390,14 @@ export default function Home() {
       <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em Lauzane Paulista, São Paulo</h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="container mx-auto flex min-h-16 items-center justify-between px-3 py-2 sm:px-4 sm:py-3">
           <div className="flex items-center gap-8">
             <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoUrl} alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista" className="h-12 w-auto brightness-0" />
+              <img src={logoUrl} alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista" className="h-10 w-auto brightness-0 sm:h-12" />
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden items-center gap-5 lg:flex xl:gap-6">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
@@ -425,14 +425,14 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-[#F97316] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold hover:bg-[#EA580C] transition-colors shadow-md hover:shadow-lg text-sm sm:text-base"
             >
               <MessageCircle size={18} />
-              <span className="hidden xs:inline">WhatsApp</span>
+              <span className="hidden sm:inline">WhatsApp</span>
             </a>
 
             {/* Mobile Menu Toggle */}
             <Sheet>
               <SheetTrigger asChild>
-                <button className="md:hidden p-2 text-[#F97316] hover:bg-gray-50 rounded-lg transition-all active:scale-95">
-                  <Menu size={32} strokeWidth={2.5} />
+                <button aria-label="Abrir menu" className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 text-[#F97316] transition-all hover:bg-gray-50 active:scale-95 lg:hidden">
+                  <Menu size={28} strokeWidth={2.5} />
                 </button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-4 border-l-[#F97316]">
@@ -498,7 +498,9 @@ export default function Home() {
                   <img
                     src={banner}
                     alt={`Banner Promocional R3 Bike Shop ${index + 1}`}
-                    className="w-full h-[250px] sm:h-[400px] md:h-[500px] object-cover object-center"
+                    className="aspect-video h-auto w-full object-contain object-center sm:h-[400px] sm:object-cover md:h-[500px]"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
                     onLoad={(e) => {
                       const target = e.currentTarget;
                       target.style.display = 'block';
@@ -532,17 +534,17 @@ export default function Home() {
           <CarouselContent>
             {heroSlides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="pt-16 pb-24 container mx-auto px-4">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="container mx-auto px-4 pb-16 pt-10 md:pb-24 md:pt-16">
+                  <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
                     <div className="order-2 md:order-1">
                       <span className="inline-block bg-[#F97316]/10 text-[#F97316] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4">
                         {slide.badge}
                       </span>
-                      <div className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
+                      <div className="break-words font-montserrat text-3xl font-black uppercase italic leading-tight text-black sm:text-4xl md:text-6xl">
                         {slide.title} <br />
                         <span className="text-[#F97316]">{slide.titleHighlight}</span>
                       </div>
-                      <div className="text-xl text-gray-600 mb-8 leading-relaxed">
+                      <div className="mb-7 mt-5 text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl">
                         {slide.description}
                       </div>
                       <div className="flex flex-col sm:flex-row gap-4">
@@ -551,7 +553,7 @@ export default function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={handleConversion}
-                          className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#F97316] transition-all shadow-xl hover:-translate-y-1 uppercase italic"
+                          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-black px-5 py-3 text-base font-black uppercase italic text-white shadow-xl transition-all hover:-translate-y-1 hover:bg-[#F97316] sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
                         >
                           {slide.ctaPrimary.icon}
                           {slide.ctaPrimary.text}
@@ -559,7 +561,7 @@ export default function Home() {
                         <a
                           href={slide.ctaSecondary.link}
                           onClick={handleConversion}
-                          className="inline-flex items-center justify-center gap-2 border-2 border-black text-black px-8 py-4 rounded-xl font-black text-lg hover:bg-black hover:text-white transition-all uppercase italic"
+                          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border-2 border-black px-5 py-3 text-base font-black uppercase italic text-black transition-all hover:bg-black hover:text-white sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
                         >
                           {slide.ctaSecondary.icon}
                           {slide.ctaSecondary.text}
@@ -573,7 +575,7 @@ export default function Home() {
                       <img
                         src={slide.image}
                         alt={slide.alt}
-                        className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-4 border-white"
+                        className="h-72 w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_50px_rgba(0,0,0,0.1)] sm:h-[400px] sm:rounded-3xl md:h-[500px]"
                         loading="lazy"
                         width={600}
                         height={500}
@@ -621,30 +623,30 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-black py-16 text-white overflow-hidden relative">
+      <section className="relative overflow-hidden bg-black py-12 text-white md:py-16">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#F97316]/10 -skew-x-12 transform translate-x-1/2"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4">
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+              <div className="mb-2 text-3xl font-black text-[#F97316] transition-transform group-hover:scale-110 sm:text-4xl md:text-5xl">
                 <Counter end="100" suffix="%" />
               </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Atendimento Local</p>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+              <div className="mb-2 text-3xl font-black text-[#F97316] transition-transform group-hover:scale-110 sm:text-4xl md:text-5xl">
                 <Counter end="500" prefix="+" />
               </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Clientes Satisfeitos</p>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+              <div className="mb-2 text-3xl font-black text-[#F97316] transition-transform group-hover:scale-110 sm:text-4xl md:text-5xl">
                 <Counter end="10" suffix="+" />
               </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Anos de Experiência</p>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-black text-[#F97316] mb-2 group-hover:scale-110 transition-transform">
+              <div className="mb-2 text-3xl font-black text-[#F97316] transition-transform group-hover:scale-110 sm:text-4xl md:text-5xl">
                 <Counter end="24/7" />
               </div>
               <p className="text-sm text-gray-400 uppercase font-black tracking-widest">Suporte WhatsApp</p>
@@ -654,7 +656,7 @@ export default function Home() {
       </section>
 
       {/* Quem Somos Section */}
-      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden" id="sobre">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white py-16 md:py-24" id="sobre">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#F97316] rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#F97316] rounded-full blur-3xl"></div>
@@ -697,7 +699,7 @@ export default function Home() {
               <div className="mb-4 inline-block">
                 <span className="bg-[#F97316]/10 text-[#F97316] px-4 py-2 rounded-full font-black text-sm uppercase tracking-widest">Nossa História</span>
               </div>
-              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic leading-tight">
+              <h2 className="mb-8 break-words font-montserrat text-3xl font-black uppercase italic leading-tight text-black sm:text-4xl md:text-5xl">
                 Bicicletaria de Confiança <span className="text-[#F97316]">na Lauzane Paulista</span>
               </h2>
               <div className="space-y-6">
@@ -738,7 +740,7 @@ export default function Home() {
       </section>
 
       {/* Seção de Ofertas Imperdíveis - Reconstruída do Zero */}
-      <section className="py-24 bg-zinc-950 relative overflow-hidden" id="ofertas">
+      <section className="relative overflow-hidden bg-zinc-950 py-16 md:py-24" id="ofertas">
         {/* Elementos Decorativos de Fundo */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#F97316] rounded-full blur-[120px]"></div>
@@ -752,7 +754,7 @@ export default function Home() {
                 <span className="w-2 h-2 bg-[#F97316] rounded-full animate-pulse"></span>
                 <span className="text-[#F97316] text-xs font-black uppercase tracking-[0.2em]">Promoções Ativas</span>
               </div>
-              <h2 className="font-montserrat font-black text-4xl md:text-6xl text-white uppercase italic leading-none">
+              <h2 className="break-words font-montserrat text-3xl font-black uppercase italic leading-none text-white sm:text-4xl md:text-6xl">
                 Acessórios e Peças <span className="text-[#F97316]">para Bicicletas</span><br />
                 <span className="text-zinc-500 text-2xl md:text-4xl">NA R3 BIKE SHOP!</span>
               </h2>
@@ -790,7 +792,7 @@ export default function Home() {
             <CarouselContent className="-ml-4">
               {promoOffers.map((offer, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                  <div className={`group relative bg-gradient-to-br ${getCardColor(index)} rounded-[40px] overflow-hidden shadow-2xl transition-all duration-500 h-full flex flex-col p-8 border-4 border-white/20`}>
+                  <div className={`group relative bg-gradient-to-br ${getCardColor(index)} flex h-full flex-col overflow-hidden rounded-3xl border-4 border-white/20 p-5 shadow-2xl transition-all duration-500 sm:rounded-[40px] sm:p-8`}>
                     {/* Badge */}
                     <div className="mb-6">
                       <span className="bg-[#F97316] text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-lg shadow-lg italic tracking-[0.2em]">
@@ -875,7 +877,7 @@ export default function Home() {
 
 
       {/* Nossos Serviços com Carrossel Automático */}
-      <section className="py-24 bg-black relative overflow-hidden" id="servicos">
+      <section className="relative overflow-hidden bg-black py-16 md:py-24" id="servicos">
         {/* Background image with overlay style footer */}
         <div 
           className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
@@ -890,7 +892,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Manutenção, Revisão <span className="text-[#F97316]">e Ajustes</span></h2>
+            <h2 className="mb-4 break-words font-montserrat text-3xl font-black uppercase italic text-white sm:text-4xl md:text-5xl">Manutenção, Revisão <span className="text-[#F97316]">e Ajustes</span></h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto font-bold italic">
               Excelência técnica e cuidado especial: a melhor <strong>manutenção de bicicletas em São Paulo</strong>.
             </p>
@@ -955,15 +957,15 @@ export default function Home() {
       </section>
 
       {/* Carrossel de Entregas */}
-      <section className="py-24 bg-white">
+      <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossas <span className="text-[#F97316]">Entregas</span></h2>
+            <h2 className="mb-4 font-montserrat text-3xl font-black uppercase italic text-black sm:text-4xl md:text-5xl">Nossas <span className="text-[#F97316]">Entregas</span></h2>
             <p className="text-gray-600 text-xl">Transparência e satisfação em cada entrega realizada.</p>
           </div>
 
           <div className="relative max-w-5xl mx-auto group">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.15)] border-8 border-white">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border-4 border-white shadow-[0_30px_60px_rgba(0,0,0,0.15)] sm:aspect-[16/9] sm:rounded-[2rem] sm:border-8">
               {deliveryImages.map((img, index) => (
                 <div 
                   key={index}
@@ -1018,13 +1020,13 @@ export default function Home() {
             
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100 z-30"
+              className="absolute left-2 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/90 p-3 opacity-100 shadow-2xl transition-all hover:bg-[#F97316] hover:text-white sm:left-4 sm:p-4 md:opacity-0 md:group-hover:opacity-100"
             >
               <ChevronLeft size={28} />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-[#F97316] hover:text-white p-4 rounded-full shadow-2xl transition-all opacity-0 group-hover:opacity-100 z-30"
+              className="absolute right-2 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white/90 p-3 opacity-100 shadow-2xl transition-all hover:bg-[#F97316] hover:text-white sm:right-4 sm:p-4 md:opacity-0 md:group-hover:opacity-100"
             >
               <ChevronRight size={28} />
             </button>
@@ -1043,11 +1045,11 @@ export default function Home() {
       </section>
 
       {/* Localização e Mapa Corrigido */}
-      <section className="py-24 bg-gray-50" id="localizacao">
+      <section className="bg-gray-50 py-16 md:py-24" id="localizacao">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">Localização da <span className="text-[#F97316]">LOJA</span></h2>
+              <h2 className="mb-8 font-montserrat text-3xl font-black uppercase italic text-black sm:text-4xl md:text-5xl">Localização da <span className="text-[#F97316]">LOJA</span></h2>
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
                     <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
@@ -1118,7 +1120,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white relative group">
+            <div className="relative h-[360px] overflow-hidden rounded-2xl border-4 border-white shadow-2xl sm:h-[500px] sm:rounded-[2rem] sm:border-8">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.560316935854!2d-46.650629099999996!3d-23.476319300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef70041fec2eb%3A0xce8dfaf42ae7cfc0!2sR3BikeShop!5e0!3m2!1spt-BR!2sbr!4v1768005391319!5m2!1spt-BR!2sbr" 
                 width="100%" 
@@ -1136,7 +1138,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-black relative overflow-hidden">
+      <section className="relative overflow-hidden bg-black py-16 md:py-24">
         {/* Geometric Bike Chain Pattern */}
         <div 
           className="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -1148,7 +1150,7 @@ export default function Home() {
         
         <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Dúvidas <span className="text-[#F97316]">Frequentes</span></h2>
+            <h2 className="mb-4 font-montserrat text-3xl font-black uppercase italic text-white sm:text-4xl md:text-5xl">Dúvidas <span className="text-[#F97316]">Frequentes</span></h2>
             <p className="text-gray-400 text-xl italic">Tudo o que você precisa saber sobre nossos serviços.</p>
           </div>
 
@@ -1173,7 +1175,7 @@ export default function Home() {
       </section>
 
       {/* Marcas Parceiras Section */}
-      <section className="py-20 bg-[#F97316] overflow-hidden relative">
+      <section className="relative overflow-hidden bg-[#F97316] py-14 md:py-20">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
         </div>
@@ -1211,14 +1213,14 @@ export default function Home() {
       </section>
 
       {/* Nossa Loja por Dentro Section - Carrossel com Zoom */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="overflow-hidden bg-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossa Loja <span className="text-[#F97316]">por Dentro</span></h2>
+            <h2 className="mb-4 font-montserrat text-3xl font-black uppercase italic text-black sm:text-4xl md:text-5xl">Nossa Loja <span className="text-[#F97316]">por Dentro</span></h2>
             <p className="text-gray-600 text-xl italic">Um espaço completo para cuidar da sua paixão.</p>
           </div>
 
-          <div className="max-w-6xl mx-auto relative px-12">
+          <div className="relative mx-auto max-w-6xl px-0 md:px-12">
             <Carousel
               opts={{
                 align: "start",
@@ -1292,7 +1294,7 @@ export default function Home() {
       <BeforeAfterGallery />
 
       {/* Oficina Section - Alta Performance */}
-      <section className="py-24 bg-zinc-950 text-white overflow-hidden relative" id="oficina">
+      <section className="relative overflow-hidden bg-zinc-950 py-16 text-white md:py-24" id="oficina">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         </div>
@@ -1304,7 +1306,7 @@ export default function Home() {
                 <span className="inline-block bg-[#F97316] text-white px-4 py-1 rounded-sm text-xs font-black uppercase tracking-[0.3em] mb-4">
                   Expertise Técnica
                 </span>
-                <h2 className="font-montserrat font-black text-4xl md:text-6xl mb-6 leading-tight uppercase italic">
+                <h2 className="mb-6 break-words font-montserrat text-3xl font-black uppercase italic leading-tight sm:text-4xl md:text-6xl">
                   Oficina de Bicicleta <br />
                   <span className="text-[#F97316]">na Zona Norte de São Paulo</span>
                 </h2>
@@ -1334,7 +1336,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleConversion}
-                  className="inline-flex items-center gap-3 bg-[#F97316] text-white px-10 py-5 rounded-full font-black text-xl hover:bg-white hover:text-[#F97316] transition-all shadow-[0_0_30px_rgba(249,115,22,0.3)] uppercase italic"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-[#F97316] px-6 py-4 text-base font-black uppercase italic text-white shadow-[0_0_30px_rgba(249,115,22,0.3)] transition-all hover:bg-white hover:text-[#F97316] sm:w-auto sm:px-10 sm:py-5 sm:text-xl"
                 >
                   <MessageCircle size={24} />
                   AGENDAR MINHA REVISÃO
@@ -1348,7 +1350,7 @@ export default function Home() {
                 <img 
                   src="/uploads/oficina-bicicleta-r3.jpg" 
                   alt="Oficina de manutenção de bicicletas" 
-                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                  className="h-[400px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[500px] lg:h-[600px]"
                   loading="lazy"
                   width={800}
                   height={600}
@@ -1365,14 +1367,14 @@ export default function Home() {
                     const parent = target.parentElement;
                     if (parent && !parent.querySelector('.fallback-workshop')) {
                       const div = document.createElement('div');
-                      div.className = "fallback-workshop absolute inset-0 h-[600px] bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
+                      div.className = "fallback-workshop absolute inset-0 h-full bg-gradient-to-br from-[#2C3E50] to-black flex items-center justify-center p-4";
                       div.innerHTML = `<span class="text-white/20 font-black text-2xl uppercase italic text-center">OFICINA R3 BIKE</span>`;
                       parent.appendChild(div);
                     }
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
-                <div className="absolute bottom-8 left-8 right-8 bg-zinc-900/90 backdrop-blur-md p-6 rounded-2xl border border-zinc-800">
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-zinc-800 bg-zinc-900/90 p-4 backdrop-blur-md sm:bottom-8 sm:left-8 sm:right-8 sm:p-6">
                   <div className="flex items-center gap-4">
                     <div className="bg-[#F97316] p-4 rounded-xl">
                       <Wrench className="text-white" size={32} />
@@ -1390,7 +1392,7 @@ export default function Home() {
       </section>
 
       {/* Avaliações do Google Section */}
-      <section className="py-24 bg-black text-white relative overflow-hidden" id="avaliacoes">
+      <section className="relative overflow-hidden bg-black py-16 text-white md:py-24" id="avaliacoes">
         {/* Background image with overlay */}
         <div 
           className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
@@ -1405,14 +1407,14 @@ export default function Home() {
         
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliações: <span className="text-[#F97316]">R3 Bike Shop</span></h2>
+            <h2 className="mb-4 font-montserrat text-3xl font-black uppercase italic sm:text-4xl md:text-5xl">Avaliações: <span className="text-[#F97316]">R3 Bike Shop</span></h2>
             <div className="flex items-center justify-center gap-2 mb-8">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Avaliações R3 Bike Shop Lauzane Paulista" className="w-8 h-8" />
               <div className="text-2xl font-black">{GOOGLE_RATING} ★ <span className="text-gray-400 font-normal text-lg">no Google</span></div>
             </div>
           </div>
 
-          <div className="relative px-12">
+          <div className="relative px-0 md:px-12">
             <Carousel
               opts={{
                 align: "start",
@@ -1581,9 +1583,6 @@ export default function Home() {
                 <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
                   <Facebook className="text-white group-hover:scale-110" size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Youtube className="text-white group-hover:scale-110" size={20} />
-                </a>
               </div>
             </div>
           </div>
@@ -1615,14 +1614,15 @@ export default function Home() {
           href={GOOGLE_BUSINESS_URL}
           target="_blank" 
           rel="noopener noreferrer"
-          className="fixed bottom-32 right-8 bg-white rounded-full px-5 py-3 flex items-center gap-3 shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-[9999] border border-gray-100 group"
+          aria-label={`Ver ${GOOGLE_REVIEW_COUNT} avaliações da R3 Bike Shop no Google`}
+          className="group fixed bottom-24 right-4 z-40 flex min-h-12 min-w-12 items-center justify-center gap-3 rounded-full border border-gray-100 bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 sm:bottom-32 sm:right-8 sm:px-5 sm:py-3"
         >
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-7 h-7" />
-          <div className="flex flex-col">
+          <div className="hidden flex-col sm:flex">
             <span className="text-[13px] font-black text-black leading-none uppercase italic">{GOOGLE_RATING} ★ no Google</span>
             <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">{GOOGLE_REVIEW_COUNT} avaliações</span>
           </div>
-          <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-[#F97316] transition-colors">
+          <div className="hidden h-8 w-8 items-center justify-center rounded-full bg-gray-50 transition-colors lg:flex">
             <Star size={14} className="text-[#F97316] group-hover:text-white" fill="currentColor" />
           </div>
         </a>
@@ -1634,10 +1634,11 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleConversion}
-        className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-5 rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group flex items-center gap-3"
+        aria-label="Falar com a R3 Bike Shop pelo WhatsApp"
+        className="group fixed bottom-4 right-4 z-50 flex min-h-14 min-w-14 items-center justify-center gap-3 rounded-full bg-[#25D366] p-4 text-white shadow-[0_10px_40px_rgba(37,211,102,0.4)] transition-transform hover:scale-110 sm:bottom-8 sm:right-8 sm:p-5"
       >
-        <MessageCircle size={32} fill="currentColor" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-black uppercase italic whitespace-nowrap">Falar com Especialista</span>
+        <MessageCircle className="h-7 w-7 sm:h-8 sm:w-8" fill="currentColor" />
+        <span className="hidden max-w-0 overflow-hidden whitespace-nowrap font-black uppercase italic transition-all duration-500 group-hover:max-w-xs sm:block">Falar com Especialista</span>
       </a>
     </div>
   );
