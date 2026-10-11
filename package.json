@@ -7,7 +7,7 @@
   "packageManager": "pnpm@10.4.1",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-static-pages.mjs",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write ."

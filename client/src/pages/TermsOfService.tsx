@@ -1,9 +1,15 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import Seo from "@/components/Seo";
 
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-white text-black font-sans pb-20">
+      <Seo
+        title="Termos de Serviço | R3 Bike Shop"
+        description="Consulte os termos de orçamento, garantia, entrega, busca e leva e pagamento da R3 Bike Shop."
+        path="/termos-de-servico"
+      />
       {/* Header Simples */}
       <header className="bg-white border-b border-gray-100 py-6 sticky top-0 z-50">
         <div className="container mx-auto px-4 flex items-center justify-between">

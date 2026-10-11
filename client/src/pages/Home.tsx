@@ -31,6 +31,11 @@ import {
 } from "@/components/ui/dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import Seo from "@/components/Seo";
+
+const GOOGLE_BUSINESS_URL = "https://www.google.com/maps/place/R3+BikeShop/@-23.4763193,-46.6506291,17z/data=!4m6!3m5!1s0x94cef70041fec2eb:0xce8dfaf42ae7cfc0!8m2!3d-23.4763193!4d-46.6506291!16s%2Fg%2F11vybjc3zy";
+const GOOGLE_RATING = "5,0";
+const GOOGLE_REVIEW_COUNT = 609;
 
 function Counter({ end, duration = 2000, suffix = "", prefix = "" }: { end: string, duration?: number, suffix?: string, prefix?: string }) {
   const [count, setCount] = useState(0);
@@ -136,14 +141,7 @@ export default function Home() {
     "/uploads/r3(15).jpg"
   ];
 
-  const partnerBrands = [
-    { name: "Shimano", logo: "/logos/shimano.png" },
-    { name: "SRAM", logo: "/logos/sram.png" },
-    { name: "RockShox", logo: "/logos/rockshox.png" },
-    { name: "Caloi", logo: "/logos/caloi.png" },
-    { name: "TSW", logo: "/logos/tsw.png" },
-    { name: "First", logo: "/logos/first.png" }
-  ];
+  const partnerBrands = ["Shimano", "SRAM", "RockShox", "Caloi", "TSW", "First"];
 
   const promoOffers = [
     {
@@ -385,6 +383,10 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-screen bg-white text-black font-sans">
+      <Seo
+        title="R3 Bike Shop | Loja e Oficina de Bicicletas em Lauzane Paulista - SP"
+        description="Loja e oficina de bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Revisão, manutenção, peças, acessórios e busca e leva."
+      />
       <h1 className="sr-only">R3 Bike Shop – Loja e Oficina de Bicicletas em Lauzane Paulista, São Paulo</h1>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -727,7 +729,7 @@ export default function Home() {
               
               <div className="mt-8 p-6 bg-[#F97316]/10 rounded-2xl border-2 border-[#F97316]">
                 <p className="font-montserrat font-black text-xl text-[#F97316] italic">
-                  "Mais de 300 avaliações de clientes satisfeitos na Zona Norte!"
+                  "Nota 5,0 no Google, com 609 avaliações de clientes!"
                 </p>
               </div>
             </div>
@@ -1107,7 +1109,7 @@ export default function Home() {
               </div>
               <div className="mt-12">
                 <a 
-                  href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
+                  href={GOOGLE_BUSINESS_URL}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#F97316] font-black text-lg hover:underline uppercase italic"
@@ -1197,22 +1199,9 @@ export default function Home() {
               {partnerBrands.map((brand, index) => (
                 <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
                   <div className="bg-transparent transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-24 group mx-2">
-                    <img 
-                      src={brand.logo} 
-                      alt={`Logo ${brand.name} - Marca parceira R3 Bike Shop`} 
-                      className="max-h-12 w-auto object-contain transition-all duration-500 opacity-60 grayscale brightness-0 invert group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:invert-0 group-hover:scale-110"
-                      onError={(e) => {
-                        const target = e.currentTarget;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent && !parent.querySelector('.fallback-brand')) {
-                          const span = document.createElement('span');
-                          span.className = "fallback-brand font-black text-xl text-white/40 group-hover:text-white uppercase italic tracking-tighter transition-all duration-300";
-                          span.textContent = brand.name;
-                          parent.appendChild(span);
-                        }
-                      }}
-                    />
+                    <span className="font-black text-xl text-white/60 group-hover:text-white uppercase italic tracking-tighter transition-all duration-300 group-hover:scale-110">
+                      {brand}
+                    </span>
                   </div>
                 </CarouselItem>
               ))}
@@ -1419,7 +1408,7 @@ export default function Home() {
             <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliações: <span className="text-[#F97316]">R3 Bike Shop</span></h2>
             <div className="flex items-center justify-center gap-2 mb-8">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Avaliações R3 Bike Shop Lauzane Paulista" className="w-8 h-8" />
-              <div className="text-2xl font-black">5,0 ★ <span className="text-gray-400 font-normal text-lg">no Google</span></div>
+              <div className="text-2xl font-black">{GOOGLE_RATING} ★ <span className="text-gray-400 font-normal text-lg">no Google</span></div>
             </div>
           </div>
 
@@ -1465,9 +1454,9 @@ export default function Home() {
           </div>
           
           <div className="mt-16 text-center">
-            <p className="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Nota 5,0 no Google • 315 avaliações</p>
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Nota {GOOGLE_RATING} no Google • {GOOGLE_REVIEW_COUNT} avaliações</p>
             <a 
-              href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
+              href={GOOGLE_BUSINESS_URL}
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-black hover:bg-[#F97316] hover:text-white transition-all uppercase italic shadow-2xl"
@@ -1623,15 +1612,15 @@ export default function Home() {
 
         {/* Floating Google Review Button */}
         <a 
-          href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
+          href={GOOGLE_BUSINESS_URL}
           target="_blank" 
           rel="noopener noreferrer"
           className="fixed bottom-32 right-8 bg-white rounded-full px-5 py-3 flex items-center gap-3 shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-[9999] border border-gray-100 group"
         >
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-7 h-7" />
           <div className="flex flex-col">
-            <span className="text-[13px] font-black text-black leading-none uppercase italic">5,0 ★ no Google</span>
-            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">315 avaliações</span>
+            <span className="text-[13px] font-black text-black leading-none uppercase italic">{GOOGLE_RATING} ★ no Google</span>
+            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">{GOOGLE_REVIEW_COUNT} avaliações</span>
           </div>
           <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-[#F97316] transition-colors">
             <Star size={14} className="text-[#F97316] group-hover:text-white" fill="currentColor" />
